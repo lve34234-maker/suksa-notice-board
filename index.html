@@ -233,32 +233,46 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
 .ristatus.done{background:#e8f5e9;color:var(--green);}
 
 /* ── 포스트 상세 ── */
-#pg-detail,#pg-write{display:none;background:var(--bg);min-height:100vh;padding-bottom:20px;}
+#pg-detail,#pg-write{display:none;background:var(--bg);min-height:100vh;padding-bottom:80px;}
 .detail-inner,#write-inner-wrap{max-width:900px;margin:0 auto;padding:12px 13px;}
-.detcard{background:var(--card);border-radius:12px;box-shadow:var(--sh);overflow:hidden;}
-.dhd{display:flex;align-items:center;padding:11px 13px;border-bottom:1px solid var(--bd);gap:9px;}
+/* overflow:hidden 제거 → 댓글 잘림 방지 */
+.detcard{background:var(--card);border-radius:12px;box-shadow:var(--sh);}
+.dhd{display:flex;align-items:center;padding:11px 13px;border-bottom:1px solid var(--bd);gap:9px;border-radius:12px 12px 0 0;}
 .dback{background:none;border:none;font-size:1.05rem;cursor:pointer;color:var(--black);padding:4px;}
 .dtitle{font-family:'Noto Serif KR',serif;font-size:.9rem;font-weight:700;}
 .dbody{padding:14px;}
 .dcontent{font-size:.87rem;line-height:1.85;white-space:pre-wrap;margin-bottom:10px;}
-.dcmtsec{border-top:1px solid var(--bd);padding-top:13px;}
+/* 댓글 섹션 */
+.dcmtsec{border-top:1px solid var(--bd);padding:13px 14px 6px;}
 .dcmttitle{font-family:'Noto Serif KR',serif;font-size:.87rem;font-weight:700;margin-bottom:11px;display:flex;align-items:center;gap:6px;}
 .dcmtcnt{background:var(--red);color:#fff;font-size:.62rem;font-weight:700;padding:1px 7px;border-radius:20px;}
-.dci{display:flex;gap:8px;padding:9px 0;border-bottom:1px solid #fafafa;}
-.dci:last-child{border-bottom:none;}
-.dcav{width:26px;height:26px;border-radius:50%;flex-shrink:0;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:.64rem;font-weight:700;color:#fff;}
+.dci{display:flex;gap:8px;padding:10px 0;border-bottom:1px solid #f5f5f5;}
+.dci:last-child{border-bottom:none;padding-bottom:6px;}
+.dcav{width:28px;height:28px;border-radius:50%;flex-shrink:0;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:700;color:#fff;}
 .dcav img{width:100%;height:100%;object-fit:cover;}
 .dcb{flex:1;}
-.dcan{font-size:.78rem;font-weight:700;}
-.dctext{font-size:.78rem;line-height:1.6;white-space:pre-wrap;}
-.dcdate{font-size:.63rem;color:var(--gray);margin-top:2px;display:flex;align-items:center;gap:7px;}
+.dcan{font-size:.8rem;font-weight:700;}
+.dctext{font-size:.8rem;line-height:1.6;white-space:pre-wrap;color:#333;word-break:break-word;}
+.dcdate{font-size:.63rem;color:var(--gray);margin-top:3px;display:flex;align-items:center;gap:7px;}
 .btn-dcdel{background:none;border:none;color:#ccc;font-size:.63rem;cursor:pointer;}
 .btn-dcdel:hover{color:var(--red);}
-.dcwrite{border-top:1px solid var(--bd);padding:10px 13px;display:flex;align-items:center;gap:8px;background:var(--card);position:sticky;bottom:72px;}
-.dcwav{width:26px;height:26px;border-radius:50%;flex-shrink:0;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:.64rem;font-weight:700;color:#fff;}
+/* 댓글 입력창 — fixed로 화면 하단에 고정 */
+.dcwrite{
+  position:fixed;bottom:0;left:0;right:0;
+  background:#fff;border-top:1.5px solid var(--bd);
+  padding:10px 14px;display:flex;align-items:center;gap:9px;
+  z-index:150;max-width:900px;margin:0 auto;
+  box-shadow:0 -2px 12px rgba(0,0,0,.08);
+}
+/* fixed일 때 left/right 계산 보정 */
+@media(min-width:900px){
+  .dcwrite{left:50%;right:auto;transform:translateX(-50%);width:900px;}
+}
+.dcwav{width:28px;height:28px;border-radius:50%;flex-shrink:0;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:700;color:#fff;}
 .dcwav img{width:100%;height:100%;object-fit:cover;}
-.dcinput{flex:1;border:none;outline:none;font-size:.82rem;background:none;}
-.dcsub{background:none;border:none;color:var(--red);font-size:.8rem;font-weight:700;cursor:pointer;padding:4px 8px;opacity:.4;}
+.dcinput{flex:1;border:1.5px solid var(--bd);border-radius:22px;outline:none;font-size:.83rem;padding:8px 14px;background:#fafafa;transition:border .2s;}
+.dcinput:focus{border-color:var(--red);background:#fff;}
+.dcsub{background:var(--red);color:#fff;border:none;border-radius:20px;font-size:.8rem;font-weight:700;cursor:pointer;padding:8px 14px;opacity:.4;transition:opacity .2s;white-space:nowrap;}
 .dcsub.on{opacity:1;}
 .att-sec{margin:0 0 10px;background:#f8fff8;border:1px solid #c8e6c9;border-radius:10px;padding:11px;}
 .atttitle{font-size:.78rem;font-weight:700;color:var(--green);margin-bottom:7px;display:flex;align-items:center;gap:7px;}
@@ -576,7 +590,7 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
 
 <!-- 포스트 상세 -->
 <div id="pg-detail">
-  <div class="detail-inner"><div class="detcard" id="det-inner"></div></div>
+  <div class="detail-inner"></div>
 </div>
 
 <!-- 글쓰기 -->
@@ -1224,7 +1238,8 @@ async function openDetail(key,board){
     p.comments=cv?Object.entries(cv).map(([k,v])=>({...v,_key:k})).sort((a,b)=>a.ts-b.ts):[];
     HL();
     showPage("detail");
-    document.getElementById("det-inner").innerHTML=buildDetail(p);
+    // det-inner 전체(카드+입력창)를 detail-inner에 렌더
+    document.querySelector("#pg-detail .detail-inner").innerHTML=buildDetail(p);
     window.scrollTo(0,0);
   }catch(e){HL();toast("❌ "+e.message,false);}
 }
@@ -1248,47 +1263,99 @@ function buildDetail(p){
   let media="";
   if(p.videoUrl){const yt=ytE(p.videoUrl);media=yt?`<iframe class="pvideo" src="${yt}" frameborder="0" allowfullscreen></iframe>`:`<video class="pvideo" src="${esc(p.videoUrl)}" controls></video>`;}
   else if(p.imageData)media=`<img class="pimg" src="${p.imageData}" alt="">`;
-  const cmts=p.comments.length?p.comments.map(c=>`
-    <div class="dci">
-      ${avEl(c.authorDisplay||c.author,c.authorPhoto||"",26)}
-      <div class="dcb"><span class="dcan">${esc(c.authorDisplay||c.author)}</span><span class="dctext"> ${esc(c.text)}</span>
-      <div class="dcdate">${fmtDate(c.ts)} ${CU?.isAdmin||CU?.username===c.author?`<button class="btn-dcdel" onclick="delComment('${p._key}','${c._key}','${p._board}')">삭제</button>`:""}</div></div>
-    </div>`).join(""):`<p style="color:var(--gray);font-size:.77rem;padding:10px 0;">첫 댓글을 달아보세요!</p>`;
-  const myAv=avEl(CU?.displayName||"",CU?.photoData||"",26);
-  return`<div class="dhd">
-    <button class="dback" onclick="backToApp()">← 목록</button>
-    <div class="dtitle">${p._board==="free"?"자율게시판":"게시판"}</div>
-    ${isMine?`<button class="pmore" style="margin-left:auto;" onclick="showMenu('${p._key}','${p._board}')">⋯</button>`:"<div></div>"}
-  </div>
-  <div class="dbody">
-    <div class="pch" style="padding:0 0 8px;">
-      ${avEl(p.authorDisplay,p.authorPhoto||"",32)}
-      <div class="pui"><div class="pun">${esc(p.authorDisplay)}</div><div class="pdt">${fmtDate(p.ts)}</div></div>
+
+  // 댓글 목록 HTML
+  const cmts=p.comments.length
+    ? p.comments.map(c=>`
+      <div class="dci">
+        ${avEl(c.authorDisplay||c.author,c.authorPhoto||"",28)}
+        <div class="dcb">
+          <span class="dcan">${esc(c.authorDisplay||c.author)}</span>
+          <span class="dctext"> ${esc(c.text)}</span>
+          <div class="dcdate">
+            ${fmtDate(c.ts)}
+            ${CU?.isAdmin||CU?.username===c.author
+              ?`<button class="btn-dcdel" onclick="delComment('${p._key}','${c._key}','${p._board}')">삭제</button>`
+              :""}
+          </div>
+        </div>
+      </div>`).join("")
+    : `<p style="color:var(--gray);font-size:.78rem;padding:14px 0 8px;text-align:center;">💬 첫 댓글을 달아보세요!</p>`;
+
+  const myAv=avEl(CU?.displayName||"",CU?.photoData||"",28);
+
+  // 댓글 입력창 (detcard 바깥, fixed 아님 — 페이지 맨 아래에 붙임)
+  const writeBar = !isGuest
+    ? `<div class="dcwrite">
+        ${myAv}
+        <input class="dcinput" id="ci"
+          placeholder="${esc(CU?.displayName||"")}(으)로 댓글 달기..."
+          oninput="this.nextElementSibling.classList.toggle('on',this.value.trim().length>0)">
+        <button class="dcsub" onclick="submitComment('${p._key}','${p._board}')">게시</button>
+      </div>`
+    : `<div style="text-align:center;padding:13px;font-size:.76rem;color:var(--gray);background:#fff;border-top:1px solid var(--bd);">
+        댓글을 달려면 로그인해주세요
+       </div>`;
+
+  return `
+  <div class="detcard">
+    <div class="dhd">
+      <button class="dback" onclick="backToApp()">← 목록</button>
+      <div class="dtitle">${p._board==="free"?"자율게시판":"게시판"}</div>
+      ${isMine?`<button class="pmore" style="margin-left:auto;" onclick="showMenu('${p._key}','${p._board}')">⋯</button>`:"<div></div>"}
     </div>
-    <div class="ptrow" style="padding:0 0 7px;">
-      <span class="tag tag-${esc(p.category)}">${esc(p.category)}</span>
-      <span class="ptitle" style="font-size:1rem;">${esc(p.title||"(제목 없음)")}${p.pinned?" 📌":""}</span>
+
+    <div class="dbody">
+      <div class="pch" style="padding:0 0 8px;">
+        ${avEl(p.authorDisplay,p.authorPhoto||"",32)}
+        <div class="pui">
+          <div class="pun">${esc(p.authorDisplay)}</div>
+          <div class="pdt">${fmtDate(p.ts)}</div>
+        </div>
+      </div>
+      <div class="ptrow" style="padding:0 0 8px;">
+        <span class="tag tag-${esc(p.category)}">${esc(p.category)}</span>
+        <span class="ptitle" style="font-size:1rem;">${esc(p.title||"(제목 없음)")}${p.pinned?" 📌":""}</span>
+      </div>
+      ${media}
+      ${p.scheduleDate?`<div class="sbadge" style="margin:5px 0 8px;">📅 ${p.scheduleDate}${p.timeStart?" ⏰ "+p.timeStart+(p.timeEnd?" ~ "+p.timeEnd:""):""}</div>`:""}
+      ${p.content?`<div class="dcontent">${esc(p.content)}</div>`:""}
+      <div class="pacts" style="padding:6px 0 2px;">
+        <button class="bhrt" onclick="toggleLike('${p._key}','${p._board}')">${liked?"❤️":"🤍"}</button>
+        <button class="bcmt">💬</button>
+      </div>
+      <div class="erow" style="padding:0 0 5px;">${era}</div>
+      ${lc?`<div class="plikes" style="padding:0 0 5px;">좋아요 ${lc}개</div>`:""}
     </div>
-    ${media}
-    ${p.scheduleDate?`<div class="sbadge" style="margin:5px 0 8px;">📅 ${p.scheduleDate}${p.timeStart?" ⏰ "+p.timeStart+(p.timeEnd?" ~ "+p.timeEnd:""):""}</div>`:""}
-    ${p.content?`<div class="dcontent">${esc(p.content)}</div>`:""}
-    <div class="pacts" style="padding:4px 0;"><button class="bhrt" onclick="toggleLike('${p._key}','${p._board}')">${liked?"❤️":"🤍"}</button><button class="bcmt">💬</button></div>
-    <div class="erow" style="padding:0 0 5px;">${era}</div>
-    ${lc?`<div class="plikes" style="padding:0 0 4px;">좋아요 ${lc}개</div>`:""}
+
     ${p.attendanceOn||CU?.isAdmin?`
-    <div class="att-sec">
-      <div class="atttitle">📋 출석 체크 ${CU?.isAdmin?`<button class="atttog" onclick="toggleAtt('${p._key}','${p._board}',${!p.attendanceOn})">${p.attendanceOn?"OFF":"ON"}</button>`:""}</div>
-      ${p.attendanceOn?`
-      <div class="attchips">${gl.map(a=>`<span class="attchip go">✅ ${esc(a.name)}</span>`).join("")}${nl.map(a=>`<span class="attchip no">❌ ${esc(a.name)}</span>`).join("")}</div>
-      <div class="attwrite"><input class="attni" id="att-name" placeholder="이름..."><button class="btnatt go" onclick="markAtt('${p._key}','${p._board}','go')">✅ 참석</button><button class="btnatt no" onclick="markAtt('${p._key}','${p._board}','no')">❌ 불참</button></div>
-      `:"<p style=\"font-size:.74rem;color:var(--gray);\">관리자가 출석을 켤 수 있어요</p>"}
+    <div style="padding:0 14px 10px;">
+      <div class="att-sec">
+        <div class="atttitle">📋 출석 체크
+          ${CU?.isAdmin?`<button class="atttog" onclick="toggleAtt('${p._key}','${p._board}',${!p.attendanceOn})">${p.attendanceOn?"OFF":"ON"}</button>`:""}
+        </div>
+        ${p.attendanceOn?`
+        <div class="attchips">${gl.map(a=>`<span class="attchip go">✅ ${esc(a.name)}</span>`).join("")}${nl.map(a=>`<span class="attchip no">❌ ${esc(a.name)}</span>`).join("")}</div>
+        <div class="attwrite">
+          <input class="attni" id="att-name" placeholder="이름...">
+          <button class="btnatt go" onclick="markAtt('${p._key}','${p._board}','go')">✅ 참석</button>
+          <button class="btnatt no" onclick="markAtt('${p._key}','${p._board}','no')">❌ 불참</button>
+        </div>`:"<p style=\"font-size:.74rem;color:var(--gray);\">관리자가 출석을 켤 수 있어요</p>"}
+      </div>
     </div>`:""}
+
+    <!-- 댓글 목록 -->
     <div class="dcmtsec">
       <div class="dcmttitle">💬 댓글 <span class="dcmtcnt">${p.comments.length}</span></div>
-      <div>${cmts}</div>
+      <div id="cmt-list">${cmts}</div>
     </div>
   </div>
-  ${!isGuest?`<div class="dcwrite">${myAv}<input class="dcinput" id="ci" placeholder="${esc(CU?.displayName||"")}(으)로 댓글 달기..." oninput="this.nextElementSibling.classList.toggle('on',this.value.trim().length>0)"><button class="dcsub" onclick="submitComment('${p._key}','${p._board}')">게시</button></div>`:`<div style="text-align:center;padding:12px;font-size:.75rem;color:var(--gray);">댓글을 달려면 로그인해주세요</div>`}`;
+
+  <!-- 댓글 입력창 (카드 바깥, 페이지 맨 아래) -->
+  ${writeBar}
+  <!-- 댓글 입력창 높이만큼 여백 -->
+  <div style="height:62px;"></div>
+  `;
 }
 
 function showMenu(key,board){
