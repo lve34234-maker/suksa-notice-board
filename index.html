@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>🥋 이현석</title>
+<title>🥋 석사 태권도 시범단</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -439,6 +439,10 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
       </div>
       <div class="hr">
         <button class="hbtn" onclick="toggleNotif()">🔔<div class="hdot" id="hdot"></div></button>
+        <!-- 관리자 패널 버튼 (관리자 전용, 모바일/PC 모두) -->
+        <button class="hbtn admin-only-btn" id="btn-admin-panel" onclick="openAdminPanel()" style="display:none;" title="관리자 패널 (Ctrl+O)">⚙️</button>
+        <!-- 로그아웃 버튼 -->
+        <button class="hbtn" id="btn-logout-hd" onclick="confirmLogout()" style="display:none;" title="로그아웃">🚪</button>
         <div class="abadge" id="abadge">👑 관리자</div>
         <div class="ndrop" id="ndrop">
           <div class="ndrop-h">알림<button class="ndrop-x" onclick="toggleNotif()">✕</button></div>
@@ -588,6 +592,7 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
     </div>
     <div class="ap-tabs">
       <div class="aptab active" id="aptab-users" onclick="switchAPTab('users')">👥 회원 관리</div>
+      <div class="aptab" id="aptab-create" onclick="switchAPTab('create')">➕ 계정 만들기</div>
       <div class="aptab" id="aptab-stats" onclick="switchAPTab('stats')">📊 통계</div>
       <div class="aptab" id="aptab-settings" onclick="switchAPTab('settings')">⚙️ 설정</div>
     </div>
@@ -695,11 +700,15 @@ function startApp(){
   if(isGuest)document.getElementById("gb").classList.add("show");
   if(CU?.isAdmin)document.getElementById("abadge").classList.add("show");
   document.getElementById("btn-nw").style.display=CU?.isAdmin&&!isGuest?"":"none";
+  // 관리자 패널 버튼 (모바일/PC 모두, 관리자만)
+  document.getElementById("btn-admin-panel").style.display=CU?.isAdmin&&!isGuest?"":"none";
+  // 로그아웃 버튼 (로그인한 사람만)
+  document.getElementById("btn-logout-hd").style.display=!isGuest?"":"none";
   startListeners();
   goPanel(1,false);
   renderCalendar();
   requestNotifPerm();
-  // Ctrl+O → 관리자 패널
+  // Ctrl+O → 관리자 패널 (PC 유지)
   document.addEventListener("keydown",e=>{
     if(e.ctrlKey&&e.key.toLowerCase()==="o"&&CU?.isAdmin){e.preventDefault();openAdminPanel();}
   });
@@ -786,6 +795,12 @@ function doLogout(){
 }
 window.doGuest=doGuest;window.doLogout=doLogout;
 
+// 로그아웃 확인
+function confirmLogout(){
+  if(confirm("로그아웃 할까요?")) doLogout();
+}
+window.confirmLogout=confirmLogout;
+
 // ── 관리자 패널 ──
 function openAdminPanel(){
   document.getElementById("m-admin-panel").classList.add("show");
@@ -796,14 +811,72 @@ window.openAdminPanel=openAdminPanel;window.closeAdminPanel=closeAdminPanel;
 
 async function switchAPTab(tab){
   document.querySelectorAll(".aptab").forEach(t=>t.classList.remove("active"));
-  document.getElementById("aptab-"+tab).classList.add("active");
+  const tabEl=document.getElementById("aptab-"+tab);
+  if(tabEl)tabEl.classList.add("active");
   const body=document.getElementById("ap-body");
   body.innerHTML=`<div class="empty-st"><div class="ej">⏳</div></div>`;
   if(tab==="users") await renderAPUsers();
+  else if(tab==="create") renderAPCreate();
   else if(tab==="stats") await renderAPStats();
   else if(tab==="settings") renderAPSettings();
 }
 window.switchAPTab=switchAPTab;
+
+function renderAPCreate(){
+  const body=document.getElementById("ap-body");
+  body.innerHTML=`
+    <div style="background:var(--card);border-radius:12px;box-shadow:var(--sh);padding:18px;">
+      <div style="font-family:'Noto Serif KR',serif;font-size:.95rem;font-weight:700;margin-bottom:14px;">➕ 새 계정 만들기</div>
+      <div id="create-err" style="color:var(--red);font-size:.74rem;min-height:16px;margin-bottom:7px;"></div>
+      <div id="create-ok" style="color:var(--green);font-size:.74rem;min-height:16px;margin-bottom:7px;display:none;"></div>
+      <label style="font-size:.72rem;font-weight:700;color:#555;margin-bottom:4px;display:block;">아이디 (한글/영문/숫자/_ 가능)</label>
+      <input id="cr-id" type="text" placeholder="예: 이지원, tkd_jiwon" maxlength="20"
+        style="width:100%;border:1.5px solid var(--bd);border-radius:8px;padding:10px 12px;font-size:.84rem;outline:none;margin-bottom:10px;">
+      <label style="font-size:.72rem;font-weight:700;color:#555;margin-bottom:4px;display:block;">표시 이름 (닉네임)</label>
+      <input id="cr-name" type="text" placeholder="예: 이지원" maxlength="15"
+        style="width:100%;border:1.5px solid var(--bd);border-radius:8px;padding:10px 12px;font-size:.84rem;outline:none;margin-bottom:10px;">
+      <label style="font-size:.72rem;font-weight:700;color:#555;margin-bottom:4px;display:block;">비밀번호</label>
+      <input id="cr-pw" type="password" placeholder="비밀번호 (4자 이상)"
+        style="width:100%;border:1.5px solid var(--bd);border-radius:8px;padding:10px 12px;font-size:.84rem;outline:none;margin-bottom:10px;">
+      <label style="font-size:.72rem;font-weight:700;color:#555;margin-bottom:4px;display:block;">권한</label>
+      <select id="cr-role" style="width:100%;border:1.5px solid var(--bd);border-radius:8px;padding:10px 12px;font-size:.84rem;outline:none;margin-bottom:14px;">
+        <option value="member">👤 일반 단원</option>
+        <option value="admin">👑 관리자</option>
+      </select>
+      <button onclick="createAcctFromPanel()"
+        style="width:100%;background:var(--red);color:#fff;border:none;border-radius:8px;padding:12px;font-size:.9rem;font-weight:700;cursor:pointer;">
+        계정 만들기
+      </button>
+    </div>`;
+}
+async function createAcctFromPanel(){
+  const id=document.getElementById("cr-id").value.trim();
+  const name=document.getElementById("cr-name").value.trim();
+  const pw=document.getElementById("cr-pw").value;
+  const role=document.getElementById("cr-role").value;
+  const errEl=document.getElementById("create-err");
+  const okEl=document.getElementById("create-ok");
+  errEl.textContent="";okEl.style.display="none";
+  if(!id||id.length<2){errEl.textContent="아이디는 2자 이상이어야 해요";return;}
+  if(!name){errEl.textContent="표시 이름을 입력해주세요";return;}
+  if(!pw||pw.length<4){errEl.textContent="비밀번호는 4자 이상이어야 해요";return;}
+  if(!/^[\uAC00-\uD7A3a-zA-Z0-9_]+$/.test(id)){errEl.textContent="아이디는 한글, 영문, 숫자, _ 만 가능해요";return;}
+  SL();
+  try{
+    const ex=await DG("users/"+id);
+    if(ex){HL();errEl.textContent="이미 사용 중인 아이디예요";return;}
+    const h=await hashPw(pw);
+    await DS("users/"+id,{displayName:name,pwHash:h,pwPlain:pw,isAdmin:role==="admin",role,createdAt:Date.now(),banned:false,createdBy:CU.username});
+    HL();
+    document.getElementById("cr-id").value="";
+    document.getElementById("cr-name").value="";
+    document.getElementById("cr-pw").value="";
+    document.getElementById("cr-role").value="member";
+    okEl.textContent=`✅ @${id} 계정이 만들어졌어요!`;okEl.style.display="block";
+    toast(`✅ @${id} 계정 생성 완료!`);
+  }catch(e){HL();errEl.textContent="❌ "+e.message;}
+}
+window.createAcctFromPanel=createAcctFromPanel;
 
 async function renderAPUsers(){
   const body=document.getElementById("ap-body");
@@ -898,6 +971,21 @@ async function renderAPStats(){
 function renderAPSettings(){
   const body=document.getElementById("ap-body");
   body.innerHTML=`
+    <!-- 백업/복구 -->
+    <div style="background:var(--card);border-radius:12px;box-shadow:var(--sh);padding:14px;margin-bottom:12px;border-left:4px solid var(--blue);">
+      <div style="font-family:'Noto Serif KR',serif;font-size:.9rem;font-weight:700;margin-bottom:10px;">💾 데이터 백업 & 복구</div>
+      <div class="setting-row" style="margin-bottom:8px;">
+        <div class="setting-info"><h4>📥 전체 백업 다운로드</h4><p>게시물, 회원, 공지, 민원 등 모든 데이터를 JSON 파일로 저장</p></div>
+        <button style="background:var(--blue);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:.78rem;font-weight:700;cursor:pointer;white-space:nowrap;" onclick="downloadBackup()">📥 백업</button>
+      </div>
+      <div class="setting-row">
+        <div class="setting-info"><h4>📤 백업 파일 복구</h4><p>이전에 저장한 백업 JSON 파일을 불러와 데이터를 복구해요</p></div>
+        <label style="background:var(--green);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:.78rem;font-weight:700;cursor:pointer;white-space:nowrap;">
+          📤 복구 <input type="file" id="restore-file" accept=".json" style="display:none;" onchange="restoreBackup(this)">
+        </label>
+      </div>
+    </div>
+    <!-- 삭제 -->
     <div class="setting-row">
       <div class="setting-info"><h4>🧹 게시판 전체 글 삭제</h4><p>게시판의 모든 글을 삭제해요 (되돌릴 수 없음)</p></div>
       <button style="background:var(--red);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:.78rem;font-weight:700;cursor:pointer;" onclick="clearAllPosts('board_posts')">삭제</button>
@@ -913,8 +1001,70 @@ function renderAPSettings(){
     <div class="setting-row">
       <div class="setting-info"><h4>👤 내 비밀번호 변경</h4><p>현재 로그인된 관리자 계정의 비밀번호를 변경해요</p></div>
       <button style="background:var(--blue);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:.78rem;font-weight:700;cursor:pointer;" onclick="changeMyPw()">변경</button>
+    </div>
+    <!-- 로그아웃 -->
+    <div class="setting-row" style="border-top:2px solid var(--bd);margin-top:6px;">
+      <div class="setting-info"><h4>🚪 로그아웃</h4><p>현재 계정에서 로그아웃해요</p></div>
+      <button style="background:#f0f0f0;color:#555;border:1.5px solid var(--bd);border-radius:8px;padding:8px 14px;font-size:.78rem;font-weight:700;cursor:pointer;" onclick="closeAdminPanel();confirmLogout()">로그아웃</button>
     </div>`;
 }
+
+// 백업 다운로드
+async function downloadBackup(){
+  SL();
+  try{
+    const [users,bp,fp,rp,notices,bcomments,fcomments]=await Promise.all([
+      DG("users"),DG("board_posts"),DG("free_posts"),
+      DG("reports"),DG("notices"),
+      DG("board_comments"),DG("free_comments")
+    ]);
+    const backup={
+      version:"sbd_backup_v1",
+      exportedAt:new Date().toISOString(),
+      exportedBy:CU.username,
+      data:{users,board_posts:bp,free_posts:fp,reports:rp,notices,board_comments:bcomments,free_comments:fcomments}
+    };
+    const json=JSON.stringify(backup,null,2);
+    const blob=new Blob([json],{type:"application/json"});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement("a");
+    const dateStr=new Date().toISOString().slice(0,10);
+    a.href=url;a.download=`시범단_백업_${dateStr}.json`;
+    document.body.appendChild(a);a.click();document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    HL();toast("✅ 백업 파일이 다운로드됐어요!");
+  }catch(e){HL();toast("❌ 백업 실패: "+e.message,false);}
+}
+
+// 백업 복구
+async function restoreBackup(input){
+  const file=input.files[0];if(!file)return;
+  if(!confirm("⚠️ 복구하면 기존 데이터가 덮어씌워져요!\n정말 복구할까요?"))return;
+  SL();
+  try{
+    const text=await file.text();
+    const backup=JSON.parse(text);
+    if(!backup.data)throw new Error("올바른 백업 파일이 아니에요");
+    const {data}=backup;
+    const writes=[];
+    if(data.board_posts)writes.push(DS("board_posts",data.board_posts));
+    if(data.free_posts)writes.push(DS("free_posts",data.free_posts));
+    if(data.reports)writes.push(DS("reports",data.reports));
+    if(data.notices)writes.push(DS("notices",data.notices));
+    if(data.board_comments)writes.push(DS("board_comments",data.board_comments));
+    if(data.free_comments)writes.push(DS("free_comments",data.free_comments));
+    // 유저는 신중하게 (기존 유저 유지하고 백업 유저 병합)
+    if(data.users){
+      const curUsers=await DG("users")||{};
+      const merged={...data.users,...curUsers}; // 현재 유저 우선
+      writes.push(DS("users",merged));
+    }
+    await Promise.all(writes);
+    HL();toast(`✅ 복구 완료! (${backup.exportedAt?.slice(0,10)||"날짜 알 수 없음"} 백업)`);
+    input.value="";
+  }catch(e){HL();toast("❌ 복구 실패: "+e.message,false);}
+}
+window.downloadBackup=downloadBackup;window.restoreBackup=restoreBackup;
 async function clearAllPosts(path){if(!confirm(`[${path}]의 모든 데이터를 삭제할까요? 되돌릴 수 없어요!`))return;SL();try{await DD(path);HL();toast("🗑️ 삭제 완료!");}catch(e){HL();toast("❌ "+e.message,false);}}
 async function changeMyPw(){
   const np=prompt("새 비밀번호를 입력하세요 (4자 이상):");
