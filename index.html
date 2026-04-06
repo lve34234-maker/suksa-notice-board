@@ -371,6 +371,7 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
 .mini-spin.show{display:flex;}
 .toast{position:fixed;bottom:75px;left:50%;transform:translateX(-50%) translateY(26px);background:rgba(0,0,0,.87);color:#fff;padding:9px 18px;border-radius:24px;font-size:.77rem;font-weight:500;z-index:800;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap;}
 .toast.show{transform:translateX(-50%) translateY(0);opacity:1;}
+@keyframes slideUp{from{transform:translateX(-50%) translateY(30px);opacity:0;}to{transform:translateX(-50%) translateY(0);opacity:1;}}
 @media(max-width:480px){.f2col,.f3col{grid-template-columns:1fr;}.stat-grid{grid-template-columns:1fr 1fr;}}
 </style>
 </head>
@@ -975,7 +976,7 @@ function renderAPSettings(){
     <div style="background:var(--card);border-radius:12px;box-shadow:var(--sh);padding:14px;margin-bottom:12px;border-left:4px solid var(--blue);">
       <div style="font-family:'Noto Serif KR',serif;font-size:.9rem;font-weight:700;margin-bottom:10px;">💾 데이터 백업 & 복구</div>
       <div class="setting-row" style="margin-bottom:8px;">
-        <div class="setting-info"><h4>📥 전체 백업 다운로드</h4><p>게시물, 회원, 공지, 민원 등 모든 데이터를 JSON 파일로 저장</p></div>
+        <div class="setting-info"><h4>📥 전체 백업 다운로드</h4><p>게시물, 회원, 공지, 민원, 댓글 등 모든 데이터를 JSON 파일로 저장</p></div>
         <button style="background:var(--blue);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:.78rem;font-weight:700;cursor:pointer;white-space:nowrap;" onclick="downloadBackup()">📥 백업</button>
       </div>
       <div class="setting-row">
@@ -983,6 +984,18 @@ function renderAPSettings(){
         <label style="background:var(--green);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:.78rem;font-weight:700;cursor:pointer;white-space:nowrap;">
           📤 복구 <input type="file" id="restore-file" accept=".json" style="display:none;" onchange="restoreBackup(this)">
         </label>
+      </div>
+    </div>
+    <!-- 버전 관리 -->
+    <div style="background:var(--card);border-radius:12px;box-shadow:var(--sh);padding:14px;margin-bottom:12px;border-left:4px solid var(--green);">
+      <div style="font-family:'Noto Serif KR',serif;font-size:.9rem;font-weight:700;margin-bottom:10px;">🆕 버전 업데이트 알림</div>
+      <div class="setting-row">
+        <div class="setting-info">
+          <h4>🔢 새 버전 번호 배포</h4>
+          <p>이 숫자를 올리면 모든 단원 화면에 새로고침 안내가 떠요<br>
+          현재 앱 버전: <strong style="color:var(--blue);">${APP_VERSION}</strong></p>
+        </div>
+        <button style="background:var(--green);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:.78rem;font-weight:700;cursor:pointer;white-space:nowrap;" onclick="pushNewVersion()">📣 배포</button>
       </div>
     </div>
     <!-- 삭제 -->
@@ -1065,6 +1078,21 @@ async function restoreBackup(input){
   }catch(e){HL();toast("❌ 복구 실패: "+e.message,false);}
 }
 window.downloadBackup=downloadBackup;window.restoreBackup=restoreBackup;
+
+// 새 버전 배포 (Firebase에 버전 번호 기록 → 모든 단원 화면에 새로고침 안내)
+async function pushNewVersion(){
+  const newVer = prompt(`새 버전 번호를 입력하세요\n현재: ${APP_VERSION}\n\n예: 1.0.6`);
+  if(!newVer || !newVer.trim()) return;
+  if(newVer.trim() === APP_VERSION){ toast("현재 버전과 같아요!",false); return; }
+  if(!confirm(`버전을 ${APP_VERSION} → ${newVer.trim()} 으로 배포할까요?\n모든 단원 화면에 새로고침 안내가 뜹니다.`)) return;
+  SL();
+  try{
+    await DS("app_version", newVer.trim());
+    HL();
+    toast(`✅ v${newVer.trim()} 배포 완료! 모든 단원에게 새로고침 안내가 떴어요`);
+  }catch(e){HL();toast("❌ "+e.message,false);}
+}
+window.pushNewVersion=pushNewVersion;
 async function clearAllPosts(path){if(!confirm(`[${path}]의 모든 데이터를 삭제할까요? 되돌릴 수 없어요!`))return;SL();try{await DD(path);HL();toast("🗑️ 삭제 완료!");}catch(e){HL();toast("❌ "+e.message,false);}}
 async function changeMyPw(){
   const np=prompt("새 비밀번호를 입력하세요 (4자 이상):");
@@ -1461,8 +1489,66 @@ document.getElementById("lip").addEventListener("keydown",e=>{if(e.key==="Enter"
 document.getElementById("su-pw").addEventListener("keydown",e=>{if(e.key==="Enter")document.getElementById("su-pw2").focus();});
 document.getElementById("su-pw2").addEventListener("keydown",e=>{if(e.key==="Enter")doSignup();});
 
+// ── 버전 자동 업데이트 감지 ──
+// Firebase에 저장된 버전 번호와 현재 버전을 비교해서 새 버전이 나오면 배너를 보여줌
+const APP_VERSION = "1.0.5"; // 새 버전 배포할 때 이 숫자만 올리면 됨
+
+async function checkVersion(){
+  try{
+    const serverVer = await DG("app_version");
+    if(!serverVer) return; // 버전 정보 없으면 무시
+    if(serverVer !== APP_VERSION){
+      showUpdateBanner(serverVer);
+    }
+  }catch(e){}
+}
+
+function showUpdateBanner(newVer){
+  // 이미 배너 있으면 skip
+  if(document.getElementById("update-banner")) return;
+  const banner = document.createElement("div");
+  banner.id = "update-banner";
+  banner.style.cssText = `
+    position:fixed;bottom:75px;left:50%;transform:translateX(-50%);
+    background:linear-gradient(135deg,#1565C0,#0d47a1);
+    color:#fff;border-radius:14px;padding:14px 18px;
+    box-shadow:0 4px 20px rgba(0,0,0,.3);z-index:900;
+    max-width:340px;width:90%;text-align:center;
+    animation:slideUp .4s ease;
+  `;
+  banner.innerHTML = `
+    <div style="font-size:.82rem;font-weight:700;margin-bottom:6px;">
+      🆕 새 버전이 있어요! (v${newVer})
+    </div>
+    <div style="font-size:.72rem;color:#bbdefb;margin-bottom:10px;">
+      새로운 기능과 개선사항이 추가됐어요
+    </div>
+    <div style="display:flex;gap:8px;justify-content:center;">
+      <button onclick="location.reload(true)" style="background:#fff;color:#1565C0;border:none;border-radius:8px;padding:8px 18px;font-size:.8rem;font-weight:700;cursor:pointer;">
+        🔄 지금 새로고침
+      </button>
+      <button onclick="document.getElementById('update-banner').remove()" style="background:rgba(255,255,255,.2);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:.8rem;cursor:pointer;">
+        나중에
+      </button>
+    </div>
+  `;
+  document.body.appendChild(banner);
+}
+
+// 버전 실시간 감지 (Firebase에서 바뀌면 즉시 알림)
+function startVersionListener(){
+  DON("app_version", ver=>{
+    if(!ver) return;
+    if(ver !== APP_VERSION){
+      showUpdateBanner(ver);
+    }
+  });
+}
+
 // ── 시작 ──
 init();
+// 버전 감지 시작 (로드 후 3초 뒤)
+setTimeout(startVersionListener, 3000);
 </script>
 </body>
 </html>
