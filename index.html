@@ -1560,19 +1560,19 @@ document.getElementById("su-pw2").addEventListener("keydown",e=>{if(e.key==="Ent
 // Firebase에 저장된 버전 번호와 현재 버전을 비교해서 새 버전이 나오면 배너를 보여줌
 const APP_VERSION = "1.0.5"; // 새 버전 배포할 때 이 숫자만 올리면 됨
 
-async function checkVersion(){
-  try{
-    const serverVer = await DG("app_version");
-    if(!serverVer) return; // 버전 정보 없으면 무시
-    if(serverVer !== APP_VERSION){
-      showUpdateBanner(serverVer);
-    }
-  }catch(e){}
-}
+// ── 버전 관리 핵심 로직 ──
+// 문제: 새로고침해도 HTML 파일의 APP_VERSION은 그대로라서 배너가 계속 뜸
+// 해결: localStorage에 "이미 이 버전 봤다"고 저장해서 중복 표시 방지
+
+function getSnoozedVer(){ return localStorage.getItem("sbd_snoozed_ver")||""; }
+function setSnoozedVer(v){ localStorage.setItem("sbd_snoozed_ver",v); }
 
 function showUpdateBanner(newVer){
-  // 이미 배너 있으면 skip
+  // 1) 이미 배너 있으면 skip
   if(document.getElementById("update-banner")) return;
+  // 2) 이미 이 버전 봤으면 skip (새로고침 후에도 안 뜸)
+  if(getSnoozedVer() === newVer) return;
+
   const banner = document.createElement("div");
   banner.id = "update-banner";
   banner.style.cssText = `
@@ -1591,10 +1591,10 @@ function showUpdateBanner(newVer){
       새로운 기능과 개선사항이 추가됐어요
     </div>
     <div style="display:flex;gap:8px;justify-content:center;">
-      <button onclick="location.reload(true)" style="background:#fff;color:#1565C0;border:none;border-radius:8px;padding:8px 18px;font-size:.8rem;font-weight:700;cursor:pointer;">
+      <button onclick="doRefresh('${newVer}')" style="background:#fff;color:#1565C0;border:none;border-radius:8px;padding:8px 18px;font-size:.8rem;font-weight:700;cursor:pointer;">
         🔄 지금 새로고침
       </button>
-      <button onclick="document.getElementById('update-banner').remove()" style="background:rgba(255,255,255,.2);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:.8rem;cursor:pointer;">
+      <button onclick="snoozeUpdate('${newVer}')" style="background:rgba(255,255,255,.2);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:.8rem;cursor:pointer;">
         나중에
       </button>
     </div>
@@ -1602,12 +1602,30 @@ function showUpdateBanner(newVer){
   document.body.appendChild(banner);
 }
 
+// "지금 새로고침" → 버전 기억 후 새로고침
+function doRefresh(ver){
+  setSnoozedVer(ver); // ← 이게 핵심! 새로고침 후 다시 안 뜸
+  location.reload(true);
+}
+// "나중에" → 이 버전 다시 안 보여줌
+function snoozeUpdate(ver){
+  setSnoozedVer(ver);
+  const b=document.getElementById("update-banner");
+  if(b)b.remove();
+}
+window.doRefresh=doRefresh;window.snoozeUpdate=snoozeUpdate;
+
 // 버전 실시간 감지 (Firebase에서 바뀌면 즉시 알림)
 function startVersionListener(){
   DON("app_version", ver=>{
     if(!ver) return;
-    if(ver !== APP_VERSION){
+    // APP_VERSION과 다르고, 이미 본 버전도 아닐 때만 배너 표시
+    if(ver !== APP_VERSION && ver !== getSnoozedVer()){
       showUpdateBanner(ver);
+    } else {
+      // 서버 버전과 현재 버전이 같아졌으면 배너 제거
+      const b=document.getElementById("update-banner");
+      if(b)b.remove();
     }
   });
 }
