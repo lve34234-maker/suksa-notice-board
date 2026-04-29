@@ -36,24 +36,25 @@ button,input,textarea,select{font-family:'Noto Sans KR',sans-serif;}
 .atitle{font-family:'Noto Serif KR',serif;font-size:1.3rem;font-weight:900;color:#fff;}
 .atitle em{color:var(--gold);font-style:normal;}
 .asub{font-size:.73rem;color:#888;text-align:center;margin-bottom:20px;}
-/* 로그인/회원가입 탭 */
 .atabs{display:flex;background:rgba(255,255,255,.07);border-radius:10px;padding:4px;margin-bottom:16px;}
 .atab{flex:1;text-align:center;padding:9px;font-size:.83rem;font-weight:600;cursor:pointer;border-radius:7px;color:#aaa;transition:all .2s;}
 .atab.active{background:var(--red);color:#fff;}
-/* 공통 폼 */
 .abox{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:20px;}
 .aerr{color:#ff8080;font-size:.73rem;text-align:center;min-height:16px;margin-bottom:6px;}
 .asucc{color:#81c784;font-size:.73rem;text-align:center;min-height:16px;margin-bottom:6px;display:none;}
 .asucc.show{display:block;}
 .ai{width:100%;border:1px solid rgba(255,255,255,.18);border-radius:8px;padding:11px 13px;font-size:.88rem;outline:none;background:rgba(255,255,255,.07);color:#fff;margin-bottom:9px;transition:border .2s;}
 .ai::placeholder{color:#666;}.ai:focus{border-color:var(--gold);}
-.ai-hint{font-size:.68rem;color:#666;margin-top:-6px;margin-bottom:9px;padding-left:2px;}
+.ai-hint{font-size:.68rem;color:#666;margin-top:-6px;margin-bottom:9px;padding:2px;}
 .btn-auth{width:100%;background:var(--red);color:#fff;border:none;border-radius:8px;padding:12px;font-size:.9rem;font-weight:700;cursor:pointer;margin-bottom:9px;transition:opacity .2s;}
 .btn-auth:hover{opacity:.88;}.btn-auth:disabled{opacity:.44;}
 .adiv{display:flex;align-items:center;gap:11px;margin:7px 0;color:#555;font-size:.71rem;}
 .adiv::before,.adiv::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.1);}
 .btn-guest{width:100%;background:none;border:1.5px solid rgba(255,255,255,.2);border-radius:8px;padding:10px;font-size:.82rem;font-weight:600;cursor:pointer;color:#bbb;transition:all .2s;}
 .btn-guest:hover{border-color:var(--gold);color:var(--gold);}
+.afindrow{text-align:center;margin-top:10px;font-size:.72rem;color:#888;}
+.afindrow a{color:#ccc;cursor:pointer;text-decoration:underline;margin:0 6px;}
+.afindrow a:hover{color:var(--gold);}
 
 /* ── 앱 ── */
 #pg-app{display:none;}
@@ -70,6 +71,8 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
 .hr{display:flex;align-items:center;gap:7px;position:relative;}
 .abadge{background:var(--gold);color:var(--black);font-size:.62rem;font-weight:700;padding:3px 9px;border-radius:20px;display:none;}
 .abadge.show{display:inline-block;}
+.sbadge2{background:var(--red);color:#fff;font-size:.62rem;font-weight:700;padding:3px 9px;border-radius:20px;display:none;}
+.sbadge2.show{display:inline-block;}
 .hbtn{background:none;border:none;font-size:1.1rem;cursor:pointer;padding:4px;border-radius:6px;color:#fff;position:relative;}
 .hbtn:hover{background:rgba(255,255,255,.1);}
 .hdot{position:absolute;top:2px;right:2px;width:7px;height:7px;background:var(--red);border-radius:50%;display:none;}
@@ -235,14 +238,12 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
 /* ── 포스트 상세 ── */
 #pg-detail,#pg-write{display:none;background:var(--bg);min-height:100vh;padding-bottom:80px;}
 .detail-inner,#write-inner-wrap{max-width:900px;margin:0 auto;padding:12px 13px;}
-/* overflow:hidden 제거 → 댓글 잘림 방지 */
 .detcard{background:var(--card);border-radius:12px;box-shadow:var(--sh);}
 .dhd{display:flex;align-items:center;padding:11px 13px;border-bottom:1px solid var(--bd);gap:9px;border-radius:12px 12px 0 0;}
 .dback{background:none;border:none;font-size:1.05rem;cursor:pointer;color:var(--black);padding:4px;}
 .dtitle{font-family:'Noto Serif KR',serif;font-size:.9rem;font-weight:700;}
 .dbody{padding:14px;}
 .dcontent{font-size:.87rem;line-height:1.85;white-space:pre-wrap;margin-bottom:10px;}
-/* 댓글 섹션 */
 .dcmtsec{border-top:1px solid var(--bd);padding:13px 14px 6px;}
 .dcmttitle{font-family:'Noto Serif KR',serif;font-size:.87rem;font-weight:700;margin-bottom:11px;display:flex;align-items:center;gap:6px;}
 .dcmtcnt{background:var(--red);color:#fff;font-size:.62rem;font-weight:700;padding:1px 7px;border-radius:20px;}
@@ -256,7 +257,6 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
 .dcdate{font-size:.63rem;color:var(--gray);margin-top:3px;display:flex;align-items:center;gap:7px;}
 .btn-dcdel{background:none;border:none;color:#ccc;font-size:.63rem;cursor:pointer;}
 .btn-dcdel:hover{color:var(--red);}
-/* 댓글 입력창 — fixed로 화면 하단에 고정 */
 .dcwrite{
   position:fixed;bottom:0;left:0;right:0;
   background:#fff;border-top:1.5px solid var(--bd);
@@ -264,7 +264,6 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
   z-index:150;max-width:900px;margin:0 auto;
   box-shadow:0 -2px 12px rgba(0,0,0,.08);
 }
-/* fixed일 때 left/right 계산 보정 */
 @media(min-width:900px){
   .dcwrite{left:50%;right:auto;transform:translateX(-50%);width:900px;}
 }
@@ -325,7 +324,6 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
 .aptab{flex:1;text-align:center;padding:10px;font-size:.78rem;font-weight:600;color:#666;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .2s;}
 .aptab:hover{color:#ccc;}.aptab.active{color:var(--gold);border-bottom-color:var(--gold);}
 .ap-body{padding:14px;}
-/* 유저 카드 */
 .user-card{background:var(--card);border-radius:12px;box-shadow:var(--sh);padding:14px;margin-bottom:9px;}
 .uc-top{display:flex;align-items:center;gap:11px;margin-bottom:8px;}
 .uc-av{width:42px;height:42px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:700;color:#fff;}
@@ -333,43 +331,43 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
 .uc-name{font-size:.92rem;font-weight:700;}
 .uc-id{font-size:.72rem;color:var(--gray);}
 .uc-role{display:inline-block;font-size:.62rem;font-weight:700;padding:2px 8px;border-radius:4px;margin-top:3px;}
+.uc-role.super{background:#7b1fa2;color:#fff;}
 .uc-role.admin{background:var(--gold);color:var(--black);}
 .uc-role.member{background:#eee;color:#555;}
 .uc-role.banned{background:var(--red);color:#fff;}
-.uc-pw{background:#1a1a2e;border-radius:8px;padding:8px 12px;font-size:.8rem;color:#a8d8a8;font-family:monospace;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between;gap:8px;}
-.uc-pw span{flex:1;}
-.uc-pw-toggle{background:none;border:1px solid #444;color:#aaa;border-radius:5px;padding:2px 8px;font-size:.66rem;cursor:pointer;}
-.uc-pw-toggle:hover{border-color:var(--gold);color:var(--gold);}
+.uc-email{background:#f8f8f8;border-radius:6px;padding:6px 10px;font-size:.72rem;color:#555;margin-bottom:8px;}
 .uc-actions{display:flex;gap:7px;flex-wrap:wrap;}
 .ucbtn{border:none;border-radius:7px;padding:6px 12px;font-size:.74rem;font-weight:600;cursor:pointer;transition:all .2s;}
+.ucbtn.tmppw{background:#e3f2fd;color:var(--blue);border:1px solid #90caf9;}
 .ucbtn.promote{background:#e8f5e9;color:var(--green);}
 .ucbtn.demote{background:#fff3e0;color:#e65100;}
 .ucbtn.ban{background:#ffebee;color:var(--red);}
 .ucbtn.unban{background:#e8f5e9;color:var(--green);}
 .ucbtn.del{background:#ffebee;color:var(--red);border:1px solid #ffcccc;}
 .uc-date{font-size:.65rem;color:var(--gray);margin-top:6px;}
-/* 통계 */
 .stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-bottom:14px;}
 .stat-card{background:var(--card);border-radius:12px;box-shadow:var(--sh);padding:14px;text-align:center;}
 .stat-num{font-size:1.8rem;font-weight:900;font-family:'Noto Serif KR',serif;}
 .stat-lbl{font-size:.72rem;color:var(--gray);margin-top:3px;}
-/* 설정 */
-.setting-row{background:var(--card);border-radius:12px;box-shadow:var(--sh);padding:14px;margin-bottom:9px;display:flex;align-items:center;justify-content:space-between;}
+.setting-row{background:var(--card);border-radius:12px;box-shadow:var(--sh);padding:14px;margin-bottom:9px;display:flex;align-items:center;justify-content:space-between;gap:9px;}
 .setting-info h4{font-size:.88rem;font-weight:700;}
 .setting-info p{font-size:.72rem;color:var(--gray);margin-top:2px;}
 
 /* ── 공통 모달 ── */
-.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:400;align-items:center;justify-content:center;}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:400;align-items:center;justify-content:center;padding:18px;}
 .overlay.show{display:flex;}
-.mbox{background:#fff;border-radius:14px;padding:22px;width:90%;max-width:330px;text-align:center;box-shadow:0 8px 36px rgba(0,0,0,.22);}
-.mbox h3{font-size:.93rem;margin-bottom:8px;}
+.mbox{background:#fff;border-radius:14px;padding:22px;width:100%;max-width:360px;text-align:center;box-shadow:0 8px 36px rgba(0,0,0,.22);max-height:90vh;overflow-y:auto;}
+.mbox h3{font-size:.95rem;margin-bottom:8px;}
 .mbox p{font-size:.76rem;color:var(--gray);margin-bottom:12px;}
 .mi{width:100%;border:1.5px solid var(--bd);border-radius:8px;padding:9px 12px;font-size:.83rem;outline:none;margin-bottom:11px;}
 .mi:focus{border-color:var(--red);}
+.mlbl{display:block;font-size:.72rem;font-weight:700;color:#555;margin-bottom:4px;text-align:left;}
 .mbtns2{display:flex;gap:8px;}
 .mbtns2 button{flex:1;padding:9px;border-radius:8px;font-size:.83rem;font-weight:700;cursor:pointer;border:none;}
 .mconfirm{background:var(--red);color:#fff;}.mcancel{background:#f0f0f0;color:#555;}
-/* 날짜 모달 */
+.tmppw-box{background:#fff8e1;border:2px dashed var(--gold);border-radius:10px;padding:14px;margin:12px 0;}
+.tmppw-val{font-family:monospace;font-size:1.4rem;font-weight:900;color:var(--red);letter-spacing:2px;margin:8px 0;}
+.tmppw-guide{background:#f0f8ff;border:1px solid #b3d4fc;border-radius:8px;padding:10px;font-size:.75rem;line-height:1.7;text-align:left;color:#333;margin:10px 0;}
 .daym{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:400;align-items:center;justify-content:center;}
 .daym.show{display:flex;}
 .daymb{background:#fff;border-radius:14px;width:90%;max-width:360px;overflow:hidden;}
@@ -418,6 +416,9 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
         <input class="ai" id="liu" type="text" placeholder="아이디 (한글/영문 모두 가능)">
         <input class="ai" id="lip" type="password" placeholder="비밀번호">
         <button class="btn-auth" id="btn-login" onclick="doLogin()">로그인</button>
+        <div class="afindrow">
+          비밀번호를 잊으셨나요? <a onclick="alert('관리자(dlgustjr)에게 임시 비밀번호 발급을 요청해주세요.\n\n관리자가 회원관리에서 [🔑 임시비번 발급]을 눌러 새 비밀번호를 알려드려요.')">비밀번호 찾기</a>
+        </div>
         <div class="adiv">또는</div>
         <button class="btn-guest" onclick="doGuest()">👀 게스트로 둘러보기</button>
       </div>
@@ -434,7 +435,7 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
         <input class="ai" id="su-pw" type="password" placeholder="비밀번호 (4자 이상)">
         <input class="ai" id="su-pw2" type="password" placeholder="비밀번호 확인">
         <button class="btn-auth" id="btn-signup" onclick="doSignup()">회원가입</button>
-        <p style="font-size:.68rem;color:#666;text-align:center;margin-top:6px;line-height:1.6;">※ 가입 후 관리자 승인 없이 바로 이용 가능해요<br>※ 관리자 권한은 관리자가 부여해요</p>
+        <p style="font-size:.68rem;color:#666;text-align:center;margin-top:6px;line-height:1.6;">※ 가입 후 관리자 승인 없이 바로 이용 가능해요<br>※ 이메일은 가입 후 [내 정보]에서 등록할 수 있어요</p>
       </div>
     </div>
   </div>
@@ -454,10 +455,10 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
       </div>
       <div class="hr">
         <button class="hbtn" onclick="toggleNotif()">🔔<div class="hdot" id="hdot"></div></button>
-        <!-- 관리자 패널 버튼 (관리자 전용, 모바일/PC 모두) -->
-        <button class="hbtn admin-only-btn" id="btn-admin-panel" onclick="openAdminPanel()" style="display:none;" title="관리자 패널 (Ctrl+O)">⚙️</button>
-        <!-- 로그아웃 버튼 -->
+        <button class="hbtn" id="btn-mysettings" onclick="openUserSettings()" style="display:none;" title="내 정보">👤</button>
+        <button class="hbtn" id="btn-admin-panel" onclick="openAdminPanel()" style="display:none;" title="관리자 패널 (Ctrl+O)">⚙️</button>
         <button class="hbtn" id="btn-logout-hd" onclick="confirmLogout()" style="display:none;" title="로그아웃">🚪</button>
+        <div class="sbadge2" id="sbadge2">⭐ 슈퍼관리자</div>
         <div class="abadge" id="abadge">👑 관리자</div>
         <div class="ndrop" id="ndrop">
           <div class="ndrop-h">알림<button class="ndrop-x" onclick="toggleNotif()">✕</button></div>
@@ -602,16 +603,54 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
 <div class="admin-panel-modal" id="m-admin-panel">
   <div class="admin-panel">
     <div class="ap-head">
-      <h2>👑 관리자 <em>패널</em></h2>
+      <h2 id="ap-title">👑 관리자 <em>패널</em></h2>
       <button class="ap-close" onclick="closeAdminPanel()">✕ 닫기</button>
     </div>
     <div class="ap-tabs">
-      <div class="aptab active" id="aptab-users" onclick="switchAPTab('users')">👥 회원 관리</div>
+      <div class="aptab" id="aptab-users" onclick="switchAPTab('users')">👥 회원 관리</div>
       <div class="aptab" id="aptab-create" onclick="switchAPTab('create')">➕ 계정 만들기</div>
-      <div class="aptab" id="aptab-stats" onclick="switchAPTab('stats')">📊 통계</div>
+      <div class="aptab active" id="aptab-stats" onclick="switchAPTab('stats')">📊 통계</div>
       <div class="aptab" id="aptab-settings" onclick="switchAPTab('settings')">⚙️ 설정</div>
     </div>
     <div class="ap-body" id="ap-body"></div>
+  </div>
+</div>
+
+<!-- 내 정보 모달 (모든 로그인 회원) -->
+<div class="overlay" id="m-usersettings">
+  <div class="mbox" style="text-align:left;">
+    <h3 style="text-align:center;">👤 내 정보 설정</h3>
+    <p style="text-align:center;">표시 이름, 이메일, 비밀번호를 변경할 수 있어요</p>
+    <label class="mlbl">📛 표시 이름 (닉네임)</label>
+    <input class="mi" id="us-name" type="text" placeholder="닉네임" maxlength="15">
+    <label class="mlbl">📧 이메일 (선택)</label>
+    <input class="mi" id="us-email" type="email" placeholder="example@email.com">
+    <hr style="border:none;border-top:1px solid var(--bd);margin:6px 0 12px;">
+    <label class="mlbl">🔒 새 비밀번호 (변경 시에만 입력)</label>
+    <input class="mi" id="us-pw" type="password" placeholder="4자 이상">
+    <input class="mi" id="us-pw2" type="password" placeholder="비밀번호 확인">
+    <div class="mbtns2"><button class="mcancel" onclick="closeM('m-usersettings')">취소</button><button class="mconfirm" onclick="saveUserSettings()">저장</button></div>
+  </div>
+</div>
+
+<!-- 임시 비밀번호 발급 결과 모달 (관리자용) -->
+<div class="overlay" id="m-tmppw">
+  <div class="mbox">
+    <h3>🔑 임시 비밀번호 발급 완료</h3>
+    <p id="tmppw-target" style="font-weight:700;color:var(--black);"></p>
+    <div class="tmppw-box">
+      <div style="font-size:.74rem;color:#5a4a00;">아래 임시 비밀번호를 회원에게 전달해주세요</div>
+      <div class="tmppw-val" id="tmppw-val">--------</div>
+      <button id="btn-copy-tmppw" onclick="copyTmpPw()" style="background:var(--gold);color:var(--black);border:none;border-radius:6px;padding:6px 14px;font-size:.76rem;font-weight:700;cursor:pointer;">📋 복사</button>
+    </div>
+    <div class="tmppw-guide">
+      <strong>📌 회원에게 안내할 내용:</strong><br>
+      ① 위 임시 비밀번호로 로그인<br>
+      ② 우측 상단 <strong>👤</strong> 버튼 클릭<br>
+      ③ "내 정보 설정"에서 새 비밀번호로 변경<br>
+      <span style="color:var(--red);">※ 보안을 위해 즉시 변경하도록 안내하세요</span>
+    </div>
+    <div class="mbtns2"><button class="mconfirm" onclick="closeM('m-tmppw')">확인</button></div>
   </div>
 </div>
 
@@ -647,13 +686,16 @@ const DU=(p,d)=>update(DR(p),d);
 const DON=(p,cb)=>onValue(DR(p),s=>cb(s.exists()?s.val():null));
 
 const ADMIN_PW="suksa";
+const SUPER_ADMIN="dlgustjr";   // ⭐ 슈퍼관리자 아이디 (이 사람만 회원관리/계정생성/설정 가능)
+const SUPER_DEFAULT_PW="suksa"; // 슈퍼관리자 자동 생성 시 기본 비번
 const EMOJIS=["👍","❤️","🔥","😂","👏"];
 const AVC=["#e53935","#8e24aa","#1e88e5","#00897b","#fb8c00","#3949ab","#d81b60","#00acc1"];
 const MONTHS=["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"];
 const MONS_EN=["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
-const SK="sbd_s6"; const RK="sbd_r5";
+const SK="sbd_s7"; const RK="sbd_r5";
+const APP_VERSION="1.1.0";
 
-// ── 상태 (단일 선언) ──
+// ── 상태 ──
 let CU=null, isGuest=false;
 let boardPosts=[], freePosts=[];
 let calY, calM;
@@ -664,13 +706,18 @@ let localReacts=JSON.parse(localStorage.getItem(RK)||"{}");
 let boardQ="", boardTag="", freeQ="", freeTag="";
 let curRT="일반민원", curPanel=1, curWriteBoard="board", curMT="text";
 let curAuthTab="login";
-let pwVisible={}; // 관리자 패널 비밀번호 표시 토글
+let _tmpPwClipboard="";
 
 (()=>{const n=new Date();calY=n.getFullYear();calM=n.getMonth();})();
 
+// ── 권한 헬퍼 ──
+const isSuper=()=>CU?.username===SUPER_ADMIN && !isGuest;
+const isAdminUser=()=>CU?.isAdmin && !isGuest;
+
 // ── 유틸 ──
-function esc(s){return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function esc(s){return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");}
 function fmtDate(ts){
+  if(!ts||isNaN(ts))return"알 수 없음";
   const d=new Date(ts),n=new Date(),df=n-d;
   if(df<60000)return"방금 전";if(df<3600000)return Math.floor(df/60000)+"분 전";
   if(df<86400000)return Math.floor(df/3600000)+"시간 전";if(df<604800000)return Math.floor(df/86400000)+"일 전";
@@ -687,6 +734,7 @@ function SL(){document.getElementById("ms").classList.add("show");}
 function HL(){document.getElementById("ms").classList.remove("show");}
 function toast(m,ok=true){const t=document.getElementById("toast");t.textContent=m;t.style.background=ok?"rgba(0,0,0,.87)":"rgba(180,0,0,.9)";t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2400);}
 async function hashPw(pw){const buf=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(pw));return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,"0")).join("");}
+function genTempPw(){const c="abcdefghjkmnpqrstuvwxyz23456789";let s="";for(let i=0;i<8;i++)s+=c[Math.floor(Math.random()*c.length)];return s;}
 async function compressImg(file,maxW=1080,q=0.72){return new Promise(res=>{const r=new FileReader();r.onload=e=>{const img=new Image();img.onload=()=>{let{width:w,height:h}=img;if(w>maxW){h=h*maxW/w;w=maxW;}const c=document.createElement("canvas");c.width=w;c.height=h;c.getContext("2d").drawImage(img,0,0,w,h);res(c.toDataURL("image/jpeg",q));};img.src=e.target.result;};r.readAsDataURL(file);});}
 function saveSession(u){localStorage.setItem(SK,JSON.stringify(u));}
 function loadSession(){try{return JSON.parse(localStorage.getItem(SK));}catch{return null;}}
@@ -700,9 +748,17 @@ async function init(){
     const ex=await DG("users/admin");
     if(!ex){
       const h=await hashPw(ADMIN_PW);
-      await DS("users/admin",{displayName:"관리자",pwHash:h,pwPlain:ADMIN_PW,isAdmin:true,createdAt:Date.now(),role:"admin"});
+      await DS("users/admin",{displayName:"관리자",pwHash:h,isAdmin:true,createdAt:Date.now(),role:"admin",email:""});
     }
-  }catch(e){}
+    // 슈퍼관리자 dlgustjr 자동 보장
+    const su=await DG("users/"+SUPER_ADMIN);
+    if(!su){
+      const h=await hashPw(SUPER_DEFAULT_PW);
+      await DS("users/"+SUPER_ADMIN,{displayName:"총관리자",pwHash:h,isAdmin:true,createdAt:Date.now(),role:"admin",email:"",banned:false});
+    }else if(!su.isAdmin||su.banned){
+      await DU("users/"+SUPER_ADMIN,{isAdmin:true,role:"admin",banned:false});
+    }
+  }catch(e){console.error(e);}
   const sess=loadSession();
   if(sess){CU=sess;isGuest=!!sess.guest;startApp();}
   else{document.getElementById("loader").style.display="none";document.getElementById("pg-auth").classList.add("show");}
@@ -713,23 +769,24 @@ function startApp(){
   document.getElementById("pg-auth").classList.remove("show");
   document.getElementById("pg-app").classList.add("show");
   if(isGuest)document.getElementById("gb").classList.add("show");
-  if(CU?.isAdmin)document.getElementById("abadge").classList.add("show");
-  document.getElementById("btn-nw").style.display=CU?.isAdmin&&!isGuest?"":"none";
-  // 관리자 패널 버튼 (모바일/PC 모두, 관리자만)
-  document.getElementById("btn-admin-panel").style.display=CU?.isAdmin&&!isGuest?"":"none";
-  // 로그아웃 버튼 (로그인한 사람만)
+  // 배지
+  document.getElementById("sbadge2").classList.toggle("show",isSuper());
+  document.getElementById("abadge").classList.toggle("show",isAdminUser()&&!isSuper());
+  // 헤더 버튼
+  document.getElementById("btn-nw").style.display=isAdminUser()?"":"none";
+  document.getElementById("btn-admin-panel").style.display=isAdminUser()?"":"none";
+  document.getElementById("btn-mysettings").style.display=!isGuest?"":"none";
   document.getElementById("btn-logout-hd").style.display=!isGuest?"":"none";
   startListeners();
   goPanel(1,false);
   renderCalendar();
   requestNotifPerm();
-  // Ctrl+O → 관리자 패널 (PC 유지)
   document.addEventListener("keydown",e=>{
-    if(e.ctrlKey&&e.key.toLowerCase()==="o"&&CU?.isAdmin){e.preventDefault();openAdminPanel();}
+    if(e.ctrlKey&&e.key.toLowerCase()==="o"&&isAdminUser()){e.preventDefault();openAdminPanel();}
   });
 }
 
-// ── 인증 탭 전환 ──
+// ── 인증 탭 ──
 function switchAuthTab(tab){
   curAuthTab=tab;
   document.getElementById("tab-login").classList.toggle("active",tab==="login");
@@ -773,8 +830,7 @@ async function doSignup(){
   if(!name){serr.textContent="표시 이름을 입력해주세요";return;}
   if(!pw||pw.length<4){serr.textContent="비밀번호는 4자 이상이어야 해요";return;}
   if(pw!==pw2){serr.textContent="비밀번호가 일치하지 않아요";return;}
-  // 아이디 유효성: 한글, 영문, 숫자, _ 허용
-  if(!/^[\uAC00-\uD7A3a-zA-Z0-9_]+$/.test(id)){serr.textContent="아이디는 한글, 영문, 숫자, _ 만 사용 가능해요";return;}
+  if(!/^[가-힣a-zA-Z0-9_]+$/.test(id)){serr.textContent="아이디는 한글, 영문, 숫자, _ 만 사용 가능해요";return;}
   document.getElementById("btn-signup").disabled=true;
   SL();
   try{
@@ -782,8 +838,8 @@ async function doSignup(){
     if(ex){HL();serr.textContent="이미 사용 중인 아이디예요";document.getElementById("btn-signup").disabled=false;return;}
     const h=await hashPw(pw);
     await DS("users/"+id,{
-      displayName:name,pwHash:h,pwPlain:pw, // 관리자가 비밀번호 볼 수 있도록
-      isAdmin:false,role:"member",createdAt:Date.now(),banned:false
+      displayName:name,pwHash:h,
+      isAdmin:false,role:"member",createdAt:Date.now(),banned:false,email:""
     });
     HL();
     const ssucc=document.getElementById("ssucc");
@@ -802,6 +858,7 @@ function doLogout(){
   document.getElementById("pg-app").classList.remove("show");
   document.getElementById("gb").classList.remove("show");
   document.getElementById("abadge").classList.remove("show");
+  document.getElementById("sbadge2").classList.remove("show");
   document.getElementById("liu").value="";document.getElementById("lip").value="";
   document.getElementById("lerr").textContent="";
   document.getElementById("btn-login").disabled=false;
@@ -809,35 +866,84 @@ function doLogout(){
   switchAuthTab("login");
 }
 window.doGuest=doGuest;window.doLogout=doLogout;
-
-// 로그아웃 확인
-function confirmLogout(){
-  if(confirm("로그아웃 할까요?")) doLogout();
-}
+function confirmLogout(){if(confirm("로그아웃 할까요?"))doLogout();}
 window.confirmLogout=confirmLogout;
+
+// ── 내 정보 (모든 로그인 사용자) ──
+async function openUserSettings(){
+  if(isGuest){toast("로그인 후 이용할 수 있어요",false);return;}
+  SL();
+  try{
+    const u=await DG("users/"+CU.username)||{};
+    HL();
+    document.getElementById("us-name").value=u.displayName||CU.displayName||"";
+    document.getElementById("us-email").value=u.email||"";
+    document.getElementById("us-pw").value="";
+    document.getElementById("us-pw2").value="";
+    document.getElementById("m-usersettings").classList.add("show");
+  }catch(e){HL();toast("❌ "+e.message,false);}
+}
+window.openUserSettings=openUserSettings;
+
+async function saveUserSettings(){
+  const name=document.getElementById("us-name").value.trim();
+  const email=document.getElementById("us-email").value.trim();
+  const pw=document.getElementById("us-pw").value;
+  const pw2=document.getElementById("us-pw2").value;
+  if(!name){toast("표시 이름을 입력해주세요",false);return;}
+  if(email&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){toast("이메일 형식이 올바르지 않아요",false);return;}
+  const updates={displayName:name,email};
+  if(pw){
+    if(pw.length<4){toast("비밀번호는 4자 이상이어야 해요",false);return;}
+    if(pw!==pw2){toast("비밀번호가 일치하지 않아요",false);return;}
+    updates.pwHash=await hashPw(pw);
+  }
+  SL();
+  try{
+    await DU("users/"+CU.username,updates);
+    CU.displayName=name;saveSession(CU);
+    HL();closeM("m-usersettings");
+    toast(pw?"✅ 정보 및 비밀번호가 저장됐어요!":"✅ 저장됐어요!");
+  }catch(e){HL();toast("❌ "+e.message,false);}
+}
+window.saveUserSettings=saveUserSettings;
 
 // ── 관리자 패널 ──
 function openAdminPanel(){
+  if(!isAdminUser())return;
   document.getElementById("m-admin-panel").classList.add("show");
-  switchAPTab("users");
+  // 슈퍼관리자만 보이는 탭 제어
+  const sup=isSuper();
+  document.getElementById("aptab-users").style.display=sup?"":"none";
+  document.getElementById("aptab-create").style.display=sup?"":"none";
+  document.getElementById("aptab-settings").style.display=sup?"":"none";
+  document.getElementById("ap-title").innerHTML=sup?"⭐ 슈퍼관리자 <em>패널</em>":"👑 관리자 <em>패널</em>";
+  // 기본 탭: 슈퍼는 회원관리, 일반관리자는 통계
+  switchAPTab(sup?"users":"stats");
 }
 function closeAdminPanel(){document.getElementById("m-admin-panel").classList.remove("show");}
 window.openAdminPanel=openAdminPanel;window.closeAdminPanel=closeAdminPanel;
 
 async function switchAPTab(tab){
+  // 슈퍼관리자만 가능한 탭 차단
+  if(!isSuper()&&(tab==="users"||tab==="create"||tab==="settings")){
+    toast("⭐ 슈퍼관리자(dlgustjr)만 접근 가능해요",false);
+    tab="stats";
+  }
   document.querySelectorAll(".aptab").forEach(t=>t.classList.remove("active"));
   const tabEl=document.getElementById("aptab-"+tab);
   if(tabEl)tabEl.classList.add("active");
   const body=document.getElementById("ap-body");
   body.innerHTML=`<div class="empty-st"><div class="ej">⏳</div></div>`;
-  if(tab==="users") await renderAPUsers();
-  else if(tab==="create") renderAPCreate();
-  else if(tab==="stats") await renderAPStats();
-  else if(tab==="settings") renderAPSettings();
+  if(tab==="users")await renderAPUsers();
+  else if(tab==="create")renderAPCreate();
+  else if(tab==="stats")await renderAPStats();
+  else if(tab==="settings")renderAPSettings();
 }
 window.switchAPTab=switchAPTab;
 
 function renderAPCreate(){
+  if(!isSuper()){document.getElementById("ap-body").innerHTML=`<div class="empty-st"><div class="ej">🔒</div><p>슈퍼관리자만 사용할 수 있어요</p></div>`;return;}
   const body=document.getElementById("ap-body");
   body.innerHTML=`
     <div style="background:var(--card);border-radius:12px;box-shadow:var(--sh);padding:18px;">
@@ -865,6 +971,7 @@ function renderAPCreate(){
     </div>`;
 }
 async function createAcctFromPanel(){
+  if(!isSuper()){toast("⭐ 슈퍼관리자만 가능해요",false);return;}
   const id=document.getElementById("cr-id").value.trim();
   const name=document.getElementById("cr-name").value.trim();
   const pw=document.getElementById("cr-pw").value;
@@ -875,13 +982,13 @@ async function createAcctFromPanel(){
   if(!id||id.length<2){errEl.textContent="아이디는 2자 이상이어야 해요";return;}
   if(!name){errEl.textContent="표시 이름을 입력해주세요";return;}
   if(!pw||pw.length<4){errEl.textContent="비밀번호는 4자 이상이어야 해요";return;}
-  if(!/^[\uAC00-\uD7A3a-zA-Z0-9_]+$/.test(id)){errEl.textContent="아이디는 한글, 영문, 숫자, _ 만 가능해요";return;}
+  if(!/^[가-힣a-zA-Z0-9_]+$/.test(id)){errEl.textContent="아이디는 한글, 영문, 숫자, _ 만 가능해요";return;}
   SL();
   try{
     const ex=await DG("users/"+id);
     if(ex){HL();errEl.textContent="이미 사용 중인 아이디예요";return;}
     const h=await hashPw(pw);
-    await DS("users/"+id,{displayName:name,pwHash:h,pwPlain:pw,isAdmin:role==="admin",role,createdAt:Date.now(),banned:false,createdBy:CU.username});
+    await DS("users/"+id,{displayName:name,pwHash:h,isAdmin:role==="admin",role,createdAt:Date.now(),banned:false,createdBy:CU.username,email:""});
     HL();
     document.getElementById("cr-id").value="";
     document.getElementById("cr-name").value="";
@@ -894,74 +1001,92 @@ async function createAcctFromPanel(){
 window.createAcctFromPanel=createAcctFromPanel;
 
 async function renderAPUsers(){
+  if(!isSuper()){document.getElementById("ap-body").innerHTML=`<div class="empty-st"><div class="ej">🔒</div><p>슈퍼관리자만 사용할 수 있어요</p></div>`;return;}
   const body=document.getElementById("ap-body");
   try{
     const val=await DG("users");
     if(!val){body.innerHTML=`<div class="empty-st"><div class="ej">👥</div><p>회원이 없어요</p></div>`;return;}
-    const users=Object.entries(val).map(([k,v])=>({...v,_key:k})).sort((a,b)=>b.createdAt-a.createdAt);
-    // 총원 수 표시
+    const users=Object.entries(val).map(([k,v])=>({...v,_key:k})).sort((a,b)=>(b.createdAt||0)-(a.createdAt||0));
     body.innerHTML=`<div style="font-size:.75rem;color:var(--gray);margin-bottom:12px;padding:0 2px;">총 ${users.length}명 가입</div>`+
     users.map(u=>{
       const isMe=u._key===CU.username;
-      const role=u.banned?"banned":(u.isAdmin?"admin":"member");
-      const roleLabel=u.banned?"🚫 정지":(u.isAdmin?"👑 관리자":"👤 단원");
-      const pwHidden=!pwVisible[u._key];
+      const isSup=u._key===SUPER_ADMIN;
+      const role=u.banned?"banned":(isSup?"super":(u.isAdmin?"admin":"member"));
+      const roleLabel=u.banned?"🚫 정지":(isSup?"⭐ 슈퍼관리자":(u.isAdmin?"👑 관리자":"👤 단원"));
+      const safeName=esc(u.displayName||u._key);
+      const safeId=esc(u._key);
       return`<div class="user-card">
         <div class="uc-top">
           ${avEl(u.displayName,"",42)}
           <div class="uc-info">
-            <div class="uc-name">${esc(u.displayName||u._key)} <span style="font-size:.7rem;color:var(--gray);">@${esc(u._key)}</span></div>
+            <div class="uc-name">${safeName} <span style="font-size:.7rem;color:var(--gray);">@${safeId}</span></div>
             <span class="uc-role ${role}">${roleLabel}</span>
           </div>
         </div>
-        <div class="uc-pw">
-          <span id="pw-${u._key}">${pwHidden?"●●●●●●":esc(u.pwPlain||"(알 수 없음)")}</span>
-          <button class="uc-pw-toggle" onclick="togglePwView('${u._key}','${esc(u.pwPlain||"")}')">
-            ${pwHidden?"👁️ 보기":"🙈 숨기기"}
-          </button>
-        </div>
+        ${u.email?`<div class="uc-email">📧 ${esc(u.email)}</div>`:`<div class="uc-email" style="color:#aaa;">📧 이메일 미등록</div>`}
         <div class="uc-actions">
-          ${!isMe&&!u.isAdmin?`<button class="ucbtn promote" onclick="promoteUser('${u._key}')">👑 관리자로 승격</button>`:""}
-          ${!isMe&&u.isAdmin&&u._key!=="admin"?`<button class="ucbtn demote" onclick="demoteUser('${u._key}')">⬇️ 일반으로 강등</button>`:""}
-          ${!isMe&&!u.banned?`<button class="ucbtn ban" onclick="banUser('${u._key}')">🚫 계정 정지</button>`:""}
-          ${!isMe&&u.banned?`<button class="ucbtn unban" onclick="unbanUser('${u._key}')">✅ 정지 해제</button>`:""}
-          ${!isMe&&u._key!=="admin"?`<button class="ucbtn del" onclick="deleteUser('${u._key}')">🗑️ 탈퇴</button>`:""}
+          ${!isMe&&!u.banned?`<button class="ucbtn tmppw" onclick="issueTempPw('${safeId}','${safeName}')">🔑 임시비번 발급</button>`:""}
+          ${!isMe&&!u.isAdmin?`<button class="ucbtn promote" onclick="promoteUser('${safeId}')">👑 관리자 승격</button>`:""}
+          ${!isMe&&u.isAdmin&&!isSup?`<button class="ucbtn demote" onclick="demoteUser('${safeId}')">⬇️ 일반 강등</button>`:""}
+          ${!isMe&&!u.banned&&!isSup?`<button class="ucbtn ban" onclick="banUser('${safeId}')">🚫 정지</button>`:""}
+          ${!isMe&&u.banned?`<button class="ucbtn unban" onclick="unbanUser('${safeId}')">✅ 정지해제</button>`:""}
+          ${!isMe&&!isSup?`<button class="ucbtn del" onclick="deleteUser('${safeId}')">🗑️ 탈퇴</button>`:""}
           ${isMe?`<span style="font-size:.7rem;color:var(--gray);">(내 계정)</span>`:""}
         </div>
         <div class="uc-date">가입일: ${u.createdAt?fmtDate(u.createdAt):"알 수 없음"}</div>
       </div>`;
     }).join("");
-  }catch(e){body.innerHTML=`<div class="empty-st"><div class="ej">⚠️</div><p>불러오기 실패</p></div>`;}
+  }catch(e){console.error(e);body.innerHTML=`<div class="empty-st"><div class="ej">⚠️</div><p>불러오기 실패: ${esc(e.message)}</p></div>`;}
 }
 
-function togglePwView(uid,plainPw){
-  pwVisible[uid]=!pwVisible[uid];
-  const el=document.getElementById("pw-"+uid);
-  const btn=el?.nextElementSibling;
-  if(el)el.textContent=pwVisible[uid]?(plainPw||"(알 수 없음)"):"●●●●●●";
-  if(btn)btn.textContent=pwVisible[uid]?"🙈 숨기기":"👁️ 보기";
+// 임시 비밀번호 발급 (슈퍼관리자만)
+async function issueTempPw(uid,uname){
+  if(!isSuper()){toast("⭐ 슈퍼관리자만 가능해요",false);return;}
+  if(!confirm(`@${uid} (${uname})의 비밀번호를 임시 비밀번호로 초기화할까요?\n\n기존 비밀번호는 즉시 사용할 수 없게 됩니다.`))return;
+  SL();
+  try{
+    const tmp=genTempPw();
+    const h=await hashPw(tmp);
+    await DU("users/"+uid,{pwHash:h});
+    HL();
+    _tmpPwClipboard=tmp;
+    document.getElementById("tmppw-target").textContent=`@${uid} (${uname})`;
+    document.getElementById("tmppw-val").textContent=tmp;
+    document.getElementById("btn-copy-tmppw").textContent="📋 복사";
+    document.getElementById("m-tmppw").classList.add("show");
+  }catch(e){HL();toast("❌ "+e.message,false);}
 }
-window.togglePwView=togglePwView;
+window.issueTempPw=issueTempPw;
+async function copyTmpPw(){
+  try{await navigator.clipboard.writeText(_tmpPwClipboard);document.getElementById("btn-copy-tmppw").textContent="✅ 복사됨!";}
+  catch(e){toast("복사 실패: 직접 입력해주세요",false);}
+}
+window.copyTmpPw=copyTmpPw;
 
-async function promoteUser(uid){if(!confirm(`@${uid}를 관리자로 승격할까요?`))return;SL();try{await DU("users/"+uid,{isAdmin:true,role:"admin"});HL();toast("✅ 관리자로 승격됐어요!");renderAPUsers();}catch(e){HL();toast("❌ "+e.message,false);}}
-async function demoteUser(uid){if(!confirm(`@${uid}를 일반 단원으로 강등할까요?`))return;SL();try{await DU("users/"+uid,{isAdmin:false,role:"member"});HL();toast("✅ 강등됐어요!");renderAPUsers();}catch(e){HL();toast("❌ "+e.message,false);}}
-async function banUser(uid){if(!confirm(`@${uid} 계정을 정지할까요?`))return;SL();try{await DU("users/"+uid,{banned:true});HL();toast("🚫 계정이 정지됐어요!");renderAPUsers();}catch(e){HL();toast("❌ "+e.message,false);}}
-async function unbanUser(uid){SL();try{await DU("users/"+uid,{banned:false});HL();toast("✅ 정지가 해제됐어요!");renderAPUsers();}catch(e){HL();toast("❌ "+e.message,false);}}
+async function promoteUser(uid){if(!isSuper())return;if(!confirm(`@${uid}를 관리자로 승격할까요?`))return;SL();try{await DU("users/"+uid,{isAdmin:true,role:"admin"});HL();toast("✅ 관리자로 승격됐어요!");renderAPUsers();}catch(e){HL();toast("❌ "+e.message,false);}}
+async function demoteUser(uid){if(!isSuper())return;if(uid===SUPER_ADMIN){toast("슈퍼관리자는 강등할 수 없어요",false);return;}if(!confirm(`@${uid}를 일반 단원으로 강등할까요?`))return;SL();try{await DU("users/"+uid,{isAdmin:false,role:"member"});HL();toast("✅ 강등됐어요!");renderAPUsers();}catch(e){HL();toast("❌ "+e.message,false);}}
+async function banUser(uid){if(!isSuper())return;if(uid===SUPER_ADMIN){toast("슈퍼관리자는 정지할 수 없어요",false);return;}if(!confirm(`@${uid} 계정을 정지할까요?`))return;SL();try{await DU("users/"+uid,{banned:true});HL();toast("🚫 정지됐어요!");renderAPUsers();}catch(e){HL();toast("❌ "+e.message,false);}}
+async function unbanUser(uid){if(!isSuper())return;SL();try{await DU("users/"+uid,{banned:false});HL();toast("✅ 정지 해제!");renderAPUsers();}catch(e){HL();toast("❌ "+e.message,false);}}
 async function deleteUser(uid){
+  if(!isSuper())return;
+  if(uid===SUPER_ADMIN){toast("슈퍼관리자는 삭제할 수 없어요",false);return;}
   if(!confirm(`@${uid} 계정을 완전히 삭제(탈퇴)할까요?\n이 작업은 되돌릴 수 없어요.`))return;
-  SL();try{await DD("users/"+uid);HL();toast("🗑️ 계정이 삭제됐어요!");renderAPUsers();}catch(e){HL();toast("❌ "+e.message,false);}
+  SL();try{await DD("users/"+uid);HL();toast("🗑️ 삭제됐어요!");renderAPUsers();}catch(e){HL();toast("❌ "+e.message,false);}
 }
 window.promoteUser=promoteUser;window.demoteUser=demoteUser;window.banUser=banUser;window.unbanUser=unbanUser;window.deleteUser=deleteUser;
 
+// 통계 (모든 관리자)
 async function renderAPStats(){
   const body=document.getElementById("ap-body");
   try{
     const [usersVal,bpVal,fpVal,rpVal,noticeVal]=await Promise.all([DG("users"),DG("board_posts"),DG("free_posts"),DG("reports"),DG("notices")]);
-    const users=usersVal?Object.values(usersVal):[];
+    const userEntries=usersVal?Object.entries(usersVal):[];
+    const users=userEntries.map(([k,v])=>({...v,_key:k}));
     const bp=bpVal?Object.keys(bpVal).length:0;
     const fp=fpVal?Object.keys(fpVal).length:0;
     const rp=rpVal?Object.values(rpVal):[];
     const nc=noticeVal?Object.keys(noticeVal).length:0;
+    const recent=users.slice().sort((a,b)=>(b.createdAt||0)-(a.createdAt||0)).slice(0,5);
     body.innerHTML=`
       <div class="stat-grid">
         <div class="stat-card"><div class="stat-num" style="color:var(--blue);">${users.length}</div><div class="stat-lbl">전체 회원</div></div>
@@ -972,21 +1097,22 @@ async function renderAPStats(){
         <div class="stat-card"><div class="stat-num" style="color:#e65100;">${rp.filter(r=>r.status==="pending").length}</div><div class="stat-lbl">미처리 민원</div></div>
       </div>
       <div style="font-family:'Noto Serif KR',serif;font-size:.88rem;font-weight:700;margin-bottom:10px;margin-top:4px;">📋 최근 가입 회원</div>
-      ${users.sort((a,b)=>b.createdAt-a.createdAt).slice(0,5).map(u=>`
+      ${recent.map(u=>`
         <div style="background:var(--card);border-radius:10px;box-shadow:var(--sh);padding:11px 13px;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between;">
           <div>
             <span style="font-size:.85rem;font-weight:700;">${esc(u.displayName||"?")}</span>
-            <span style="font-size:.7rem;color:var(--gray);margin-left:7px;">@${esc(Object.keys(usersVal).find(k=>usersVal[k]===u)||"?")}</span>
+            <span style="font-size:.7rem;color:var(--gray);margin-left:7px;">@${esc(u._key)}</span>
           </div>
           <span style="font-size:.68rem;color:var(--gray);">${u.createdAt?fmtDate(u.createdAt):"알 수 없음"}</span>
         </div>`).join("")}`;
-  }catch(e){body.innerHTML=`<div class="empty-st"><div class="ej">⚠️</div><p>불러오기 실패</p></div>`;}
+  }catch(e){console.error(e);body.innerHTML=`<div class="empty-st"><div class="ej">⚠️</div><p>불러오기 실패: ${esc(e.message)}</p></div>`;}
 }
 
+// 설정 (슈퍼관리자만)
 function renderAPSettings(){
+  if(!isSuper()){document.getElementById("ap-body").innerHTML=`<div class="empty-st"><div class="ej">🔒</div><p>슈퍼관리자만 사용할 수 있어요</p></div>`;return;}
   const body=document.getElementById("ap-body");
   body.innerHTML=`
-    <!-- 백업/복구 -->
     <div style="background:var(--card);border-radius:12px;box-shadow:var(--sh);padding:14px;margin-bottom:12px;border-left:4px solid var(--blue);">
       <div style="font-family:'Noto Serif KR',serif;font-size:.9rem;font-weight:700;margin-bottom:10px;">💾 데이터 백업 & 복구</div>
       <div class="setting-row" style="margin-bottom:8px;">
@@ -1000,7 +1126,6 @@ function renderAPSettings(){
         </label>
       </div>
     </div>
-    <!-- 버전 관리 -->
     <div style="background:var(--card);border-radius:12px;box-shadow:var(--sh);padding:14px;margin-bottom:12px;border-left:4px solid var(--green);">
       <div style="font-family:'Noto Serif KR',serif;font-size:.9rem;font-weight:700;margin-bottom:10px;">🆕 버전 업데이트 알림</div>
       <div class="setting-row">
@@ -1012,7 +1137,6 @@ function renderAPSettings(){
         <button style="background:var(--green);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:.78rem;font-weight:700;cursor:pointer;white-space:nowrap;" onclick="pushNewVersion()">📣 배포</button>
       </div>
     </div>
-    <!-- 삭제 -->
     <div class="setting-row">
       <div class="setting-info"><h4>🧹 게시판 전체 글 삭제</h4><p>게시판의 모든 글을 삭제해요 (되돌릴 수 없음)</p></div>
       <button style="background:var(--red);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:.78rem;font-weight:700;cursor:pointer;" onclick="clearAllPosts('board_posts')">삭제</button>
@@ -1025,19 +1149,18 @@ function renderAPSettings(){
       <div class="setting-info"><h4>🧹 민원/신고 전체 삭제</h4><p>접수된 민원을 모두 삭제해요</p></div>
       <button style="background:var(--red);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:.78rem;font-weight:700;cursor:pointer;" onclick="clearAllPosts('reports')">삭제</button>
     </div>
-    <div class="setting-row">
-      <div class="setting-info"><h4>👤 내 비밀번호 변경</h4><p>현재 로그인된 관리자 계정의 비밀번호를 변경해요</p></div>
-      <button style="background:var(--blue);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:.78rem;font-weight:700;cursor:pointer;" onclick="changeMyPw()">변경</button>
-    </div>
-    <!-- 로그아웃 -->
     <div class="setting-row" style="border-top:2px solid var(--bd);margin-top:6px;">
       <div class="setting-info"><h4>🚪 로그아웃</h4><p>현재 계정에서 로그아웃해요</p></div>
       <button style="background:#f0f0f0;color:#555;border:1.5px solid var(--bd);border-radius:8px;padding:8px 14px;font-size:.78rem;font-weight:700;cursor:pointer;" onclick="closeAdminPanel();confirmLogout()">로그아웃</button>
-    </div>`;
+    </div>
+    <p style="font-size:.7rem;color:var(--gray);text-align:center;margin-top:14px;">
+      💡 내 비밀번호 변경은 우측 상단 <strong>👤 내 정보</strong>에서 할 수 있어요
+    </p>`;
 }
 
-// 백업 다운로드
+// 백업
 async function downloadBackup(){
+  if(!isSuper()){toast("⭐ 슈퍼관리자만 가능해요",false);return;}
   SL();
   try{
     const [users,bp,fp,rp,notices,bcomments,fcomments]=await Promise.all([
@@ -1062,9 +1185,8 @@ async function downloadBackup(){
     HL();toast("✅ 백업 파일이 다운로드됐어요!");
   }catch(e){HL();toast("❌ 백업 실패: "+e.message,false);}
 }
-
-// 백업 복구
 async function restoreBackup(input){
+  if(!isSuper()){toast("⭐ 슈퍼관리자만 가능해요",false);return;}
   const file=input.files[0];if(!file)return;
   if(!confirm("⚠️ 복구하면 기존 데이터가 덮어씌워져요!\n정말 복구할까요?"))return;
   SL();
@@ -1080,10 +1202,9 @@ async function restoreBackup(input){
     if(data.notices)writes.push(DS("notices",data.notices));
     if(data.board_comments)writes.push(DS("board_comments",data.board_comments));
     if(data.free_comments)writes.push(DS("free_comments",data.free_comments));
-    // 유저는 신중하게 (기존 유저 유지하고 백업 유저 병합)
     if(data.users){
       const curUsers=await DG("users")||{};
-      const merged={...data.users,...curUsers}; // 현재 유저 우선
+      const merged={...data.users,...curUsers};
       writes.push(DS("users",merged));
     }
     await Promise.all(writes);
@@ -1093,27 +1214,26 @@ async function restoreBackup(input){
 }
 window.downloadBackup=downloadBackup;window.restoreBackup=restoreBackup;
 
-// 새 버전 배포 (Firebase에 버전 번호 기록 → 모든 단원 화면에 새로고침 안내)
 async function pushNewVersion(){
-  const newVer = prompt(`새 버전 번호를 입력하세요\n현재: ${APP_VERSION}\n\n예: 1.0.6`);
-  if(!newVer || !newVer.trim()) return;
-  if(newVer.trim() === APP_VERSION){ toast("현재 버전과 같아요!",false); return; }
-  if(!confirm(`버전을 ${APP_VERSION} → ${newVer.trim()} 으로 배포할까요?\n모든 단원 화면에 새로고침 안내가 뜹니다.`)) return;
+  if(!isSuper()){toast("⭐ 슈퍼관리자만 가능해요",false);return;}
+  const newVer=prompt(`새 버전 번호를 입력하세요\n현재: ${APP_VERSION}\n\n예: 1.1.1`);
+  if(!newVer||!newVer.trim())return;
+  if(newVer.trim()===APP_VERSION){toast("현재 버전과 같아요!",false);return;}
+  if(!confirm(`버전을 ${APP_VERSION} → ${newVer.trim()} 으로 배포할까요?`))return;
   SL();
   try{
-    await DS("app_version", newVer.trim());
+    await DS("app_version",newVer.trim());
     HL();
-    toast(`✅ v${newVer.trim()} 배포 완료! 모든 단원에게 새로고침 안내가 떴어요`);
+    toast(`✅ v${newVer.trim()} 배포 완료!`);
   }catch(e){HL();toast("❌ "+e.message,false);}
 }
 window.pushNewVersion=pushNewVersion;
-async function clearAllPosts(path){if(!confirm(`[${path}]의 모든 데이터를 삭제할까요? 되돌릴 수 없어요!`))return;SL();try{await DD(path);HL();toast("🗑️ 삭제 완료!");}catch(e){HL();toast("❌ "+e.message,false);}}
-async function changeMyPw(){
-  const np=prompt("새 비밀번호를 입력하세요 (4자 이상):");
-  if(!np||np.length<4){toast("4자 이상 입력해주세요",false);return;}
-  SL();try{const h=await hashPw(np);await DU("users/"+CU.username,{pwHash:h,pwPlain:np});HL();toast("✅ 비밀번호가 변경됐어요!");}catch(e){HL();toast("❌ "+e.message,false);}
+async function clearAllPosts(path){
+  if(!isSuper()){toast("⭐ 슈퍼관리자만 가능해요",false);return;}
+  if(!confirm(`[${path}]의 모든 데이터를 삭제할까요? 되돌릴 수 없어요!`))return;
+  SL();try{await DD(path);HL();toast("🗑️ 삭제 완료!");}catch(e){HL();toast("❌ "+e.message,false);}
 }
-window.clearAllPosts=clearAllPosts;window.changeMyPw=changeMyPw;
+window.clearAllPosts=clearAllPosts;
 
 // ── 실시간 리스너 ──
 let boardFirst=true, freeFirst=true;
@@ -1121,14 +1241,14 @@ function startListeners(){
   DON("board_posts",val=>{
     const prev=boardPosts.map(p=>p._key);
     boardPosts=val?Object.entries(val).map(([k,v])=>({...v,_key:k})).sort((a,b)=>{
-      if(a.pinned&&!b.pinned)return-1;if(!a.pinned&&b.pinned)return 1;return b.ts-a.ts;
+      if(a.pinned&&!b.pinned)return-1;if(!a.pinned&&b.pinned)return 1;return (b.ts||0)-(a.ts||0);
     }):[];
     if(!boardFirst){boardPosts.forEach(p=>{if(!prev.includes(p._key)&&p.ts>lastVisitTs){notifItems.unshift({key:p._key,board:"board",title:p.title||"새 글",author:p.authorDisplay,ts:p.ts});sendBNotif(p.authorDisplay,p.title||"새 게시물");document.getElementById("hdot").classList.add("show");}});if(notifIsOpen)renderND();}
     boardFirst=false;renderBoard();renderCalendar();renderUpcoming();
   });
   DON("free_posts",val=>{
     const prev=freePosts.map(p=>p._key);
-    freePosts=val?Object.entries(val).map(([k,v])=>({...v,_key:k})).sort((a,b)=>b.ts-a.ts):[];
+    freePosts=val?Object.entries(val).map(([k,v])=>({...v,_key:k})).sort((a,b)=>(b.ts||0)-(a.ts||0)):[];
     if(!freeFirst){freePosts.forEach(p=>{if(!prev.includes(p._key)&&p.ts>lastVisitTs){notifItems.unshift({key:p._key,board:"free",title:p.title||"새 글",author:p.authorDisplay,ts:p.ts});document.getElementById("hdot").classList.add("show");}});if(notifIsOpen)renderND();}
     freeFirst=false;renderFree();
   });
@@ -1145,7 +1265,7 @@ function goPanel(idx,animate=true){
   document.querySelectorAll(".sdot").forEach((d,i)=>d.classList.toggle("active",i===curPanel));
   if(curPanel===0)renderNotices();
   if(curPanel===3){renderCalendar();renderUpcoming();}
-  if(curPanel===4&&CU?.isAdmin)loadReports();
+  if(curPanel===4&&isAdminUser())loadReports();
   window.scrollTo(0,0);
 }
 window.goPanel=goPanel;
@@ -1213,22 +1333,19 @@ function buildCard(p,board){
 }
 function ytE(url){if(!url)return"";const m=url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|v\/|shorts\/))([a-zA-Z0-9_-]{11})/);return m?`https://www.youtube.com/embed/${m[1]}`:""}
 
-// ── 검색/필터 ──
 function doSearch(q,board){if(board==="board"){boardQ=q;renderBoard();}else{freeQ=q;renderFree();}}
 function ftag(el,board,tag){
-  if(board==="board"){boardTag=tag;document.querySelectorAll("#tnav-1~* .stag, #tnav-1+* .stag").forEach(t=>t.classList.remove("active"));}
-  else{freeTag=tag;}
-  document.querySelectorAll(".stag").forEach(t=>{if(t===el)t.classList.add("active");});
+  if(board==="board"){boardTag=tag;}else{freeTag=tag;}
+  el.parentElement.querySelectorAll(".stag").forEach(t=>t.classList.remove("active"));
+  el.classList.add("active");
   if(board==="board")renderBoard();else renderFree();
 }
 window.doSearch=doSearch;window.ftag=ftag;
 
-// ── 좋아요/이모지 ──
 async function toggleLike(key,board){if(isGuest){toast("로그인 후 이용할 수 있어요",false);return;}const ek=`${key}_❤️`;const had=!!localReacts[ek];const path=`${board}_posts/${key}/reactions/❤️`;const cur=(await DG(path))||0;await DS(path,Math.max(0,had?cur-1:cur+1));if(had)delete localReacts[ek];else localReacts[ek]=true;localStorage.setItem(RK,JSON.stringify(localReacts));}
 async function toggleReact(e,key,board,emoji){e.preventDefault();e.stopPropagation();if(isGuest){toast("로그인 후 이용할 수 있어요",false);return;}const ek=`${key}_${emoji}`;const had=!!localReacts[ek];const path=`${board}_posts/${key}/reactions/${emoji}`;const cur=(await DG(path))||0;await DS(path,Math.max(0,had?cur-1:cur+1));if(had)delete localReacts[ek];else localReacts[ek]=true;localStorage.setItem(RK,JSON.stringify(localReacts));}
 window.toggleLike=toggleLike;window.toggleReact=toggleReact;
 
-// ── 포스트 상세 ──
 async function openDetail(key,board){
   SL();
   try{
@@ -1238,7 +1355,6 @@ async function openDetail(key,board){
     p.comments=cv?Object.entries(cv).map(([k,v])=>({...v,_key:k})).sort((a,b)=>a.ts-b.ts):[];
     HL();
     showPage("detail");
-    // det-inner 전체(카드+입력창)를 detail-inner에 렌더
     document.querySelector("#pg-detail .detail-inner").innerHTML=buildDetail(p);
     window.scrollTo(0,0);
   }catch(e){HL();toast("❌ "+e.message,false);}
@@ -1264,7 +1380,6 @@ function buildDetail(p){
   if(p.videoUrl){const yt=ytE(p.videoUrl);media=yt?`<iframe class="pvideo" src="${yt}" frameborder="0" allowfullscreen></iframe>`:`<video class="pvideo" src="${esc(p.videoUrl)}" controls></video>`;}
   else if(p.imageData)media=`<img class="pimg" src="${p.imageData}" alt="">`;
 
-  // 댓글 목록 HTML
   const cmts=p.comments.length
     ? p.comments.map(c=>`
       <div class="dci">
@@ -1283,9 +1398,7 @@ function buildDetail(p){
     : `<p style="color:var(--gray);font-size:.78rem;padding:14px 0 8px;text-align:center;">💬 첫 댓글을 달아보세요!</p>`;
 
   const myAv=avEl(CU?.displayName||"",CU?.photoData||"",28);
-
-  // 댓글 입력창 (detcard 바깥, fixed 아님 — 페이지 맨 아래에 붙임)
-  const writeBar = !isGuest
+  const writeBar=!isGuest
     ? `<div class="dcwrite">
         ${myAv}
         <input class="dcinput" id="ci"
@@ -1344,16 +1457,13 @@ function buildDetail(p){
       </div>
     </div>`:""}
 
-    <!-- 댓글 목록 -->
     <div class="dcmtsec">
       <div class="dcmttitle">💬 댓글 <span class="dcmtcnt">${p.comments.length}</span></div>
       <div id="cmt-list">${cmts}</div>
     </div>
   </div>
 
-  <!-- 댓글 입력창 (카드 바깥, 페이지 맨 아래) -->
   ${writeBar}
-  <!-- 댓글 입력창 높이만큼 여백 -->
   <div style="height:62px;"></div>
   `;
 }
@@ -1481,19 +1591,19 @@ async function submitPost(){
 }
 window.submitPost=submitPost;
 
-// ── 공지 ──
+// ── 공지 (모든 관리자) ──
 async function renderNotices(){
-  document.getElementById("btn-nw").style.display=CU?.isAdmin&&!isGuest?"":"none";
+  document.getElementById("btn-nw").style.display=isAdminUser()?"":"none";
   const c=document.getElementById("notice-list");c.innerHTML=`<div class="empty-st"><div class="ej">⏳</div></div>`;
-  try{const val=await DG("notices");const ns=val?Object.entries(val).map(([k,v])=>({...v,_key:k})).sort((a,b)=>b.ts-a.ts):[];let html=CU?.isAdmin?"":"<div class=\"admhint\">👑 공지는 관리자만 작성할 수 있어요</div>";if(!ns.length){c.innerHTML=html+`<div class="empty-st"><div class="ej">📢</div><p>등록된 공지가 없어요</p></div>`;return;}c.innerHTML=html+ns.map(n=>`<div class="nc"><div class="nch"><div class="nctitle">📢 ${esc(n.title)}</div><div class="ncmeta"><span>${fmtDate(n.ts)}</span>${CU?.isAdmin?`<button style="background:none;border:none;color:var(--red);font-size:.68rem;cursor:pointer;" onclick="delNotice('${n._key}')">삭제</button>`:""}</div></div><div class="ncbody">${esc(n.content)}</div></div>`).join("");}catch(e){}
+  try{const val=await DG("notices");const ns=val?Object.entries(val).map(([k,v])=>({...v,_key:k})).sort((a,b)=>b.ts-a.ts):[];let html=isAdminUser()?"":"<div class=\"admhint\">👑 공지는 관리자만 작성할 수 있어요</div>";if(!ns.length){c.innerHTML=html+`<div class="empty-st"><div class="ej">📢</div><p>등록된 공지가 없어요</p></div>`;return;}c.innerHTML=html+ns.map(n=>`<div class="nc"><div class="nch"><div class="nctitle">📢 ${esc(n.title)}</div><div class="ncmeta"><span>${fmtDate(n.ts)}</span>${isAdminUser()?`<button style="background:none;border:none;color:var(--red);font-size:.68rem;cursor:pointer;" onclick="delNotice('${n._key}')">삭제</button>`:""}</div></div><div class="ncbody">${esc(n.content)}</div></div>`).join("");}catch(e){}
 }
-function showNW(){document.getElementById("nw-area").style.display="";document.getElementById("nwt").value="";document.getElementById("nwb").value="";}
+function showNW(){if(!isAdminUser())return;document.getElementById("nw-area").style.display="";document.getElementById("nwt").value="";document.getElementById("nwb").value="";}
 function hideNW(){document.getElementById("nw-area").style.display="none";}
-async function submitNotice(){const t=document.getElementById("nwt").value.trim(),c=document.getElementById("nwb").value.trim();if(!t||!c){toast("제목과 내용을 모두 입력해주세요",false);return;}SL();try{await DP("notices",{title:t,content:c,ts:Date.now()});HL();hideNW();toast("📢 공지 등록됐어요!");renderNotices();}catch(e){HL();toast("❌ "+e.message,false);}}
-async function delNotice(key){if(!confirm("공지를 삭제할까요?"))return;SL();try{await DD("notices/"+key);HL();toast("🗑️ 삭제됐어요!");renderNotices();}catch(e){HL();toast("❌ "+e.message,false);}}
+async function submitNotice(){if(!isAdminUser()){toast("관리자만 가능해요",false);return;}const t=document.getElementById("nwt").value.trim(),c=document.getElementById("nwb").value.trim();if(!t||!c){toast("제목과 내용을 모두 입력해주세요",false);return;}SL();try{await DP("notices",{title:t,content:c,ts:Date.now()});HL();hideNW();toast("📢 공지 등록됐어요!");renderNotices();}catch(e){HL();toast("❌ "+e.message,false);}}
+async function delNotice(key){if(!isAdminUser())return;if(!confirm("공지를 삭제할까요?"))return;SL();try{await DD("notices/"+key);HL();toast("🗑️ 삭제됐어요!");renderNotices();}catch(e){HL();toast("❌ "+e.message,false);}}
 window.showNW=showNW;window.hideNW=hideNW;window.submitNotice=submitNotice;window.delNotice=delNotice;
 
-// ── 익명 민원/신고 ──
+// ── 익명 민원/신고 (관리자 처리: 모든 관리자) ──
 function selRT(el,type){curRT=type;document.querySelectorAll(".rtbtn").forEach(b=>b.classList.remove("active"));el.classList.add("active");}
 window.selRT=selRT;
 async function submitReport(){
@@ -1503,6 +1613,7 @@ async function submitReport(){
 }
 window.submitReport=submitReport;
 async function loadReports(){
+  if(!isAdminUser())return;
   document.getElementById("r-admin-area").style.display="";
   try{const val=await DG("reports");const rs=val?Object.entries(val).map(([k,v])=>({...v,_key:k})).sort((a,b)=>b.ts-a.ts):[];document.getElementById("r-cnt").textContent=`(${rs.length}건)`;const c=document.getElementById("r-list");if(!rs.length){c.innerHTML=`<div class="empty-st" style="padding:22px;"><div class="ej">📭</div><p>접수된 민원이 없어요</p></div>`;return;}c.innerHTML=rs.map(r=>`<div class="ritem"><div class="rih"><div><span class="ritag">${esc(r.type)}</span><span class="rititl">${esc(r.title)}</span></div><div style="display:flex;align-items:center;gap:6px;"><span class="ristatus ${r.status==="done"?"done":"pending"}">${r.status==="done"?"✅ 처리완료":"⏳ 처리중"}</span><span class="ridate">${fmtDate(r.ts)}</span></div></div><div class="ribody">${esc(r.content)}</div><div style="margin-top:6px;font-size:.67rem;color:var(--gray);">🔒 익명 접수 ${r.status!=="done"?`<button onclick="markRDone('${r._key}')" style="background:var(--green);color:#fff;border:none;border-radius:5px;padding:2px 9px;font-size:.65rem;cursor:pointer;margin-left:8px;">처리완료</button>`:""}<button onclick="delReport('${r._key}')" style="background:none;border:none;color:var(--red);font-size:.65rem;cursor:pointer;margin-left:5px;">삭제</button></div></div>`).join("");}catch(e){}}
 async function markRDone(k){SL();try{await DU("reports/"+k,{status:"done"});HL();toast("✅ 처리완료!");loadReports();}catch(e){HL();}}
@@ -1549,91 +1660,45 @@ document.addEventListener("click",e=>{if(notifIsOpen&&!e.target.closest(".ndrop"
 // ── 모달 ──
 function closeM(id){document.getElementById(id).classList.remove("show");}
 window.closeM=closeM;
-["m-del","m-day"].forEach(id=>{document.getElementById(id).addEventListener("click",function(e){if(e.target===this)closeM(id);});});
+["m-del","m-day","m-usersettings","m-tmppw"].forEach(id=>{const el=document.getElementById(id);if(el)el.addEventListener("click",function(e){if(e.target===this)closeM(id);});});
 document.getElementById("del-pw").addEventListener("keydown",e=>{if(e.key==="Enter")confirmDel();});
 document.getElementById("liu").addEventListener("keydown",e=>{if(e.key==="Enter")document.getElementById("lip").focus();});
 document.getElementById("lip").addEventListener("keydown",e=>{if(e.key==="Enter")doLogin();});
 document.getElementById("su-pw").addEventListener("keydown",e=>{if(e.key==="Enter")document.getElementById("su-pw2").focus();});
 document.getElementById("su-pw2").addEventListener("keydown",e=>{if(e.key==="Enter")doSignup();});
 
-// ── 버전 자동 업데이트 감지 ──
-// Firebase에 저장된 버전 번호와 현재 버전을 비교해서 새 버전이 나오면 배너를 보여줌
-const APP_VERSION = "1.0.5"; // 새 버전 배포할 때 이 숫자만 올리면 됨
-
-// ── 버전 관리 핵심 로직 ──
-// 문제: 새로고침해도 HTML 파일의 APP_VERSION은 그대로라서 배너가 계속 뜸
-// 해결: localStorage에 "이미 이 버전 봤다"고 저장해서 중복 표시 방지
-
-function getSnoozedVer(){ return localStorage.getItem("sbd_snoozed_ver")||""; }
-function setSnoozedVer(v){ localStorage.setItem("sbd_snoozed_ver",v); }
-
+// ── 버전 자동 업데이트 ──
+function getSnoozedVer(){return localStorage.getItem("sbd_snoozed_ver")||"";}
+function setSnoozedVer(v){localStorage.setItem("sbd_snoozed_ver",v);}
 function showUpdateBanner(newVer){
-  // 1) 이미 배너 있으면 skip
-  if(document.getElementById("update-banner")) return;
-  // 2) 이미 이 버전 봤으면 skip (새로고침 후에도 안 뜸)
-  if(getSnoozedVer() === newVer) return;
-
-  const banner = document.createElement("div");
-  banner.id = "update-banner";
-  banner.style.cssText = `
-    position:fixed;bottom:75px;left:50%;transform:translateX(-50%);
-    background:linear-gradient(135deg,#1565C0,#0d47a1);
-    color:#fff;border-radius:14px;padding:14px 18px;
-    box-shadow:0 4px 20px rgba(0,0,0,.3);z-index:900;
-    max-width:340px;width:90%;text-align:center;
-    animation:slideUp .4s ease;
-  `;
-  banner.innerHTML = `
-    <div style="font-size:.82rem;font-weight:700;margin-bottom:6px;">
-      🆕 새 버전이 있어요! (v${newVer})
-    </div>
-    <div style="font-size:.72rem;color:#bbdefb;margin-bottom:10px;">
-      새로운 기능과 개선사항이 추가됐어요
-    </div>
+  if(document.getElementById("update-banner"))return;
+  if(getSnoozedVer()===newVer)return;
+  const banner=document.createElement("div");
+  banner.id="update-banner";
+  banner.style.cssText=`position:fixed;bottom:75px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#1565C0,#0d47a1);color:#fff;border-radius:14px;padding:14px 18px;box-shadow:0 4px 20px rgba(0,0,0,.3);z-index:900;max-width:340px;width:90%;text-align:center;animation:slideUp .4s ease;`;
+  banner.innerHTML=`
+    <div style="font-size:.82rem;font-weight:700;margin-bottom:6px;">🆕 새 버전이 있어요! (v${newVer})</div>
+    <div style="font-size:.72rem;color:#bbdefb;margin-bottom:10px;">새로운 기능과 개선사항이 추가됐어요</div>
     <div style="display:flex;gap:8px;justify-content:center;">
-      <button onclick="doRefresh('${newVer}')" style="background:#fff;color:#1565C0;border:none;border-radius:8px;padding:8px 18px;font-size:.8rem;font-weight:700;cursor:pointer;">
-        🔄 지금 새로고침
-      </button>
-      <button onclick="snoozeUpdate('${newVer}')" style="background:rgba(255,255,255,.2);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:.8rem;cursor:pointer;">
-        나중에
-      </button>
-    </div>
-  `;
+      <button onclick="doRefresh('${newVer}')" style="background:#fff;color:#1565C0;border:none;border-radius:8px;padding:8px 18px;font-size:.8rem;font-weight:700;cursor:pointer;">🔄 지금 새로고침</button>
+      <button onclick="snoozeUpdate('${newVer}')" style="background:rgba(255,255,255,.2);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:.8rem;cursor:pointer;">나중에</button>
+    </div>`;
   document.body.appendChild(banner);
 }
-
-// "지금 새로고침" → 버전 기억 후 새로고침
-function doRefresh(ver){
-  setSnoozedVer(ver); // ← 이게 핵심! 새로고침 후 다시 안 뜸
-  location.reload(true);
-}
-// "나중에" → 이 버전 다시 안 보여줌
-function snoozeUpdate(ver){
-  setSnoozedVer(ver);
-  const b=document.getElementById("update-banner");
-  if(b)b.remove();
-}
+function doRefresh(ver){setSnoozedVer(ver);location.reload(true);}
+function snoozeUpdate(ver){setSnoozedVer(ver);const b=document.getElementById("update-banner");if(b)b.remove();}
 window.doRefresh=doRefresh;window.snoozeUpdate=snoozeUpdate;
 
-// 버전 실시간 감지 (Firebase에서 바뀌면 즉시 알림)
 function startVersionListener(){
-  DON("app_version", ver=>{
-    if(!ver) return;
-    // APP_VERSION과 다르고, 이미 본 버전도 아닐 때만 배너 표시
-    if(ver !== APP_VERSION && ver !== getSnoozedVer()){
-      showUpdateBanner(ver);
-    } else {
-      // 서버 버전과 현재 버전이 같아졌으면 배너 제거
-      const b=document.getElementById("update-banner");
-      if(b)b.remove();
-    }
+  DON("app_version",ver=>{
+    if(!ver)return;
+    if(ver!==APP_VERSION&&ver!==getSnoozedVer())showUpdateBanner(ver);
+    else{const b=document.getElementById("update-banner");if(b)b.remove();}
   });
 }
 
-// ── 시작 ──
 init();
-// 버전 감지 시작 (로드 후 3초 뒤)
-setTimeout(startVersionListener, 3000);
+setTimeout(startVersionListener,3000);
 </script>
 </body>
 </html>
