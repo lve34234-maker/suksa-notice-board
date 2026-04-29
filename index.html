@@ -15,23 +15,17 @@
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
 body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--black);min-height:100vh;overflow-x:hidden;}
 button,input,textarea,select{font-family:'Noto Sans KR',sans-serif;}
-
-/* ── 로더 ── */
 #loader{position:fixed;inset:0;background:var(--black);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;}
-.ld-belt{display:flex;gap:5px;}
-.ld-belt span{width:8px;height:36px;border-radius:4px;}
+.ld-belt{display:flex;gap:5px;}.ld-belt span{width:8px;height:36px;border-radius:4px;}
 .ld-logo{font-family:'Noto Serif KR',serif;font-size:1.5rem;font-weight:900;color:#fff;text-align:center;}
 .ld-logo em{color:var(--gold);font-style:normal;}
 .spin{width:28px;height:28px;border:3px solid #333;border-top-color:var(--red);border-radius:50%;animation:spin .7s linear infinite;}
 @keyframes spin{to{transform:rotate(360deg);}}
-
-/* ── 인증 화면 ── */
 #pg-auth{display:none;min-height:100vh;background:linear-gradient(160deg,#111 60%,var(--dk) 100%);align-items:center;justify-content:center;padding:24px;flex-direction:column;}
 #pg-auth.show{display:flex;}
 .aw{width:100%;max-width:340px;}
 .ah{display:flex;align-items:center;gap:11px;margin-bottom:7px;justify-content:center;}
-.abelt{display:flex;gap:4px;}
-.abelt span{width:6px;height:30px;border-radius:3px;}
+.abelt{display:flex;gap:4px;}.abelt span{width:6px;height:30px;border-radius:3px;}
 .ab1{background:#fff;}.ab2{background:var(--gold);}.ab3{background:var(--red);}.ab4{background:#333;border:1px solid #555;}
 .atitle{font-family:'Noto Serif KR',serif;font-size:1.3rem;font-weight:900;color:#fff;}
 .atitle em{color:var(--gold);font-style:normal;}
@@ -55,15 +49,11 @@ button,input,textarea,select{font-family:'Noto Sans KR',sans-serif;}
 .afindrow{text-align:center;margin-top:10px;font-size:.72rem;color:#888;}
 .afindrow a{color:#ccc;cursor:pointer;text-decoration:underline;margin:0 6px;}
 .afindrow a:hover{color:var(--gold);}
-
-/* ── 앱 ── */
-#pg-app{display:none;}
-#pg-app.show{display:block;}
+#pg-app{display:none;}#pg-app.show{display:block;}
 header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2px 20px rgba(0,0,0,.5);}
 .hinner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:11px 15px;}
 .hlogo{display:flex;align-items:center;gap:10px;cursor:pointer;}
-.belt{display:flex;gap:3px;}
-.belt span{width:5px;height:26px;border-radius:3px;}
+.belt{display:flex;gap:3px;}.belt span{width:5px;height:26px;border-radius:3px;}
 .b1{background:#fff;}.b2{background:var(--gold);}.b3{background:var(--red);}.b4{background:#222;border:1px solid #444;}
 .ht h1{font-family:'Noto Serif KR',serif;font-size:1.1rem;font-weight:900;color:#fff;}
 .ht h1 em{color:var(--gold);font-style:normal;}
@@ -80,8 +70,6 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
 .gb{background:#1a1a2e;color:#aaa;text-align:center;padding:7px;font-size:.71rem;display:none;}
 .gb.show{display:block;}
 .gb button{background:var(--red);color:#fff;border:none;border-radius:5px;padding:3px 10px;font-size:.69rem;cursor:pointer;margin-left:7px;}
-
-/* ── 알림 드롭 ── */
 .ndrop{position:absolute;top:46px;right:0;width:275px;background:#fff;border:1px solid var(--bd);border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,.15);z-index:300;display:none;overflow:hidden;}
 .ndrop.show{display:block;}
 .ndrop-h{padding:10px 13px;font-size:.78rem;font-weight:700;border-bottom:1px solid var(--bd);display:flex;justify-content:space-between;align-items:center;}
@@ -91,8 +79,6 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
 .nrow:hover{background:#fafafa;}.nrow.new{background:#fff8e1;}
 .nrow-t{font-size:.77rem;font-weight:600;}.nrow-s{font-size:.66rem;color:var(--gray);margin-top:2px;}
 .nempty{padding:18px;text-align:center;font-size:.77rem;color:var(--gray);}
-
-/* ── 탭 네비 ── */
 .tnav-wrap{background:#1a1a1a;border-bottom:2px solid #222;}
 .tnav-inner{max-width:900px;margin:0 auto;display:flex;padding:0 10px;overflow-x:auto;scrollbar-width:none;}
 .tnav-inner::-webkit-scrollbar{display:none;}
@@ -106,24 +92,18 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
 .sdots{display:flex;justify-content:center;gap:5px;padding:4px 0 2px;}
 .sdot{width:5px;height:5px;border-radius:50%;background:#ccc;transition:all .2s;}
 .sdot.active{background:var(--gold);width:16px;border-radius:3px;}
-
-/* ── 히어로 ── */
 .hero{background:linear-gradient(135deg,var(--black) 60%,var(--dk) 100%);color:#fff;border-radius:14px;padding:18px 20px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--sh);position:relative;overflow:hidden;}
 .hero::before{content:'🥋';position:absolute;right:14px;font-size:4rem;opacity:.1;top:50%;transform:translateY(-50%);}
 .hero h2{font-family:'Noto Serif KR',serif;font-size:1.1rem;font-weight:900;}
 .hero p{font-size:.72rem;color:#bbb;margin-top:3px;}
 .btn-wr{background:var(--gold);color:var(--black);border:none;border-radius:8px;padding:10px 18px;font-size:.8rem;font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:all .2s;z-index:1;position:relative;}
 .btn-wr:hover{background:var(--lgold);transform:translateY(-1px);}
-
-/* ── 검색 ── */
 .srch-wrap{background:var(--card);border-radius:12px;box-shadow:var(--sh);padding:13px;margin-bottom:13px;}
 .srch-bar{display:flex;align-items:center;background:#f0eeea;border-radius:9px;padding:8px 12px;gap:7px;}
 .srch-bar input{flex:1;background:none;border:none;outline:none;font-size:.83rem;}
 .stags{display:flex;gap:6px;margin-top:9px;flex-wrap:wrap;}
 .stag{background:#f0f0f0;border-radius:20px;padding:5px 12px;font-size:.75rem;cursor:pointer;font-weight:500;transition:all .15s;border:1.5px solid transparent;}
 .stag:hover{background:#eee;}.stag.active{background:var(--black);color:#fff;}
-
-/* ── 게시물 카드 ── */
 .post-list{display:flex;flex-direction:column;gap:9px;}
 .pcard{background:var(--card);border-radius:12px;box-shadow:var(--sh);overflow:hidden;border:1.5px solid transparent;transition:all .18s;}
 .pcard:hover{border-color:var(--red);transform:translateY(-2px);box-shadow:0 6px 20px rgba(200,16,46,.12);}
@@ -131,16 +111,13 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
 .pch{display:flex;align-items:center;padding:11px 13px 7px;gap:8px;}
 .pav{width:32px;height:32px;border-radius:50%;flex-shrink:0;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700;color:#fff;}
 .pav img{width:100%;height:100%;object-fit:cover;}
-.pui{flex:1;}
-.pun{font-size:.82rem;font-weight:700;}.pdt{font-size:.64rem;color:var(--gray);}
+.pui{flex:1;}.pun{font-size:.82rem;font-weight:700;}.pdt{font-size:.64rem;color:var(--gray);}
 .pmore{background:none;border:none;font-size:.95rem;cursor:pointer;color:var(--gray);padding:4px 8px;}
 .ptrow{padding:0 13px 5px;display:flex;align-items:flex-start;flex-wrap:wrap;}
 .tag{display:inline-block;color:#fff;font-size:.57rem;font-weight:700;padding:2px 7px;border-radius:4px;margin-right:5px;vertical-align:middle;flex-shrink:0;}
-.tag-공지{background:var(--gold);color:var(--black);}
-.tag-일반{background:#555;}.tag-훈련{background:var(--green);}
+.tag-공지{background:var(--gold);color:var(--black);}.tag-일반{background:#555;}.tag-훈련{background:var(--green);}
 .tag-일정{background:var(--blue);}.tag-동영상{background:var(--purple);}
-.tag-자유{background:#e65100;}.tag-정보{background:#1565C0;}
-.tag-질문{background:#6a1b9a;}.tag-유머{background:#e91e63;}
+.tag-자유{background:#e65100;}.tag-정보{background:#1565C0;}.tag-질문{background:#6a1b9a;}.tag-유머{background:#e91e63;}
 .ptitle{font-family:'Noto Serif KR',serif;font-size:.92rem;font-weight:700;cursor:pointer;line-height:1.4;}
 .pimg{width:100%;max-height:280px;object-fit:cover;display:block;cursor:pointer;}
 .pvideo{width:100%;aspect-ratio:16/9;display:block;}
@@ -161,8 +138,6 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
 .att-strip{padding:5px 12px;background:#f0fff4;border-top:1px solid #e8f5e9;font-size:.72rem;cursor:pointer;}
 .empty-st{text-align:center;padding:46px 18px;color:var(--gray);}
 .empty-st .ej{font-size:2.6rem;margin-bottom:10px;}
-
-/* ── 공지 ── */
 .nhero{background:linear-gradient(135deg,var(--black) 60%,#1a1000 100%);color:#fff;border-radius:12px;padding:18px 20px;margin-bottom:13px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--sh);position:relative;overflow:hidden;}
 .nhero::before{content:'📢';position:absolute;right:14px;font-size:3.8rem;opacity:.1;top:50%;transform:translateY(-50%);}
 .nhero h2{font-family:'Noto Serif KR',serif;font-size:1rem;font-weight:900;}
@@ -178,8 +153,6 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
 .nwi:focus{border-color:var(--gold);}
 .nwta{width:100%;border:1.5px solid var(--bd);border-radius:8px;padding:9px 12px;font-size:.83rem;outline:none;resize:vertical;min-height:70px;margin-bottom:8px;}
 .nwta:focus{border-color:var(--gold);}
-
-/* ── 달력 ── */
 .calcard{background:var(--card);border-radius:12px;box-shadow:var(--sh);overflow:hidden;margin-bottom:13px;}
 .calh{background:var(--black);color:#fff;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;}
 .calh h3{font-family:'Noto Serif KR',serif;font-size:.92rem;font-weight:700;}
@@ -207,8 +180,6 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
 .udmon{font-size:.56rem;color:var(--red);font-weight:700;text-transform:uppercase;}
 .udday{font-size:1.2rem;font-weight:900;line-height:1;font-family:'Noto Serif KR',serif;}
 .utxt h5{font-size:.8rem;font-weight:700;}.utxt p{font-size:.66rem;color:var(--gray);margin-top:2px;}
-
-/* ── 민원/신고 ── */
 .rhero{background:linear-gradient(135deg,#0a0a2e 60%,#1a0a0a 100%);color:#fff;border-radius:12px;padding:18px 20px;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--sh);position:relative;overflow:hidden;}
 .rhero::before{content:'🔒';position:absolute;right:14px;font-size:3.8rem;opacity:.12;top:50%;transform:translateY(-50%);}
 .rhero h2{font-family:'Noto Serif KR',serif;font-size:1rem;font-weight:900;}
@@ -228,14 +199,10 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
 .ritem{background:var(--card);border-radius:12px;box-shadow:var(--sh);padding:13px;margin-bottom:9px;border-left:4px solid var(--purple);}
 .rih{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:6px;flex-wrap:wrap;gap:6px;}
 .ritag{display:inline-block;background:var(--purple);color:#fff;font-size:.59rem;font-weight:700;padding:2px 7px;border-radius:4px;margin-right:5px;}
-.rititl{font-size:.87rem;font-weight:700;}
-.ridate{font-size:.65rem;color:var(--gray);}
+.rititl{font-size:.87rem;font-weight:700;}.ridate{font-size:.65rem;color:var(--gray);}
 .ribody{font-size:.8rem;line-height:1.75;white-space:pre-wrap;}
 .ristatus{display:inline-block;font-size:.64rem;font-weight:700;padding:2px 7px;border-radius:4px;}
-.ristatus.pending{background:#fff3e0;color:#e65100;}
-.ristatus.done{background:#e8f5e9;color:var(--green);}
-
-/* ── 포스트 상세 ── */
+.ristatus.pending{background:#fff3e0;color:#e65100;}.ristatus.done{background:#e8f5e9;color:var(--green);}
 #pg-detail,#pg-write{display:none;background:var(--bg);min-height:100vh;padding-bottom:80px;}
 .detail-inner,#write-inner-wrap{max-width:900px;margin:0 auto;padding:12px 13px;}
 .detcard{background:var(--card);border-radius:12px;box-shadow:var(--sh);}
@@ -251,22 +218,13 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
 .dci:last-child{border-bottom:none;padding-bottom:6px;}
 .dcav{width:28px;height:28px;border-radius:50%;flex-shrink:0;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:700;color:#fff;}
 .dcav img{width:100%;height:100%;object-fit:cover;}
-.dcb{flex:1;}
-.dcan{font-size:.8rem;font-weight:700;}
+.dcb{flex:1;}.dcan{font-size:.8rem;font-weight:700;}
 .dctext{font-size:.8rem;line-height:1.6;white-space:pre-wrap;color:#333;word-break:break-word;}
 .dcdate{font-size:.63rem;color:var(--gray);margin-top:3px;display:flex;align-items:center;gap:7px;}
 .btn-dcdel{background:none;border:none;color:#ccc;font-size:.63rem;cursor:pointer;}
 .btn-dcdel:hover{color:var(--red);}
-.dcwrite{
-  position:fixed;bottom:0;left:0;right:0;
-  background:#fff;border-top:1.5px solid var(--bd);
-  padding:10px 14px;display:flex;align-items:center;gap:9px;
-  z-index:150;max-width:900px;margin:0 auto;
-  box-shadow:0 -2px 12px rgba(0,0,0,.08);
-}
-@media(min-width:900px){
-  .dcwrite{left:50%;right:auto;transform:translateX(-50%);width:900px;}
-}
+.dcwrite{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1.5px solid var(--bd);padding:10px 14px;display:flex;align-items:center;gap:9px;z-index:150;max-width:900px;margin:0 auto;box-shadow:0 -2px 12px rgba(0,0,0,.08);}
+@media(min-width:900px){.dcwrite{left:50%;right:auto;transform:translateX(-50%);width:900px;}}
 .dcwav{width:28px;height:28px;border-radius:50%;flex-shrink:0;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:700;color:#fff;}
 .dcwav img{width:100%;height:100%;object-fit:cover;}
 .dcinput{flex:1;border:1.5px solid var(--bd);border-radius:22px;outline:none;font-size:.83rem;padding:8px 14px;background:#fafafa;transition:border .2s;}
@@ -285,8 +243,6 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
 .btnatt{padding:7px 11px;border:none;border-radius:8px;font-size:.74rem;font-weight:700;cursor:pointer;color:#fff;}
 .btnatt.go{background:var(--green);}.btnatt.no{background:var(--red);}
 .atttog{background:none;border:1px solid var(--bd);border-radius:6px;padding:2px 8px;font-size:.64rem;cursor:pointer;margin-left:auto;}
-
-/* ── 글쓰기 ── */
 .wfcard{background:var(--card);border-radius:12px;box-shadow:var(--sh);overflow:hidden;}
 .wfhead{background:var(--black);color:#fff;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;}
 .wfhead h2{font-family:'Noto Serif KR',serif;font-size:.95rem;font-weight:700;}
@@ -311,7 +267,6 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
 .vidinput{width:100%;border:1.5px solid var(--bd);border-radius:8px;padding:9px 12px;font-size:.82rem;outline:none;margin-bottom:6px;}
 .vidinput:focus{border-color:var(--red);}
 .vidhint{font-size:.67rem;color:var(--gray);margin-bottom:8px;}
-
 /* ── 관리자 패널 ── */
 .admin-panel-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:600;align-items:flex-start;justify-content:center;padding:0;overflow-y:auto;}
 .admin-panel-modal.show{display:flex;}
@@ -320,22 +275,26 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
 .ap-head h2{font-family:'Noto Serif KR',serif;font-size:1rem;font-weight:900;}
 .ap-head h2 em{color:var(--gold);font-style:normal;}
 .ap-close{background:none;border:none;color:#aaa;font-size:1.1rem;cursor:pointer;}
-.ap-tabs{display:flex;background:#1a1a1a;border-bottom:2px solid #222;}
-.aptab{flex:1;text-align:center;padding:10px;font-size:.78rem;font-weight:600;color:#666;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .2s;}
+.ap-tabs{display:flex;background:#1a1a1a;border-bottom:2px solid #222;overflow-x:auto;scrollbar-width:none;}
+.ap-tabs::-webkit-scrollbar{display:none;}
+.aptab{flex:1;text-align:center;padding:10px 8px;font-size:.76rem;font-weight:600;color:#666;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .2s;white-space:nowrap;}
 .aptab:hover{color:#ccc;}.aptab.active{color:var(--gold);border-bottom-color:var(--gold);}
 .ap-body{padding:14px;}
+/* 유저 카드 */
 .user-card{background:var(--card);border-radius:12px;box-shadow:var(--sh);padding:14px;margin-bottom:9px;}
 .uc-top{display:flex;align-items:center;gap:11px;margin-bottom:8px;}
 .uc-av{width:42px;height:42px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:700;color:#fff;}
-.uc-info{flex:1;}
-.uc-name{font-size:.92rem;font-weight:700;}
-.uc-id{font-size:.72rem;color:var(--gray);}
+.uc-info{flex:1;}.uc-name{font-size:.92rem;font-weight:700;}.uc-id{font-size:.72rem;color:var(--gray);}
 .uc-role{display:inline-block;font-size:.62rem;font-weight:700;padding:2px 8px;border-radius:4px;margin-top:3px;}
-.uc-role.super{background:#7b1fa2;color:#fff;}
-.uc-role.admin{background:var(--gold);color:var(--black);}
-.uc-role.member{background:#eee;color:#555;}
-.uc-role.banned{background:var(--red);color:#fff;}
+.uc-role.super{background:var(--purple);color:#fff;}.uc-role.admin{background:var(--gold);color:var(--black);}
+.uc-role.member{background:#eee;color:#555;}.uc-role.banned{background:var(--red);color:#fff;}
 .uc-email{background:#f8f8f8;border-radius:6px;padding:6px 10px;font-size:.72rem;color:#555;margin-bottom:8px;}
+/* 비밀번호 박스 */
+.uc-pwbox{background:#1a1a2e;border-radius:8px;padding:9px 12px;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between;gap:8px;}
+.uc-pwlabel{font-size:.68rem;color:#888;flex-shrink:0;}
+.uc-pwval{font-family:monospace;font-size:.82rem;color:#a8d8a8;letter-spacing:1px;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin:0 8px;}
+.uc-pwval.revealed{color:#FFD54F;}
+.uc-pwbtns{display:flex;gap:5px;flex-shrink:0;}
 .uc-actions{display:flex;gap:7px;flex-wrap:wrap;}
 .ucbtn{border:none;border-radius:7px;padding:6px 12px;font-size:.74rem;font-weight:600;cursor:pointer;transition:all .2s;}
 .ucbtn.tmppw{background:#e3f2fd;color:var(--blue);border:1px solid #90caf9;}
@@ -344,21 +303,18 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
 .ucbtn.ban{background:#ffebee;color:var(--red);}
 .ucbtn.unban{background:#e8f5e9;color:var(--green);}
 .ucbtn.del{background:#ffebee;color:var(--red);border:1px solid #ffcccc;}
+.ucbtn.changepw{background:#fff3e0;color:#e65100;border:1px solid #ffcc80;}
 .uc-date{font-size:.65rem;color:var(--gray);margin-top:6px;}
 .stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-bottom:14px;}
 .stat-card{background:var(--card);border-radius:12px;box-shadow:var(--sh);padding:14px;text-align:center;}
 .stat-num{font-size:1.8rem;font-weight:900;font-family:'Noto Serif KR',serif;}
 .stat-lbl{font-size:.72rem;color:var(--gray);margin-top:3px;}
 .setting-row{background:var(--card);border-radius:12px;box-shadow:var(--sh);padding:14px;margin-bottom:9px;display:flex;align-items:center;justify-content:space-between;gap:9px;}
-.setting-info h4{font-size:.88rem;font-weight:700;}
-.setting-info p{font-size:.72rem;color:var(--gray);margin-top:2px;}
-
-/* ── 공통 모달 ── */
+.setting-info h4{font-size:.88rem;font-weight:700;}.setting-info p{font-size:.72rem;color:var(--gray);margin-top:2px;}
 .overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:400;align-items:center;justify-content:center;padding:18px;}
 .overlay.show{display:flex;}
 .mbox{background:#fff;border-radius:14px;padding:22px;width:100%;max-width:360px;text-align:center;box-shadow:0 8px 36px rgba(0,0,0,.22);max-height:90vh;overflow-y:auto;}
-.mbox h3{font-size:.95rem;margin-bottom:8px;}
-.mbox p{font-size:.76rem;color:var(--gray);margin-bottom:12px;}
+.mbox h3{font-size:.95rem;margin-bottom:8px;}.mbox p{font-size:.76rem;color:var(--gray);margin-bottom:12px;}
 .mi{width:100%;border:1.5px solid var(--bd);border-radius:8px;padding:9px 12px;font-size:.83rem;outline:none;margin-bottom:11px;}
 .mi:focus{border-color:var(--red);}
 .mlbl{display:block;font-size:.72rem;font-weight:700;color:#555;margin-bottom:4px;text-align:left;}
@@ -372,13 +328,10 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
 .daym.show{display:flex;}
 .daymb{background:#fff;border-radius:14px;width:90%;max-width:360px;overflow:hidden;}
 .daymh{background:var(--black);color:#fff;padding:12px 15px;display:flex;justify-content:space-between;align-items:center;}
-.daymh h3{font-size:.87rem;font-weight:700;}
-.daymx{background:none;border:none;color:#aaa;font-size:1rem;cursor:pointer;}
+.daymh h3{font-size:.87rem;font-weight:700;}.daymx{background:none;border:none;color:#aaa;font-size:1rem;cursor:pointer;}
 .daymbody{padding:13px;max-height:46vh;overflow-y:auto;}
 .dev{padding:8px 11px;border-radius:8px;background:#f5f5f5;margin-bottom:6px;cursor:pointer;}
 .dev:hover{background:#eee;}
-
-/* ── 유틸 ── */
 .mini-spin{position:fixed;inset:0;background:rgba(255,255,255,.45);z-index:700;display:none;align-items:center;justify-content:center;}
 .mini-spin.show{display:flex;}
 .toast{position:fixed;bottom:75px;left:50%;transform:translateX(-50%) translateY(26px);background:rgba(0,0,0,.87);color:#fff;padding:9px 18px;border-radius:24px;font-size:.77rem;font-weight:500;z-index:800;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap;}
@@ -388,43 +341,27 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
 </style>
 </head>
 <body>
-
-<!-- 로더 -->
 <div id="loader">
   <div class="ld-belt"><span style="background:#fff"></span><span style="background:#D4AF37"></span><span style="background:#C8102E"></span><span style="background:#333;border:1px solid #555"></span></div>
   <div class="ld-logo">석사 태권도 <em>시범단</em></div>
   <div class="spin"></div>
 </div>
-
-<!-- 인증 화면 -->
 <div id="pg-auth">
   <div class="aw">
-    <div class="ah">
-      <div class="abelt"><span class="ab1"></span><span class="ab2"></span><span class="ab3"></span><span class="ab4"></span></div>
-      <div class="atitle">석사 태권도 <em>시범단</em></div>
-    </div>
+    <div class="ah"><div class="abelt"><span class="ab1"></span><span class="ab2"></span><span class="ab3"></span><span class="ab4"></span></div><div class="atitle">석사 태권도 <em>시범단</em></div></div>
     <div class="asub">Demonstration Team Community</div>
-    <div class="atabs">
-      <div class="atab active" id="tab-login" onclick="switchAuthTab('login')">로그인</div>
-      <div class="atab" id="tab-signup" onclick="switchAuthTab('signup')">회원가입</div>
-    </div>
-
-    <!-- 로그인 폼 -->
+    <div class="atabs"><div class="atab active" id="tab-login" onclick="switchAuthTab('login')">로그인</div><div class="atab" id="tab-signup" onclick="switchAuthTab('signup')">회원가입</div></div>
     <div id="form-login">
       <div class="abox">
         <div class="aerr" id="lerr"></div>
         <input class="ai" id="liu" type="text" placeholder="아이디 (한글/영문 모두 가능)">
         <input class="ai" id="lip" type="password" placeholder="비밀번호">
         <button class="btn-auth" id="btn-login" onclick="doLogin()">로그인</button>
-        <div class="afindrow">
-          비밀번호를 잊으셨나요? <a onclick="alert('관리자(dlgustjr)에게 임시 비밀번호 발급을 요청해주세요.\n\n관리자가 회원관리에서 [🔑 임시비번 발급]을 눌러 새 비밀번호를 알려드려요.')">비밀번호 찾기</a>
-        </div>
+        <div class="afindrow">비밀번호를 잊으셨나요? <a onclick="alert('관리자(dlgustjr)에게 임시 비밀번호 발급을 요청해주세요.')">비밀번호 찾기</a></div>
         <div class="adiv">또는</div>
         <button class="btn-guest" onclick="doGuest()">👀 게스트로 둘러보기</button>
       </div>
     </div>
-
-    <!-- 회원가입 폼 -->
     <div id="form-signup" style="display:none;">
       <div class="abox">
         <div class="aerr" id="serr"></div>
@@ -435,23 +372,18 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
         <input class="ai" id="su-pw" type="password" placeholder="비밀번호 (4자 이상)">
         <input class="ai" id="su-pw2" type="password" placeholder="비밀번호 확인">
         <button class="btn-auth" id="btn-signup" onclick="doSignup()">회원가입</button>
-        <p style="font-size:.68rem;color:#666;text-align:center;margin-top:6px;line-height:1.6;">※ 가입 후 관리자 승인 없이 바로 이용 가능해요<br>※ 이메일은 가입 후 [내 정보]에서 등록할 수 있어요</p>
+        <p style="font-size:.68rem;color:#666;text-align:center;margin-top:6px;line-height:1.6;">※ 가입 후 바로 이용 가능해요</p>
       </div>
     </div>
   </div>
 </div>
-
-<!-- 앱 -->
 <div id="pg-app">
   <div class="gb" id="gb">👀 게스트 모드 — 보기만 가능해요 <button onclick="doLogout()">로그인</button></div>
   <header>
     <div class="hinner">
       <div class="hlogo" onclick="goPanel(1)">
         <div class="belt"><span class="b1"></span><span class="b2"></span><span class="b3"></span><span class="b4"></span></div>
-        <div class="ht">
-          <h1>석사 태권도 <em>시범단</em></h1>
-          <p>Demonstration Team Board</p>
-        </div>
+        <div class="ht"><h1>석사 태권도 <em>시범단</em></h1><p>Demonstration Team Board</p></div>
       </div>
       <div class="hr">
         <button class="hbtn" onclick="toggleNotif()">🔔<div class="hdot" id="hdot"></div></button>
@@ -467,8 +399,6 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
       </div>
     </div>
   </header>
-
-  <!-- 탭 -->
   <div class="tnav-wrap">
     <div class="tnav-inner">
       <div class="tnav" onclick="goPanel(0)" id="tnav-0">📢 공지</div>
@@ -479,133 +409,58 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
     </div>
   </div>
   <div class="swipe-hint">← 탭을 누르거나 좌우 스와이프</div>
-
   <div class="swipe-con" id="swipe-con">
     <div class="swipe-trk" id="swipe-trk">
-
       <!-- 패널 0: 공지 -->
       <div class="spw"><div class="spi">
-        <div class="nhero">
-          <div><h2>📢 전체 공지사항</h2><p>관리자가 올린 중요 공지를 확인하세요</p></div>
-          <button class="btn-wr" id="btn-nw" style="display:none;" onclick="showNW()">+ 작성</button>
-        </div>
-        <div id="nw-area" style="display:none;">
-          <div class="nwbox">
-            <input class="nwi" id="nwt" placeholder="공지 제목">
-            <textarea class="nwta" id="nwb" placeholder="공지 내용..."></textarea>
-            <div style="display:flex;gap:7px;">
-              <button style="background:var(--gold);color:var(--black);border:none;border-radius:8px;padding:8px 16px;font-size:.78rem;font-weight:700;cursor:pointer;" onclick="submitNotice()">등록</button>
-              <button onclick="hideNW()" style="background:#f0f0f0;border:none;border-radius:8px;padding:8px 12px;font-size:.78rem;cursor:pointer;">취소</button>
-            </div>
-          </div>
-        </div>
+        <div class="nhero"><div><h2>📢 전체 공지사항</h2><p>관리자가 올린 중요 공지를 확인하세요</p></div><button class="btn-wr" id="btn-nw" style="display:none;" onclick="showNW()">+ 작성</button></div>
+        <div id="nw-area" style="display:none;"><div class="nwbox"><input class="nwi" id="nwt" placeholder="공지 제목"><textarea class="nwta" id="nwb" placeholder="공지 내용..."></textarea><div style="display:flex;gap:7px;"><button style="background:var(--gold);color:var(--black);border:none;border-radius:8px;padding:8px 16px;font-size:.78rem;font-weight:700;cursor:pointer;" onclick="submitNotice()">등록</button><button onclick="hideNW()" style="background:#f0f0f0;border:none;border-radius:8px;padding:8px 12px;font-size:.78rem;cursor:pointer;">취소</button></div></div></div>
         <div id="notice-list"></div>
       </div></div>
-
       <!-- 패널 1: 게시판 -->
       <div class="spw"><div class="spi">
-        <div class="srch-wrap">
-          <div class="srch-bar"><span>🔍</span><input id="s-board" type="text" placeholder="제목, 이름, 내용 검색..." oninput="doSearch(this.value,'board')"></div>
-          <div class="stags">
-            <span class="stag active" onclick="ftag(this,'board','')">전체</span>
-            <span class="stag" onclick="ftag(this,'board','일정')">📅 일정</span>
-            <span class="stag" onclick="ftag(this,'board','훈련')">🥊 훈련</span>
-            <span class="stag" onclick="ftag(this,'board','공지')">📢 공지</span>
-          </div>
-        </div>
-        <div class="hero">
-          <div><h2>시범단 게시판</h2><p>공지, 훈련, 일정 등을 올려요 🥋</p></div>
-          <button class="btn-wr" onclick="openWrite('board')">✏️ 글 쓰기</button>
-        </div>
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;padding:0 2px;">
-          <h3 style="font-family:'Noto Serif KR',serif;font-size:.92rem;font-weight:700;">📋 전체 글</h3>
-          <span style="font-size:.72rem;color:var(--gray);">총 <span id="board-cnt" style="color:var(--red);font-weight:700;">0</span>개</span>
-        </div>
+        <div class="srch-wrap"><div class="srch-bar"><span>🔍</span><input id="s-board" type="text" placeholder="제목, 이름, 내용 검색..." oninput="doSearch(this.value,'board')"></div><div class="stags"><span class="stag active" onclick="ftag(this,'board','')">전체</span><span class="stag" onclick="ftag(this,'board','일정')">📅 일정</span><span class="stag" onclick="ftag(this,'board','훈련')">🥊 훈련</span><span class="stag" onclick="ftag(this,'board','공지')">📢 공지</span></div></div>
+        <div class="hero"><div><h2>시범단 게시판</h2><p>공지, 훈련, 일정 등을 올려요 🥋</p></div><button class="btn-wr" onclick="openWrite('board')">✏️ 글 쓰기</button></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;padding:0 2px;"><h3 style="font-family:'Noto Serif KR',serif;font-size:.92rem;font-weight:700;">📋 전체 글</h3><span style="font-size:.72rem;color:var(--gray);">총 <span id="board-cnt" style="color:var(--red);font-weight:700;">0</span>개</span></div>
         <div class="post-list" id="board-list"></div>
       </div></div>
-
       <!-- 패널 2: 자율게시판 -->
       <div class="spw"><div class="spi">
-        <div class="srch-wrap">
-          <div class="srch-bar"><span>🔍</span><input id="s-free" type="text" placeholder="검색..." oninput="doSearch(this.value,'free')"></div>
-          <div class="stags">
-            <span class="stag active" onclick="ftag(this,'free','')">전체</span>
-            <span class="stag" onclick="ftag(this,'free','자유')">💬 자유</span>
-            <span class="stag" onclick="ftag(this,'free','정보')">📌 정보</span>
-            <span class="stag" onclick="ftag(this,'free','질문')">❓ 질문</span>
-            <span class="stag" onclick="ftag(this,'free','유머')">😂 유머</span>
-          </div>
-        </div>
-        <div class="hero" style="background:linear-gradient(135deg,#1a1a1a 60%,#2d1a00 100%);">
-          <div><h2>자율게시판</h2><p>자유롭게 이야기해요 😄</p></div>
-          <button class="btn-wr" onclick="openWrite('free')">✏️ 글 쓰기</button>
-        </div>
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;padding:0 2px;">
-          <h3 style="font-family:'Noto Serif KR',serif;font-size:.92rem;font-weight:700;">📝 자율게시판</h3>
-          <span style="font-size:.72rem;color:var(--gray);">총 <span id="free-cnt" style="color:var(--red);font-weight:700;">0</span>개</span>
-        </div>
+        <div class="srch-wrap"><div class="srch-bar"><span>🔍</span><input id="s-free" type="text" placeholder="검색..." oninput="doSearch(this.value,'free')"></div><div class="stags"><span class="stag active" onclick="ftag(this,'free','')">전체</span><span class="stag" onclick="ftag(this,'free','자유')">💬 자유</span><span class="stag" onclick="ftag(this,'free','정보')">📌 정보</span><span class="stag" onclick="ftag(this,'free','질문')">❓ 질문</span><span class="stag" onclick="ftag(this,'free','유머')">😂 유머</span></div></div>
+        <div class="hero" style="background:linear-gradient(135deg,#1a1a1a 60%,#2d1a00 100%);"><div><h2>자율게시판</h2><p>자유롭게 이야기해요 😄</p></div><button class="btn-wr" onclick="openWrite('free')">✏️ 글 쓰기</button></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;padding:0 2px;"><h3 style="font-family:'Noto Serif KR',serif;font-size:.92rem;font-weight:700;">📝 자율게시판</h3><span style="font-size:.72rem;color:var(--gray);">총 <span id="free-cnt" style="color:var(--red);font-weight:700;">0</span>개</span></div>
         <div class="post-list" id="free-list"></div>
       </div></div>
-
       <!-- 패널 3: 달력 -->
       <div class="spw"><div class="spi">
-        <div class="calcard">
-          <div class="calh"><h3>📅 일정 달력</h3><div class="calnav"><button onclick="calPrev()">‹</button><div class="callbl" id="callbl"></div><button onclick="calNext()">›</button></div></div>
-          <div class="calbody">
-            <div class="calwdays"><div class="cwd">일</div><div class="cwd">월</div><div class="cwd">화</div><div class="cwd">수</div><div class="cwd">목</div><div class="cwd">금</div><div class="cwd">토</div></div>
-            <div class="calgrid" id="calgrid"></div>
-          </div>
-        </div>
+        <div class="calcard"><div class="calh"><h3>📅 일정 달력</h3><div class="calnav"><button onclick="calPrev()">‹</button><div class="callbl" id="callbl"></div><button onclick="calNext()">›</button></div></div><div class="calbody"><div class="calwdays"><div class="cwd">일</div><div class="cwd">월</div><div class="cwd">화</div><div class="cwd">수</div><div class="cwd">목</div><div class="cwd">금</div><div class="cwd">토</div></div><div class="calgrid" id="calgrid"></div></div></div>
         <div class="upwrap"><h4>🔜 다가오는 일정</h4><div id="uplist"></div></div>
         <div style="text-align:right;margin-top:10px;"><button class="btn-wr" onclick="openWriteSched()">+ 일정 추가</button></div>
       </div></div>
-
       <!-- 패널 4: 민원/신고 -->
       <div class="spw"><div class="spi">
         <div class="rhero"><div><h2>🔒 익명 민원 및 신고</h2><p>완전 익명으로 접수돼요</p></div></div>
         <div class="rnotice">🛡️ <strong>완전 익명 보장</strong> — 작성자 정보는 저장되지 않아요<br>📋 접수된 내용은 관리자만 확인 가능해요</div>
         <div class="rform">
           <label class="rl">유형 선택</label>
-          <div class="rtypes">
-            <button class="rtbtn active" onclick="selRT(this,'일반민원')">📋 일반민원</button>
-            <button class="rtbtn" onclick="selRT(this,'불편신고')">😤 불편신고</button>
-            <button class="rtbtn" onclick="selRT(this,'부조리신고')">⚠️ 부조리</button>
-            <button class="rtbtn" onclick="selRT(this,'칭찬/건의')">💡 건의</button>
-          </div>
-          <label class="rl">제목</label>
-          <input class="ri" id="r-title" type="text" placeholder="제목을 입력하세요" maxlength="60">
-          <label class="rl">내용</label>
-          <textarea class="rta" id="r-content" placeholder="내용을 자세히 작성해주세요..."></textarea>
+          <div class="rtypes"><button class="rtbtn active" onclick="selRT(this,'일반민원')">📋 일반민원</button><button class="rtbtn" onclick="selRT(this,'불편신고')">😤 불편신고</button><button class="rtbtn" onclick="selRT(this,'부조리신고')">⚠️ 부조리</button><button class="rtbtn" onclick="selRT(this,'칭찬/건의')">💡 건의</button></div>
+          <label class="rl">제목</label><input class="ri" id="r-title" type="text" placeholder="제목을 입력하세요" maxlength="60">
+          <label class="rl">내용</label><textarea class="rta" id="r-content" placeholder="내용을 자세히 작성해주세요..."></textarea>
           <button class="btn-rsub" onclick="submitReport()">🔒 익명으로 제출하기</button>
         </div>
-        <div id="r-admin-area" style="display:none;margin-top:16px;">
-          <div style="font-family:'Noto Serif KR',serif;font-size:.92rem;font-weight:700;margin-bottom:10px;">📥 접수된 민원/신고 <span id="r-cnt" style="color:var(--red);"></span></div>
-          <div id="r-list"></div>
-        </div>
+        <div id="r-admin-area" style="display:none;margin-top:16px;"><div style="font-family:'Noto Serif KR',serif;font-size:.92rem;font-weight:700;margin-bottom:10px;">📥 접수된 민원/신고 <span id="r-cnt" style="color:var(--red);"></span></div><div id="r-list"></div></div>
       </div></div>
-
     </div>
   </div>
   <div class="sdots"><div class="sdot" id="dot-0"></div><div class="sdot active" id="dot-1"></div><div class="sdot" id="dot-2"></div><div class="sdot" id="dot-3"></div><div class="sdot" id="dot-4"></div></div>
 </div>
-
-<!-- 포스트 상세 -->
-<div id="pg-detail">
-  <div class="detail-inner"></div>
-</div>
-
-<!-- 글쓰기 -->
-<div id="pg-write">
-  <div id="write-inner-wrap"><div class="wfcard" id="wf-inner"></div></div>
-</div>
+<div id="pg-detail"><div class="detail-inner"></div></div>
+<div id="pg-write"><div id="write-inner-wrap"><div class="wfcard" id="wf-inner"></div></div></div>
 
 <!-- 관리자 패널 -->
 <div class="admin-panel-modal" id="m-admin-panel">
   <div class="admin-panel">
-    <div class="ap-head">
-      <h2 id="ap-title">👑 관리자 <em>패널</em></h2>
-      <button class="ap-close" onclick="closeAdminPanel()">✕ 닫기</button>
-    </div>
+    <div class="ap-head"><h2 id="ap-title">👑 관리자 <em>패널</em></h2><button class="ap-close" onclick="closeAdminPanel()">✕ 닫기</button></div>
     <div class="ap-tabs">
       <div class="aptab" id="aptab-users" onclick="switchAPTab('users')">👥 회원 관리</div>
       <div class="aptab" id="aptab-create" onclick="switchAPTab('create')">➕ 계정 만들기</div>
@@ -616,15 +471,13 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
   </div>
 </div>
 
-<!-- 내 정보 모달 (모든 로그인 회원) -->
+<!-- 내 정보 모달 -->
 <div class="overlay" id="m-usersettings">
   <div class="mbox" style="text-align:left;">
     <h3 style="text-align:center;">👤 내 정보 설정</h3>
-    <p style="text-align:center;">표시 이름, 이메일, 비밀번호를 변경할 수 있어요</p>
-    <label class="mlbl">📛 표시 이름 (닉네임)</label>
-    <input class="mi" id="us-name" type="text" placeholder="닉네임" maxlength="15">
-    <label class="mlbl">📧 이메일 (선택)</label>
-    <input class="mi" id="us-email" type="email" placeholder="example@email.com">
+    <p style="text-align:center;">닉네임, 이메일, 비밀번호를 변경할 수 있어요</p>
+    <label class="mlbl">📛 표시 이름 (닉네임)</label><input class="mi" id="us-name" type="text" placeholder="닉네임" maxlength="15">
+    <label class="mlbl">📧 이메일 (선택)</label><input class="mi" id="us-email" type="email" placeholder="example@email.com">
     <hr style="border:none;border-top:1px solid var(--bd);margin:6px 0 12px;">
     <label class="mlbl">🔒 새 비밀번호 (변경 시에만 입력)</label>
     <input class="mi" id="us-pw" type="password" placeholder="4자 이상">
@@ -633,7 +486,7 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
   </div>
 </div>
 
-<!-- 임시 비밀번호 발급 결과 모달 (관리자용) -->
+<!-- 임시 비밀번호 발급 결과 모달 -->
 <div class="overlay" id="m-tmppw">
   <div class="mbox">
     <h3>🔑 임시 비밀번호 발급 완료</h3>
@@ -643,13 +496,7 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
       <div class="tmppw-val" id="tmppw-val">--------</div>
       <button id="btn-copy-tmppw" onclick="copyTmpPw()" style="background:var(--gold);color:var(--black);border:none;border-radius:6px;padding:6px 14px;font-size:.76rem;font-weight:700;cursor:pointer;">📋 복사</button>
     </div>
-    <div class="tmppw-guide">
-      <strong>📌 회원에게 안내할 내용:</strong><br>
-      ① 위 임시 비밀번호로 로그인<br>
-      ② 우측 상단 <strong>👤</strong> 버튼 클릭<br>
-      ③ "내 정보 설정"에서 새 비밀번호로 변경<br>
-      <span style="color:var(--red);">※ 보안을 위해 즉시 변경하도록 안내하세요</span>
-    </div>
+    <div class="tmppw-guide"><strong>📌 회원에게 안내할 내용:</strong><br>① 위 임시 비밀번호로 로그인<br>② 우측 상단 <strong>👤</strong> 버튼 클릭<br>③ "내 정보 설정"에서 새 비밀번호로 변경<br><span style="color:var(--red);">※ 보안을 위해 즉시 변경하도록 안내하세요</span></div>
     <div class="mbtns2"><button class="mconfirm" onclick="closeM('m-tmppw')">확인</button></div>
   </div>
 </div>
@@ -660,13 +507,11 @@ header{background:var(--black);position:sticky;top:0;z-index:200;box-shadow:0 2p
   <input class="mi" id="del-pw" type="password" placeholder="비밀번호">
   <div class="mbtns2"><button class="mcancel" onclick="closeM('m-del')">취소</button><button class="mconfirm" onclick="confirmDel()">삭제</button></div></div>
 </div>
-
 <!-- 날짜 모달 -->
 <div class="daym" id="m-day">
   <div class="daymb"><div class="daymh"><h3 id="day-t">날짜</h3><button class="daymx" onclick="closeM('m-day')">✕</button></div>
   <div class="daymbody" id="day-b"></div></div>
 </div>
-
 <div class="mini-spin" id="ms"><div class="spin" style="width:36px;height:36px;border-width:4px;"></div></div>
 <div class="toast" id="toast"></div>
 
@@ -676,7 +521,7 @@ import { getDatabase,ref,push,set,get,remove,onValue,update }
   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
 const FB={apiKey:"AIzaSyCKz62B5-0kVS_ydha5hjZ5P394xR1MKyk",authDomain:"suksa-borad.firebaseapp.com",databaseURL:"https://suksa-borad-default-rtdb.firebaseio.com",projectId:"suksa-borad",storageBucket:"suksa-borad.firebasestorage.app",messagingSenderId:"686734600036",appId:"1:686734600036:web:d2f1dd34fabf81b5f67c71"};
-const app=initializeApp(FB); const db=getDatabase(app);
+const app=initializeApp(FB);const db=getDatabase(app);
 const DR=p=>ref(db,p);
 const DG=p=>get(DR(p)).then(s=>s.exists()?s.val():null);
 const DS=(p,d)=>set(DR(p),d);
@@ -686,50 +531,39 @@ const DU=(p,d)=>update(DR(p),d);
 const DON=(p,cb)=>onValue(DR(p),s=>cb(s.exists()?s.val():null));
 
 const ADMIN_PW="suksa";
-const SUPER_ADMIN="dlgustjr";   // ⭐ 슈퍼관리자 아이디 (이 사람만 회원관리/계정생성/설정 가능)
-const SUPER_DEFAULT_PW="suksa"; // 슈퍼관리자 자동 생성 시 기본 비번
+const SUPER_ADMIN="dlgustjr";
+const SUPER_DEFAULT_PW="suksa";
 const EMOJIS=["👍","❤️","🔥","😂","👏"];
 const AVC=["#e53935","#8e24aa","#1e88e5","#00897b","#fb8c00","#3949ab","#d81b60","#00acc1"];
 const MONTHS=["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"];
 const MONS_EN=["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
-const SK="sbd_s7"; const RK="sbd_r5";
+const SK="sbd_s7";const RK="sbd_r5";
 const APP_VERSION="1.1.0";
 
-// ── 상태 ──
-let CU=null, isGuest=false;
-let boardPosts=[], freePosts=[];
-let calY, calM;
-let delKey=null, delType=null, delBoard=null;
-let notifItems=[], notifIsOpen=false;
+let CU=null,isGuest=false;
+let boardPosts=[],freePosts=[];
+let calY,calM;
+let delKey=null,delType=null,delBoard=null;
+let notifItems=[],notifIsOpen=false;
 let lastVisitTs=parseInt(localStorage.getItem("sbd_lv")||"0");
 let localReacts=JSON.parse(localStorage.getItem(RK)||"{}");
-let boardQ="", boardTag="", freeQ="", freeTag="";
-let curRT="일반민원", curPanel=1, curWriteBoard="board", curMT="text";
+let boardQ="",boardTag="",freeQ="",freeTag="";
+let curRT="일반민원",curPanel=1,curWriteBoard="board",curMT="text";
 let curAuthTab="login";
 let _tmpPwClipboard="";
+// 비밀번호 캐시 (uid -> {plain, visible})
+const _pwCache={};
 
 (()=>{const n=new Date();calY=n.getFullYear();calM=n.getMonth();})();
 
-// ── 권한 헬퍼 ──
-const isSuper=()=>CU?.username===SUPER_ADMIN && !isGuest;
-const isAdminUser=()=>CU?.isAdmin && !isGuest;
+const isSuper=()=>CU?.username===SUPER_ADMIN&&!isGuest;
+const isAdminUser=()=>CU?.isAdmin&&!isGuest;
 
-// ── 유틸 ──
 function esc(s){return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");}
-function fmtDate(ts){
-  if(!ts||isNaN(ts))return"알 수 없음";
-  const d=new Date(ts),n=new Date(),df=n-d;
-  if(df<60000)return"방금 전";if(df<3600000)return Math.floor(df/60000)+"분 전";
-  if(df<86400000)return Math.floor(df/3600000)+"시간 전";if(df<604800000)return Math.floor(df/86400000)+"일 전";
-  return d.getFullYear()+"."+String(d.getMonth()+1).padStart(2,"0")+"."+String(d.getDate()).padStart(2,"0");
-}
+function fmtDate(ts){if(!ts||isNaN(ts))return"알 수 없음";const d=new Date(ts),n=new Date(),df=n-d;if(df<60000)return"방금 전";if(df<3600000)return Math.floor(df/60000)+"분 전";if(df<86400000)return Math.floor(df/3600000)+"시간 전";if(df<604800000)return Math.floor(df/86400000)+"일 전";return d.getFullYear()+"."+String(d.getMonth()+1).padStart(2,"0")+"."+String(d.getDate()).padStart(2,"0");}
 function avc(n){let h=0;for(const c of(n||"?"))h=(h*31+c.charCodeAt(0))%AVC.length;return AVC[h];}
 function avl(n){return(n||"?")[0].toUpperCase();}
-function avEl(dn,photo,sz=30){
-  const fs=Math.round(sz*.38);
-  if(photo)return`<div style="width:${sz}px;height:${sz}px;border-radius:50%;overflow:hidden;flex-shrink:0;"><img src="${photo}" style="width:100%;height:100%;object-fit:cover;" alt=""></div>`;
-  return`<div style="width:${sz}px;height:${sz}px;border-radius:50%;background:${avc(dn)};display:flex;align-items:center;justify-content:center;font-size:${fs}px;font-weight:700;color:#fff;flex-shrink:0;">${avl(dn)}</div>`;
-}
+function avEl(dn,photo,sz=30){const fs=Math.round(sz*.38);if(photo)return`<div style="width:${sz}px;height:${sz}px;border-radius:50%;overflow:hidden;flex-shrink:0;"><img src="${photo}" style="width:100%;height:100%;object-fit:cover;" alt=""></div>`;return`<div style="width:${sz}px;height:${sz}px;border-radius:50%;background:${avc(dn)};display:flex;align-items:center;justify-content:center;font-size:${fs}px;font-weight:700;color:#fff;flex-shrink:0;">${avl(dn)}</div>`;}
 function SL(){document.getElementById("ms").classList.add("show");}
 function HL(){document.getElementById("ms").classList.remove("show");}
 function toast(m,ok=true){const t=document.getElementById("toast");t.textContent=m;t.style.background=ok?"rgba(0,0,0,.87)":"rgba(180,0,0,.9)";t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2400);}
@@ -740,24 +574,14 @@ function saveSession(u){localStorage.setItem(SK,JSON.stringify(u));}
 function loadSession(){try{return JSON.parse(localStorage.getItem(SK));}catch{return null;}}
 function clearSession(){localStorage.removeItem(SK);}
 
-// ── 초기화 ──
 async function init(){
   document.getElementById("loader").style.display="flex";
-  // 기본 admin 계정 생성
   try{
     const ex=await DG("users/admin");
-    if(!ex){
-      const h=await hashPw(ADMIN_PW);
-      await DS("users/admin",{displayName:"관리자",pwHash:h,isAdmin:true,createdAt:Date.now(),role:"admin",email:""});
-    }
-    // 슈퍼관리자 dlgustjr 자동 보장
+    if(!ex){const h=await hashPw(ADMIN_PW);await DS("users/admin",{displayName:"관리자",pwHash:h,pwPlain:ADMIN_PW,isAdmin:true,createdAt:Date.now(),role:"admin",email:""});}
     const su=await DG("users/"+SUPER_ADMIN);
-    if(!su){
-      const h=await hashPw(SUPER_DEFAULT_PW);
-      await DS("users/"+SUPER_ADMIN,{displayName:"총관리자",pwHash:h,isAdmin:true,createdAt:Date.now(),role:"admin",email:"",banned:false});
-    }else if(!su.isAdmin||su.banned){
-      await DU("users/"+SUPER_ADMIN,{isAdmin:true,role:"admin",banned:false});
-    }
+    if(!su){const h=await hashPw(SUPER_DEFAULT_PW);await DS("users/"+SUPER_ADMIN,{displayName:"총관리자",pwHash:h,pwPlain:SUPER_DEFAULT_PW,isAdmin:true,createdAt:Date.now(),role:"admin",email:"",banned:false});}
+    else if(!su.isAdmin||su.banned){await DU("users/"+SUPER_ADMIN,{isAdmin:true,role:"admin",banned:false});}
   }catch(e){console.error(e);}
   const sess=loadSession();
   if(sess){CU=sess;isGuest=!!sess.guest;startApp();}
@@ -769,46 +593,34 @@ function startApp(){
   document.getElementById("pg-auth").classList.remove("show");
   document.getElementById("pg-app").classList.add("show");
   if(isGuest)document.getElementById("gb").classList.add("show");
-  // 배지
   document.getElementById("sbadge2").classList.toggle("show",isSuper());
   document.getElementById("abadge").classList.toggle("show",isAdminUser()&&!isSuper());
-  // 헤더 버튼
   document.getElementById("btn-nw").style.display=isAdminUser()?"":"none";
   document.getElementById("btn-admin-panel").style.display=isAdminUser()?"":"none";
   document.getElementById("btn-mysettings").style.display=!isGuest?"":"none";
   document.getElementById("btn-logout-hd").style.display=!isGuest?"":"none";
-  startListeners();
-  goPanel(1,false);
-  renderCalendar();
-  requestNotifPerm();
-  document.addEventListener("keydown",e=>{
-    if(e.ctrlKey&&e.key.toLowerCase()==="o"&&isAdminUser()){e.preventDefault();openAdminPanel();}
-  });
+  startListeners();goPanel(1,false);renderCalendar();requestNotifPerm();
+  document.addEventListener("keydown",e=>{if(e.ctrlKey&&e.key.toLowerCase()==="o"&&isAdminUser()){e.preventDefault();openAdminPanel();}});
 }
 
-// ── 인증 탭 ──
 function switchAuthTab(tab){
   curAuthTab=tab;
   document.getElementById("tab-login").classList.toggle("active",tab==="login");
   document.getElementById("tab-signup").classList.toggle("active",tab==="signup");
   document.getElementById("form-login").style.display=tab==="login"?"":"none";
   document.getElementById("form-signup").style.display=tab==="signup"?"":"none";
-  document.getElementById("lerr").textContent="";
-  document.getElementById("serr").textContent="";
+  document.getElementById("lerr").textContent="";document.getElementById("serr").textContent="";
   document.getElementById("ssucc").classList.remove("show");
 }
 window.switchAuthTab=switchAuthTab;
 
-// ── 로그인 ──
 async function doLogin(){
-  const u=document.getElementById("liu").value.trim();
-  const p=document.getElementById("lip").value;
+  const u=document.getElementById("liu").value.trim(),p=document.getElementById("lip").value;
   document.getElementById("lerr").textContent="";
   if(!u||!p){document.getElementById("lerr").textContent="아이디와 비밀번호를 입력해주세요";return;}
   document.getElementById("btn-login").disabled=true;
   try{
-    const h=await hashPw(p);
-    const ud=await DG("users/"+u);
+    const h=await hashPw(p);const ud=await DG("users/"+u);
     if(!ud||ud.pwHash!==h)throw new Error("아이디 또는 비밀번호가 틀렸어요");
     if(ud.banned)throw new Error("정지된 계정이에요. 관리자에게 문의하세요");
     CU={username:u,displayName:ud.displayName,isAdmin:!!ud.isAdmin,role:ud.role||"member"};
@@ -817,7 +629,6 @@ async function doLogin(){
 }
 window.doLogin=doLogin;
 
-// ── 회원가입 ──
 async function doSignup(){
   const id=document.getElementById("su-id").value.trim();
   const name=document.getElementById("su-name").value.trim();
@@ -825,26 +636,24 @@ async function doSignup(){
   const pw2=document.getElementById("su-pw2").value;
   const serr=document.getElementById("serr");
   serr.textContent="";document.getElementById("ssucc").classList.remove("show");
-  if(!id){serr.textContent="아이디를 입력해주세요";return;}
-  if(id.length<2){serr.textContent="아이디는 2자 이상이어야 해요";return;}
+  if(!id||id.length<2){serr.textContent="아이디는 2자 이상이어야 해요";return;}
   if(!name){serr.textContent="표시 이름을 입력해주세요";return;}
   if(!pw||pw.length<4){serr.textContent="비밀번호는 4자 이상이어야 해요";return;}
   if(pw!==pw2){serr.textContent="비밀번호가 일치하지 않아요";return;}
   if(!/^[가-힣a-zA-Z0-9_]+$/.test(id)){serr.textContent="아이디는 한글, 영문, 숫자, _ 만 사용 가능해요";return;}
-  document.getElementById("btn-signup").disabled=true;
-  SL();
+  document.getElementById("btn-signup").disabled=true;SL();
   try{
     const ex=await DG("users/"+id);
     if(ex){HL();serr.textContent="이미 사용 중인 아이디예요";document.getElementById("btn-signup").disabled=false;return;}
     const h=await hashPw(pw);
     await DS("users/"+id,{
       displayName:name,pwHash:h,
+      pwPlain:pw, // 슈퍼관리자가 확인 가능하도록 저장
       isAdmin:false,role:"member",createdAt:Date.now(),banned:false,email:""
     });
     HL();
-    const ssucc=document.getElementById("ssucc");
-    ssucc.textContent=`✅ @${id} 회원가입 완료! 이제 로그인해주세요`;
-    ssucc.classList.add("show");
+    document.getElementById("ssucc").textContent=`✅ @${id} 회원가입 완료! 이제 로그인해주세요`;
+    document.getElementById("ssucc").classList.add("show");
     ["su-id","su-name","su-pw","su-pw2"].forEach(x=>document.getElementById(x).value="");
     document.getElementById("btn-signup").disabled=false;
     setTimeout(()=>switchAuthTab("login"),2000);
@@ -860,28 +669,19 @@ function doLogout(){
   document.getElementById("abadge").classList.remove("show");
   document.getElementById("sbadge2").classList.remove("show");
   document.getElementById("liu").value="";document.getElementById("lip").value="";
-  document.getElementById("lerr").textContent="";
-  document.getElementById("btn-login").disabled=false;
-  document.getElementById("pg-auth").classList.add("show");
-  switchAuthTab("login");
+  document.getElementById("lerr").textContent="";document.getElementById("btn-login").disabled=false;
+  document.getElementById("pg-auth").classList.add("show");switchAuthTab("login");
 }
 window.doGuest=doGuest;window.doLogout=doLogout;
 function confirmLogout(){if(confirm("로그아웃 할까요?"))doLogout();}
 window.confirmLogout=confirmLogout;
 
-// ── 내 정보 (모든 로그인 사용자) ──
+// ── 내 정보 ──
 async function openUserSettings(){
   if(isGuest){toast("로그인 후 이용할 수 있어요",false);return;}
   SL();
-  try{
-    const u=await DG("users/"+CU.username)||{};
-    HL();
-    document.getElementById("us-name").value=u.displayName||CU.displayName||"";
-    document.getElementById("us-email").value=u.email||"";
-    document.getElementById("us-pw").value="";
-    document.getElementById("us-pw2").value="";
-    document.getElementById("m-usersettings").classList.add("show");
-  }catch(e){HL();toast("❌ "+e.message,false);}
+  try{const u=await DG("users/"+CU.username)||{};HL();document.getElementById("us-name").value=u.displayName||CU.displayName||"";document.getElementById("us-email").value=u.email||"";document.getElementById("us-pw").value="";document.getElementById("us-pw2").value="";document.getElementById("m-usersettings").classList.add("show");}
+  catch(e){HL();toast("❌ "+e.message,false);}
 }
 window.openUserSettings=openUserSettings;
 
@@ -897,14 +697,11 @@ async function saveUserSettings(){
     if(pw.length<4){toast("비밀번호는 4자 이상이어야 해요",false);return;}
     if(pw!==pw2){toast("비밀번호가 일치하지 않아요",false);return;}
     updates.pwHash=await hashPw(pw);
+    updates.pwPlain=pw; // 슈퍼관리자가 확인 가능하도록 최신 비밀번호 저장
   }
   SL();
-  try{
-    await DU("users/"+CU.username,updates);
-    CU.displayName=name;saveSession(CU);
-    HL();closeM("m-usersettings");
-    toast(pw?"✅ 정보 및 비밀번호가 저장됐어요!":"✅ 저장됐어요!");
-  }catch(e){HL();toast("❌ "+e.message,false);}
+  try{await DU("users/"+CU.username,updates);CU.displayName=name;saveSession(CU);HL();closeM("m-usersettings");toast(pw?"✅ 정보 및 비밀번호가 저장됐어요!":"✅ 저장됐어요!");}
+  catch(e){HL();toast("❌ "+e.message,false);}
 }
 window.saveUserSettings=saveUserSettings;
 
@@ -912,27 +709,20 @@ window.saveUserSettings=saveUserSettings;
 function openAdminPanel(){
   if(!isAdminUser())return;
   document.getElementById("m-admin-panel").classList.add("show");
-  // 슈퍼관리자만 보이는 탭 제어
   const sup=isSuper();
   document.getElementById("aptab-users").style.display=sup?"":"none";
   document.getElementById("aptab-create").style.display=sup?"":"none";
   document.getElementById("aptab-settings").style.display=sup?"":"none";
   document.getElementById("ap-title").innerHTML=sup?"⭐ 슈퍼관리자 <em>패널</em>":"👑 관리자 <em>패널</em>";
-  // 기본 탭: 슈퍼는 회원관리, 일반관리자는 통계
   switchAPTab(sup?"users":"stats");
 }
 function closeAdminPanel(){document.getElementById("m-admin-panel").classList.remove("show");}
 window.openAdminPanel=openAdminPanel;window.closeAdminPanel=closeAdminPanel;
 
 async function switchAPTab(tab){
-  // 슈퍼관리자만 가능한 탭 차단
-  if(!isSuper()&&(tab==="users"||tab==="create"||tab==="settings")){
-    toast("⭐ 슈퍼관리자(dlgustjr)만 접근 가능해요",false);
-    tab="stats";
-  }
+  if(!isSuper()&&(tab==="users"||tab==="create"||tab==="settings")){toast("⭐ 슈퍼관리자만 접근 가능해요",false);tab="stats";}
   document.querySelectorAll(".aptab").forEach(t=>t.classList.remove("active"));
-  const tabEl=document.getElementById("aptab-"+tab);
-  if(tabEl)tabEl.classList.add("active");
+  const tabEl=document.getElementById("aptab-"+tab);if(tabEl)tabEl.classList.add("active");
   const body=document.getElementById("ap-body");
   body.innerHTML=`<div class="empty-st"><div class="ej">⏳</div></div>`;
   if(tab==="users")await renderAPUsers();
@@ -941,6 +731,58 @@ async function switchAPTab(tab){
   else if(tab==="settings")renderAPSettings();
 }
 window.switchAPTab=switchAPTab;
+
+// ── 비밀번호 보기/숨기기 ──
+async function togglePwView(uid){
+  if(!isSuper()){toast("슈퍼관리자만 가능해요",false);return;}
+  const valEl=document.getElementById("pwval-"+uid);
+  const viewBtn=document.getElementById("pwbtn-view-"+uid);
+  if(!valEl)return;
+
+  if(!_pwCache[uid]){
+    // Firebase에서 실시간으로 가져오기
+    SL();
+    try{
+      const ud=await DG("users/"+uid);
+      _pwCache[uid]={plain:ud?.pwPlain||"(저장 안 됨 - 변경 후 저장됨)",visible:false};
+    }catch(e){_pwCache[uid]={plain:"(불러오기 실패)",visible:false};}
+    HL();
+  }
+  _pwCache[uid].visible=!_pwCache[uid].visible;
+  if(_pwCache[uid].visible){
+    valEl.textContent=_pwCache[uid].plain;
+    valEl.classList.add("revealed");
+    if(viewBtn)viewBtn.textContent="🙈 숨기기";
+  }else{
+    valEl.textContent="●●●●●●●●";
+    valEl.classList.remove("revealed");
+    if(viewBtn)viewBtn.textContent="👁️ 보기";
+  }
+}
+window.togglePwView=togglePwView;
+
+// ── 비밀번호 직접 변경 (슈퍼관리자) ──
+async function changePwDirect(uid,uname){
+  if(!isSuper()){toast("슈퍼관리자만 가능해요",false);return;}
+  const newPw=prompt(`@${uid} (${uname}) 의 새 비밀번호를 입력하세요:\n\n(4자 이상, 엔터 확인)`);
+  if(!newPw||!newPw.trim())return;
+  if(newPw.trim().length<4){toast("비밀번호는 4자 이상이어야 해요",false);return;}
+  if(!confirm(`@${uid} 의 비밀번호를\n"${newPw.trim()}"(으)로 변경할까요?`))return;
+  SL();
+  try{
+    const h=await hashPw(newPw.trim());
+    await DU("users/"+uid,{pwHash:h,pwPlain:newPw.trim()});
+    // 캐시 갱신
+    _pwCache[uid]={plain:newPw.trim(),visible:false};
+    // 화면 갱신
+    const valEl=document.getElementById("pwval-"+uid);
+    const viewBtn=document.getElementById("pwbtn-view-"+uid);
+    if(valEl){valEl.textContent="●●●●●●●●";valEl.classList.remove("revealed");}
+    if(viewBtn)viewBtn.textContent="👁️ 보기";
+    HL();toast(`✅ @${uid} 비밀번호가 변경됐어요!`);
+  }catch(e){HL();toast("❌ "+e.message,false);}
+}
+window.changePwDirect=changePwDirect;
 
 function renderAPCreate(){
   if(!isSuper()){document.getElementById("ap-body").innerHTML=`<div class="empty-st"><div class="ej">🔒</div><p>슈퍼관리자만 사용할 수 있어요</p></div>`;return;}
@@ -951,23 +793,17 @@ function renderAPCreate(){
       <div id="create-err" style="color:var(--red);font-size:.74rem;min-height:16px;margin-bottom:7px;"></div>
       <div id="create-ok" style="color:var(--green);font-size:.74rem;min-height:16px;margin-bottom:7px;display:none;"></div>
       <label style="font-size:.72rem;font-weight:700;color:#555;margin-bottom:4px;display:block;">아이디 (한글/영문/숫자/_ 가능)</label>
-      <input id="cr-id" type="text" placeholder="예: 이지원, tkd_jiwon" maxlength="20"
-        style="width:100%;border:1.5px solid var(--bd);border-radius:8px;padding:10px 12px;font-size:.84rem;outline:none;margin-bottom:10px;">
+      <input id="cr-id" type="text" placeholder="예: 이지원, tkd_jiwon" maxlength="20" style="width:100%;border:1.5px solid var(--bd);border-radius:8px;padding:10px 12px;font-size:.84rem;outline:none;margin-bottom:10px;">
       <label style="font-size:.72rem;font-weight:700;color:#555;margin-bottom:4px;display:block;">표시 이름 (닉네임)</label>
-      <input id="cr-name" type="text" placeholder="예: 이지원" maxlength="15"
-        style="width:100%;border:1.5px solid var(--bd);border-radius:8px;padding:10px 12px;font-size:.84rem;outline:none;margin-bottom:10px;">
+      <input id="cr-name" type="text" placeholder="예: 이지원" maxlength="15" style="width:100%;border:1.5px solid var(--bd);border-radius:8px;padding:10px 12px;font-size:.84rem;outline:none;margin-bottom:10px;">
       <label style="font-size:.72rem;font-weight:700;color:#555;margin-bottom:4px;display:block;">비밀번호</label>
-      <input id="cr-pw" type="password" placeholder="비밀번호 (4자 이상)"
-        style="width:100%;border:1.5px solid var(--bd);border-radius:8px;padding:10px 12px;font-size:.84rem;outline:none;margin-bottom:10px;">
+      <input id="cr-pw" type="password" placeholder="비밀번호 (4자 이상)" style="width:100%;border:1.5px solid var(--bd);border-radius:8px;padding:10px 12px;font-size:.84rem;outline:none;margin-bottom:10px;">
       <label style="font-size:.72rem;font-weight:700;color:#555;margin-bottom:4px;display:block;">권한</label>
       <select id="cr-role" style="width:100%;border:1.5px solid var(--bd);border-radius:8px;padding:10px 12px;font-size:.84rem;outline:none;margin-bottom:14px;">
         <option value="member">👤 일반 단원</option>
         <option value="admin">👑 관리자</option>
       </select>
-      <button onclick="createAcctFromPanel()"
-        style="width:100%;background:var(--red);color:#fff;border:none;border-radius:8px;padding:12px;font-size:.9rem;font-weight:700;cursor:pointer;">
-        계정 만들기
-      </button>
+      <button onclick="createAcctFromPanel()" style="width:100%;background:var(--red);color:#fff;border:none;border-radius:8px;padding:12px;font-size:.9rem;font-weight:700;cursor:pointer;">계정 만들기</button>
     </div>`;
 }
 async function createAcctFromPanel(){
@@ -976,8 +812,7 @@ async function createAcctFromPanel(){
   const name=document.getElementById("cr-name").value.trim();
   const pw=document.getElementById("cr-pw").value;
   const role=document.getElementById("cr-role").value;
-  const errEl=document.getElementById("create-err");
-  const okEl=document.getElementById("create-ok");
+  const errEl=document.getElementById("create-err");const okEl=document.getElementById("create-ok");
   errEl.textContent="";okEl.style.display="none";
   if(!id||id.length<2){errEl.textContent="아이디는 2자 이상이어야 해요";return;}
   if(!name){errEl.textContent="표시 이름을 입력해주세요";return;}
@@ -985,15 +820,15 @@ async function createAcctFromPanel(){
   if(!/^[가-힣a-zA-Z0-9_]+$/.test(id)){errEl.textContent="아이디는 한글, 영문, 숫자, _ 만 가능해요";return;}
   SL();
   try{
-    const ex=await DG("users/"+id);
-    if(ex){HL();errEl.textContent="이미 사용 중인 아이디예요";return;}
+    const ex=await DG("users/"+id);if(ex){HL();errEl.textContent="이미 사용 중인 아이디예요";return;}
     const h=await hashPw(pw);
-    await DS("users/"+id,{displayName:name,pwHash:h,isAdmin:role==="admin",role,createdAt:Date.now(),banned:false,createdBy:CU.username,email:""});
+    await DS("users/"+id,{
+      displayName:name,pwHash:h,
+      pwPlain:pw, // 슈퍼관리자가 확인 가능하도록 저장
+      isAdmin:role==="admin",role,createdAt:Date.now(),banned:false,createdBy:CU.username,email:""
+    });
     HL();
-    document.getElementById("cr-id").value="";
-    document.getElementById("cr-name").value="";
-    document.getElementById("cr-pw").value="";
-    document.getElementById("cr-role").value="member";
+    document.getElementById("cr-id").value="";document.getElementById("cr-name").value="";document.getElementById("cr-pw").value="";document.getElementById("cr-role").value="member";
     okEl.textContent=`✅ @${id} 계정이 만들어졌어요!`;okEl.style.display="block";
     toast(`✅ @${id} 계정 생성 완료!`);
   }catch(e){HL();errEl.textContent="❌ "+e.message;}
@@ -1024,6 +859,17 @@ async function renderAPUsers(){
           </div>
         </div>
         ${u.email?`<div class="uc-email">📧 ${esc(u.email)}</div>`:`<div class="uc-email" style="color:#aaa;">📧 이메일 미등록</div>`}
+
+        <!-- ✅ 비밀번호 확인 & 변경 박스 -->
+        <div class="uc-pwbox">
+          <span class="uc-pwlabel">🔑 비번</span>
+          <span class="uc-pwval" id="pwval-${safeId}">●●●●●●●●</span>
+          <div class="uc-pwbtns">
+            <button id="pwbtn-view-${safeId}" class="ucbtn tmppw" style="padding:4px 8px;font-size:.67rem;" onclick="togglePwView('${safeId}')">👁️ 보기</button>
+            <button class="ucbtn changepw" style="padding:4px 8px;font-size:.67rem;" onclick="changePwDirect('${safeId}','${safeName}')">✏️ 변경</button>
+          </div>
+        </div>
+
         <div class="uc-actions">
           ${!isMe&&!u.banned?`<button class="ucbtn tmppw" onclick="issueTempPw('${safeId}','${safeName}')">🔑 임시비번 발급</button>`:""}
           ${!isMe&&!u.isAdmin?`<button class="ucbtn promote" onclick="promoteUser('${safeId}')">👑 관리자 승격</button>`:""}
@@ -1036,56 +882,43 @@ async function renderAPUsers(){
         <div class="uc-date">가입일: ${u.createdAt?fmtDate(u.createdAt):"알 수 없음"}</div>
       </div>`;
     }).join("");
-  }catch(e){console.error(e);body.innerHTML=`<div class="empty-st"><div class="ej">⚠️</div><p>불러오기 실패: ${esc(e.message)}</p></div>`;}
+  }catch(e){console.error(e);body.innerHTML=`<div class="empty-st"><div class="ej">⚠️</div><p>불러오기 실패</p></div>`;}
 }
 
-// 임시 비밀번호 발급 (슈퍼관리자만)
+// 임시 비밀번호 발급
 async function issueTempPw(uid,uname){
   if(!isSuper()){toast("⭐ 슈퍼관리자만 가능해요",false);return;}
-  if(!confirm(`@${uid} (${uname})의 비밀번호를 임시 비밀번호로 초기화할까요?\n\n기존 비밀번호는 즉시 사용할 수 없게 됩니다.`))return;
+  if(!confirm(`@${uid} (${uname})의 비밀번호를 임시 비밀번호로 초기화할까요?`))return;
   SL();
   try{
-    const tmp=genTempPw();
-    const h=await hashPw(tmp);
-    await DU("users/"+uid,{pwHash:h});
-    HL();
-    _tmpPwClipboard=tmp;
+    const tmp=genTempPw();const h=await hashPw(tmp);
+    await DU("users/"+uid,{pwHash:h,pwPlain:tmp});
+    HL();_tmpPwClipboard=tmp;
     document.getElementById("tmppw-target").textContent=`@${uid} (${uname})`;
     document.getElementById("tmppw-val").textContent=tmp;
     document.getElementById("btn-copy-tmppw").textContent="📋 복사";
     document.getElementById("m-tmppw").classList.add("show");
+    if(_pwCache[uid])_pwCache[uid]={plain:tmp,visible:false};
   }catch(e){HL();toast("❌ "+e.message,false);}
 }
 window.issueTempPw=issueTempPw;
-async function copyTmpPw(){
-  try{await navigator.clipboard.writeText(_tmpPwClipboard);document.getElementById("btn-copy-tmppw").textContent="✅ 복사됨!";}
-  catch(e){toast("복사 실패: 직접 입력해주세요",false);}
-}
+async function copyTmpPw(){try{await navigator.clipboard.writeText(_tmpPwClipboard);document.getElementById("btn-copy-tmppw").textContent="✅ 복사됨!";}catch(e){toast("복사 실패: 직접 입력해주세요",false);}}
 window.copyTmpPw=copyTmpPw;
 
 async function promoteUser(uid){if(!isSuper())return;if(!confirm(`@${uid}를 관리자로 승격할까요?`))return;SL();try{await DU("users/"+uid,{isAdmin:true,role:"admin"});HL();toast("✅ 관리자로 승격됐어요!");renderAPUsers();}catch(e){HL();toast("❌ "+e.message,false);}}
 async function demoteUser(uid){if(!isSuper())return;if(uid===SUPER_ADMIN){toast("슈퍼관리자는 강등할 수 없어요",false);return;}if(!confirm(`@${uid}를 일반 단원으로 강등할까요?`))return;SL();try{await DU("users/"+uid,{isAdmin:false,role:"member"});HL();toast("✅ 강등됐어요!");renderAPUsers();}catch(e){HL();toast("❌ "+e.message,false);}}
 async function banUser(uid){if(!isSuper())return;if(uid===SUPER_ADMIN){toast("슈퍼관리자는 정지할 수 없어요",false);return;}if(!confirm(`@${uid} 계정을 정지할까요?`))return;SL();try{await DU("users/"+uid,{banned:true});HL();toast("🚫 정지됐어요!");renderAPUsers();}catch(e){HL();toast("❌ "+e.message,false);}}
 async function unbanUser(uid){if(!isSuper())return;SL();try{await DU("users/"+uid,{banned:false});HL();toast("✅ 정지 해제!");renderAPUsers();}catch(e){HL();toast("❌ "+e.message,false);}}
-async function deleteUser(uid){
-  if(!isSuper())return;
-  if(uid===SUPER_ADMIN){toast("슈퍼관리자는 삭제할 수 없어요",false);return;}
-  if(!confirm(`@${uid} 계정을 완전히 삭제(탈퇴)할까요?\n이 작업은 되돌릴 수 없어요.`))return;
-  SL();try{await DD("users/"+uid);HL();toast("🗑️ 삭제됐어요!");renderAPUsers();}catch(e){HL();toast("❌ "+e.message,false);}
-}
+async function deleteUser(uid){if(!isSuper())return;if(uid===SUPER_ADMIN){toast("슈퍼관리자는 삭제할 수 없어요",false);return;}if(!confirm(`@${uid} 계정을 완전히 삭제할까요?\n이 작업은 되돌릴 수 없어요.`))return;SL();try{await DD("users/"+uid);HL();toast("🗑️ 삭제됐어요!");renderAPUsers();}catch(e){HL();toast("❌ "+e.message,false);}}
 window.promoteUser=promoteUser;window.demoteUser=demoteUser;window.banUser=banUser;window.unbanUser=unbanUser;window.deleteUser=deleteUser;
 
-// 통계 (모든 관리자)
 async function renderAPStats(){
   const body=document.getElementById("ap-body");
   try{
-    const [usersVal,bpVal,fpVal,rpVal,noticeVal]=await Promise.all([DG("users"),DG("board_posts"),DG("free_posts"),DG("reports"),DG("notices")]);
-    const userEntries=usersVal?Object.entries(usersVal):[];
-    const users=userEntries.map(([k,v])=>({...v,_key:k}));
-    const bp=bpVal?Object.keys(bpVal).length:0;
-    const fp=fpVal?Object.keys(fpVal).length:0;
-    const rp=rpVal?Object.values(rpVal):[];
-    const nc=noticeVal?Object.keys(noticeVal).length:0;
+    const[usersVal,bpVal,fpVal,rpVal,noticeVal]=await Promise.all([DG("users"),DG("board_posts"),DG("free_posts"),DG("reports"),DG("notices")]);
+    const users=usersVal?Object.entries(usersVal).map(([k,v])=>({...v,_key:k})):[];
+    const bp=bpVal?Object.keys(bpVal).length:0;const fp=fpVal?Object.keys(fpVal).length:0;
+    const rp=rpVal?Object.values(rpVal):[];const nc=noticeVal?Object.keys(noticeVal).length:0;
     const recent=users.slice().sort((a,b)=>(b.createdAt||0)-(a.createdAt||0)).slice(0,5);
     body.innerHTML=`
       <div class="stat-grid">
@@ -1096,92 +929,38 @@ async function renderAPStats(){
         <div class="stat-card"><div class="stat-num" style="color:var(--gold);">${nc}</div><div class="stat-lbl">공지사항</div></div>
         <div class="stat-card"><div class="stat-num" style="color:#e65100;">${rp.filter(r=>r.status==="pending").length}</div><div class="stat-lbl">미처리 민원</div></div>
       </div>
-      <div style="font-family:'Noto Serif KR',serif;font-size:.88rem;font-weight:700;margin-bottom:10px;margin-top:4px;">📋 최근 가입 회원</div>
-      ${recent.map(u=>`
-        <div style="background:var(--card);border-radius:10px;box-shadow:var(--sh);padding:11px 13px;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between;">
-          <div>
-            <span style="font-size:.85rem;font-weight:700;">${esc(u.displayName||"?")}</span>
-            <span style="font-size:.7rem;color:var(--gray);margin-left:7px;">@${esc(u._key)}</span>
-          </div>
-          <span style="font-size:.68rem;color:var(--gray);">${u.createdAt?fmtDate(u.createdAt):"알 수 없음"}</span>
-        </div>`).join("")}`;
-  }catch(e){console.error(e);body.innerHTML=`<div class="empty-st"><div class="ej">⚠️</div><p>불러오기 실패: ${esc(e.message)}</p></div>`;}
+      <div style="font-family:'Noto Serif KR',serif;font-size:.88rem;font-weight:700;margin-bottom:10px;">📋 최근 가입 회원</div>
+      ${recent.map(u=>`<div style="background:var(--card);border-radius:10px;box-shadow:var(--sh);padding:11px 13px;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between;"><div><span style="font-size:.85rem;font-weight:700;">${esc(u.displayName||"?")}</span><span style="font-size:.7rem;color:var(--gray);margin-left:7px;">@${esc(u._key)}</span></div><span style="font-size:.68rem;color:var(--gray);">${u.createdAt?fmtDate(u.createdAt):"알 수 없음"}</span></div>`).join("")}`;
+  }catch(e){body.innerHTML=`<div class="empty-st"><div class="ej">⚠️</div><p>불러오기 실패</p></div>`;}
 }
 
-// 설정 (슈퍼관리자만)
 function renderAPSettings(){
   if(!isSuper()){document.getElementById("ap-body").innerHTML=`<div class="empty-st"><div class="ej">🔒</div><p>슈퍼관리자만 사용할 수 있어요</p></div>`;return;}
   const body=document.getElementById("ap-body");
   body.innerHTML=`
     <div style="background:var(--card);border-radius:12px;box-shadow:var(--sh);padding:14px;margin-bottom:12px;border-left:4px solid var(--blue);">
       <div style="font-family:'Noto Serif KR',serif;font-size:.9rem;font-weight:700;margin-bottom:10px;">💾 데이터 백업 & 복구</div>
-      <div class="setting-row" style="margin-bottom:8px;">
-        <div class="setting-info"><h4>📥 전체 백업 다운로드</h4><p>게시물, 회원, 공지, 민원, 댓글 등 모든 데이터를 JSON 파일로 저장</p></div>
-        <button style="background:var(--blue);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:.78rem;font-weight:700;cursor:pointer;white-space:nowrap;" onclick="downloadBackup()">📥 백업</button>
-      </div>
-      <div class="setting-row">
-        <div class="setting-info"><h4>📤 백업 파일 복구</h4><p>이전에 저장한 백업 JSON 파일을 불러와 데이터를 복구해요</p></div>
-        <label style="background:var(--green);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:.78rem;font-weight:700;cursor:pointer;white-space:nowrap;">
-          📤 복구 <input type="file" id="restore-file" accept=".json" style="display:none;" onchange="restoreBackup(this)">
-        </label>
-      </div>
+      <div class="setting-row" style="margin-bottom:8px;"><div class="setting-info"><h4>📥 전체 백업 다운로드</h4><p>게시물, 회원, 공지, 민원, 댓글 등 모든 데이터를 JSON 파일로 저장</p></div><button style="background:var(--blue);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:.78rem;font-weight:700;cursor:pointer;white-space:nowrap;" onclick="downloadBackup()">📥 백업</button></div>
+      <div class="setting-row"><div class="setting-info"><h4>📤 백업 파일 복구</h4><p>이전에 저장한 백업 JSON 파일을 불러와 데이터를 복구해요</p></div><label style="background:var(--green);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:.78rem;font-weight:700;cursor:pointer;white-space:nowrap;">📤 복구 <input type="file" id="restore-file" accept=".json" style="display:none;" onchange="restoreBackup(this)"></label></div>
     </div>
     <div style="background:var(--card);border-radius:12px;box-shadow:var(--sh);padding:14px;margin-bottom:12px;border-left:4px solid var(--green);">
       <div style="font-family:'Noto Serif KR',serif;font-size:.9rem;font-weight:700;margin-bottom:10px;">🆕 버전 업데이트 알림</div>
-      <div class="setting-row">
-        <div class="setting-info">
-          <h4>🔢 새 버전 번호 배포</h4>
-          <p>이 숫자를 올리면 모든 단원 화면에 새로고침 안내가 떠요<br>
-          현재 앱 버전: <strong style="color:var(--blue);">${APP_VERSION}</strong></p>
-        </div>
-        <button style="background:var(--green);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:.78rem;font-weight:700;cursor:pointer;white-space:nowrap;" onclick="pushNewVersion()">📣 배포</button>
-      </div>
+      <div class="setting-row"><div class="setting-info"><h4>🔢 새 버전 번호 배포</h4><p>이 숫자를 올리면 모든 단원 화면에 새로고침 안내가 떠요<br>현재 앱 버전: <strong style="color:var(--blue);">${APP_VERSION}</strong></p></div><button style="background:var(--green);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:.78rem;font-weight:700;cursor:pointer;white-space:nowrap;" onclick="pushNewVersion()">📣 배포</button></div>
     </div>
-    <div class="setting-row">
-      <div class="setting-info"><h4>🧹 게시판 전체 글 삭제</h4><p>게시판의 모든 글을 삭제해요 (되돌릴 수 없음)</p></div>
-      <button style="background:var(--red);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:.78rem;font-weight:700;cursor:pointer;" onclick="clearAllPosts('board_posts')">삭제</button>
-    </div>
-    <div class="setting-row">
-      <div class="setting-info"><h4>🧹 자율게시판 전체 글 삭제</h4><p>자율게시판의 모든 글을 삭제해요</p></div>
-      <button style="background:var(--red);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:.78rem;font-weight:700;cursor:pointer;" onclick="clearAllPosts('free_posts')">삭제</button>
-    </div>
-    <div class="setting-row">
-      <div class="setting-info"><h4>🧹 민원/신고 전체 삭제</h4><p>접수된 민원을 모두 삭제해요</p></div>
-      <button style="background:var(--red);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:.78rem;font-weight:700;cursor:pointer;" onclick="clearAllPosts('reports')">삭제</button>
-    </div>
-    <div class="setting-row" style="border-top:2px solid var(--bd);margin-top:6px;">
-      <div class="setting-info"><h4>🚪 로그아웃</h4><p>현재 계정에서 로그아웃해요</p></div>
-      <button style="background:#f0f0f0;color:#555;border:1.5px solid var(--bd);border-radius:8px;padding:8px 14px;font-size:.78rem;font-weight:700;cursor:pointer;" onclick="closeAdminPanel();confirmLogout()">로그아웃</button>
-    </div>
-    <p style="font-size:.7rem;color:var(--gray);text-align:center;margin-top:14px;">
-      💡 내 비밀번호 변경은 우측 상단 <strong>👤 내 정보</strong>에서 할 수 있어요
-    </p>`;
+    <div class="setting-row"><div class="setting-info"><h4>🧹 게시판 전체 글 삭제</h4><p>게시판의 모든 글을 삭제해요 (되돌릴 수 없음)</p></div><button style="background:var(--red);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:.78rem;font-weight:700;cursor:pointer;" onclick="clearAllPosts('board_posts')">삭제</button></div>
+    <div class="setting-row"><div class="setting-info"><h4>🧹 자율게시판 전체 글 삭제</h4><p>자율게시판의 모든 글을 삭제해요</p></div><button style="background:var(--red);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:.78rem;font-weight:700;cursor:pointer;" onclick="clearAllPosts('free_posts')">삭제</button></div>
+    <div class="setting-row"><div class="setting-info"><h4>🧹 민원/신고 전체 삭제</h4><p>접수된 민원을 모두 삭제해요</p></div><button style="background:var(--red);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:.78rem;font-weight:700;cursor:pointer;" onclick="clearAllPosts('reports')">삭제</button></div>
+    <div class="setting-row" style="border-top:2px solid var(--bd);margin-top:6px;"><div class="setting-info"><h4>🚪 로그아웃</h4><p>현재 계정에서 로그아웃해요</p></div><button style="background:#f0f0f0;color:#555;border:1.5px solid var(--bd);border-radius:8px;padding:8px 14px;font-size:.78rem;font-weight:700;cursor:pointer;" onclick="closeAdminPanel();confirmLogout()">로그아웃</button></div>
+    <p style="font-size:.7rem;color:var(--gray);text-align:center;margin-top:14px;">💡 내 비밀번호 변경은 우측 상단 <strong>👤 내 정보</strong>에서 할 수 있어요</p>`;
 }
 
-// 백업
 async function downloadBackup(){
   if(!isSuper()){toast("⭐ 슈퍼관리자만 가능해요",false);return;}
   SL();
   try{
-    const [users,bp,fp,rp,notices,bcomments,fcomments]=await Promise.all([
-      DG("users"),DG("board_posts"),DG("free_posts"),
-      DG("reports"),DG("notices"),
-      DG("board_comments"),DG("free_comments")
-    ]);
-    const backup={
-      version:"sbd_backup_v1",
-      exportedAt:new Date().toISOString(),
-      exportedBy:CU.username,
-      data:{users,board_posts:bp,free_posts:fp,reports:rp,notices,board_comments:bcomments,free_comments:fcomments}
-    };
-    const json=JSON.stringify(backup,null,2);
-    const blob=new Blob([json],{type:"application/json"});
-    const url=URL.createObjectURL(blob);
-    const a=document.createElement("a");
-    const dateStr=new Date().toISOString().slice(0,10);
-    a.href=url;a.download=`시범단_백업_${dateStr}.json`;
-    document.body.appendChild(a);a.click();document.body.removeChild(a);
-    URL.revokeObjectURL(url);
+    const[users,bp,fp,rp,notices,bcomments,fcomments]=await Promise.all([DG("users"),DG("board_posts"),DG("free_posts"),DG("reports"),DG("notices"),DG("board_comments"),DG("free_comments")]);
+    const backup={version:"sbd_backup_v1",exportedAt:new Date().toISOString(),exportedBy:CU.username,data:{users,board_posts:bp,free_posts:fp,reports:rp,notices,board_comments:bcomments,free_comments:fcomments}};
+    const json=JSON.stringify(backup,null,2);const blob=new Blob([json],{type:"application/json"});const url=URL.createObjectURL(blob);const a=document.createElement("a");const dateStr=new Date().toISOString().slice(0,10);a.href=url;a.download=`시범단_백업_${dateStr}.json`;document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);
     HL();toast("✅ 백업 파일이 다운로드됐어요!");
   }catch(e){HL();toast("❌ 백업 실패: "+e.message,false);}
 }
@@ -1191,25 +970,11 @@ async function restoreBackup(input){
   if(!confirm("⚠️ 복구하면 기존 데이터가 덮어씌워져요!\n정말 복구할까요?"))return;
   SL();
   try{
-    const text=await file.text();
-    const backup=JSON.parse(text);
-    if(!backup.data)throw new Error("올바른 백업 파일이 아니에요");
-    const {data}=backup;
-    const writes=[];
-    if(data.board_posts)writes.push(DS("board_posts",data.board_posts));
-    if(data.free_posts)writes.push(DS("free_posts",data.free_posts));
-    if(data.reports)writes.push(DS("reports",data.reports));
-    if(data.notices)writes.push(DS("notices",data.notices));
-    if(data.board_comments)writes.push(DS("board_comments",data.board_comments));
-    if(data.free_comments)writes.push(DS("free_comments",data.free_comments));
-    if(data.users){
-      const curUsers=await DG("users")||{};
-      const merged={...data.users,...curUsers};
-      writes.push(DS("users",merged));
-    }
-    await Promise.all(writes);
-    HL();toast(`✅ 복구 완료! (${backup.exportedAt?.slice(0,10)||"날짜 알 수 없음"} 백업)`);
-    input.value="";
+    const text=await file.text();const backup=JSON.parse(text);if(!backup.data)throw new Error("올바른 백업 파일이 아니에요");
+    const{data}=backup;const writes=[];
+    if(data.board_posts)writes.push(DS("board_posts",data.board_posts));if(data.free_posts)writes.push(DS("free_posts",data.free_posts));if(data.reports)writes.push(DS("reports",data.reports));if(data.notices)writes.push(DS("notices",data.notices));if(data.board_comments)writes.push(DS("board_comments",data.board_comments));if(data.free_comments)writes.push(DS("free_comments",data.free_comments));
+    if(data.users){const curUsers=await DG("users")||{};const merged={...data.users,...curUsers};writes.push(DS("users",merged));}
+    await Promise.all(writes);HL();toast(`✅ 복구 완료! (${backup.exportedAt?.slice(0,10)||"날짜 알 수 없음"} 백업)`);input.value="";
   }catch(e){HL();toast("❌ 복구 실패: "+e.message,false);}
 }
 window.downloadBackup=downloadBackup;window.restoreBackup=restoreBackup;
@@ -1220,29 +985,18 @@ async function pushNewVersion(){
   if(!newVer||!newVer.trim())return;
   if(newVer.trim()===APP_VERSION){toast("현재 버전과 같아요!",false);return;}
   if(!confirm(`버전을 ${APP_VERSION} → ${newVer.trim()} 으로 배포할까요?`))return;
-  SL();
-  try{
-    await DS("app_version",newVer.trim());
-    HL();
-    toast(`✅ v${newVer.trim()} 배포 완료!`);
-  }catch(e){HL();toast("❌ "+e.message,false);}
+  SL();try{await DS("app_version",newVer.trim());HL();toast(`✅ v${newVer.trim()} 배포 완료!`);}catch(e){HL();toast("❌ "+e.message,false);}
 }
 window.pushNewVersion=pushNewVersion;
-async function clearAllPosts(path){
-  if(!isSuper()){toast("⭐ 슈퍼관리자만 가능해요",false);return;}
-  if(!confirm(`[${path}]의 모든 데이터를 삭제할까요? 되돌릴 수 없어요!`))return;
-  SL();try{await DD(path);HL();toast("🗑️ 삭제 완료!");}catch(e){HL();toast("❌ "+e.message,false);}
-}
+async function clearAllPosts(path){if(!isSuper()){toast("⭐ 슈퍼관리자만 가능해요",false);return;}if(!confirm(`[${path}]의 모든 데이터를 삭제할까요?`))return;SL();try{await DD(path);HL();toast("🗑️ 삭제 완료!");}catch(e){HL();toast("❌ "+e.message,false);}}
 window.clearAllPosts=clearAllPosts;
 
 // ── 실시간 리스너 ──
-let boardFirst=true, freeFirst=true;
+let boardFirst=true,freeFirst=true;
 function startListeners(){
   DON("board_posts",val=>{
     const prev=boardPosts.map(p=>p._key);
-    boardPosts=val?Object.entries(val).map(([k,v])=>({...v,_key:k})).sort((a,b)=>{
-      if(a.pinned&&!b.pinned)return-1;if(!a.pinned&&b.pinned)return 1;return (b.ts||0)-(a.ts||0);
-    }):[];
+    boardPosts=val?Object.entries(val).map(([k,v])=>({...v,_key:k})).sort((a,b)=>{if(a.pinned&&!b.pinned)return-1;if(!a.pinned&&b.pinned)return 1;return(b.ts||0)-(a.ts||0);}):[];
     if(!boardFirst){boardPosts.forEach(p=>{if(!prev.includes(p._key)&&p.ts>lastVisitTs){notifItems.unshift({key:p._key,board:"board",title:p.title||"새 글",author:p.authorDisplay,ts:p.ts});sendBNotif(p.authorDisplay,p.title||"새 게시물");document.getElementById("hdot").classList.add("show");}});if(notifIsOpen)renderND();}
     boardFirst=false;renderBoard();renderCalendar();renderUpcoming();
   });
@@ -1254,34 +1008,26 @@ function startListeners(){
   });
 }
 
-// ── 패널 ──
 function goPanel(idx,animate=true){
   curPanel=Math.max(0,Math.min(4,idx));
-  const trk=document.getElementById("swipe-trk");
-  const vw=document.getElementById("swipe-con").offsetWidth;
-  trk.style.transition=animate?"transform .32s cubic-bezier(.4,0,.2,1)":"none";
-  trk.style.transform=`translateX(-${curPanel*vw}px)`;
+  const trk=document.getElementById("swipe-trk");const vw=document.getElementById("swipe-con").offsetWidth;
+  trk.style.transition=animate?"transform .32s cubic-bezier(.4,0,.2,1)":"none";trk.style.transform=`translateX(-${curPanel*vw}px)`;
   document.querySelectorAll(".tnav").forEach((t,i)=>t.classList.toggle("active",i===curPanel));
   document.querySelectorAll(".sdot").forEach((d,i)=>d.classList.toggle("active",i===curPanel));
-  if(curPanel===0)renderNotices();
-  if(curPanel===3){renderCalendar();renderUpcoming();}
-  if(curPanel===4&&isAdminUser())loadReports();
+  if(curPanel===0)renderNotices();if(curPanel===3){renderCalendar();renderUpcoming();}if(curPanel===4&&isAdminUser())loadReports();
   window.scrollTo(0,0);
 }
 window.goPanel=goPanel;
 window.addEventListener("resize",()=>goPanel(curPanel,false));
-let tX=0,tY=0;
-const sc=document.getElementById("swipe-con");
+let tX=0,tY=0;const sc=document.getElementById("swipe-con");
 sc.addEventListener("touchstart",e=>{tX=e.touches[0].clientX;tY=e.touches[0].clientY;},{passive:true});
 sc.addEventListener("touchend",e=>{const dx=e.changedTouches[0].clientX-tX,dy=e.changedTouches[0].clientY-tY;if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>44){if(dx<0)goPanel(curPanel+1);else goPanel(curPanel-1);}},{passive:true});
 
-// ── 렌더 ──
 function renderBoard(){
   let list=boardPosts;
   if(boardQ)list=list.filter(p=>(p.title||"").includes(boardQ)||(p.authorDisplay||"").includes(boardQ)||(p.content||"").includes(boardQ));
   if(boardTag)list=list.filter(p=>p.category===boardTag);
-  document.getElementById("board-cnt").textContent=list.length;
-  const c=document.getElementById("board-list");
+  document.getElementById("board-cnt").textContent=list.length;const c=document.getElementById("board-list");
   if(!list.length){c.innerHTML=`<div class="empty-st"><div class="ej">🥋</div><p>아직 게시물이 없어요!</p></div>`;return;}
   c.innerHTML=list.map(p=>buildCard(p,"board")).join("");
 }
@@ -1289,59 +1035,31 @@ function renderFree(){
   let list=freePosts;
   if(freeQ)list=list.filter(p=>(p.title||"").includes(freeQ)||(p.authorDisplay||"").includes(freeQ)||(p.content||"").includes(freeQ));
   if(freeTag)list=list.filter(p=>p.category===freeTag);
-  document.getElementById("free-cnt").textContent=list.length;
-  const c=document.getElementById("free-list");
+  document.getElementById("free-cnt").textContent=list.length;const c=document.getElementById("free-list");
   if(!list.length){c.innerHTML=`<div class="empty-st"><div class="ej">📝</div><p>아직 글이 없어요!</p></div>`;return;}
   c.innerHTML=list.map(p=>buildCard(p,"free")).join("");
 }
 
 function buildCard(p,board){
-  const liked=localReacts[`${p._key}_❤️`];
-  const lc=(p.reactions&&p.reactions["❤️"])||0;
+  const liked=localReacts[`${p._key}_❤️`];const lc=(p.reactions&&p.reactions["❤️"])||0;
   const era=EMOJIS.map(e=>{const cnt=(p.reactions&&p.reactions[e])||0;const act=localReacts[`${p._key}_${e}`];return`<button class="erb${act?" active":""}" onclick="toggleReact(event,'${p._key}','${board}','${e}')">${e}${cnt?` <span class="erbc">${cnt}</span>`:""}</button>`;}).join("");
-  const attGo=p.attendance?Object.values(p.attendance).filter(a=>a.status==="go").length:0;
-  const attNo=p.attendance?Object.values(p.attendance).filter(a=>a.status==="no").length:0;
-  let media="";
-  if(p.videoUrl){const yt=ytE(p.videoUrl);media=yt?`<iframe class="pvideo" src="${yt}" frameborder="0" allowfullscreen></iframe>`:`<video class="pvideo" src="${esc(p.videoUrl)}" controls></video>`;}
-  else if(p.imageData)media=`<img class="pimg" src="${p.imageData}" alt="" onclick="openDetail('${p._key}','${board}')" loading="lazy">`;
+  const attGo=p.attendance?Object.values(p.attendance).filter(a=>a.status==="go").length:0;const attNo=p.attendance?Object.values(p.attendance).filter(a=>a.status==="no").length:0;
+  let media="";if(p.videoUrl){const yt=ytE(p.videoUrl);media=yt?`<iframe class="pvideo" src="${yt}" frameborder="0" allowfullscreen></iframe>`:`<video class="pvideo" src="${esc(p.videoUrl)}" controls></video>`;}else if(p.imageData)media=`<img class="pimg" src="${p.imageData}" alt="" onclick="openDetail('${p._key}','${board}')" loading="lazy">`;
   return`<div class="pcard${p.pinned?" pinned":""}">
-    <div class="pch">
-      ${avEl(p.authorDisplay,p.authorPhoto||"",32)}
-      <div class="pui"><div class="pun">${esc(p.authorDisplay)}</div><div class="pdt">${fmtDate(p.ts)}</div></div>
-      <button class="pmore" onclick="showMenu('${p._key}','${board}')">⋯</button>
-    </div>
-    <div class="ptrow">
-      <span class="tag tag-${esc(p.category)}">${esc(p.category)}</span>
-      <span class="ptitle" onclick="openDetail('${p._key}','${board}')">${esc(p.title||"(제목 없음)")}${p.pinned?" 📌":""}</span>
-    </div>
-    ${media}
-    ${p.scheduleDate?`<div class="sbadge">📅 ${p.scheduleDate}${p.timeStart?" ⏰ "+p.timeStart+(p.timeEnd?" ~ "+p.timeEnd:""):""}</div>`:""}
+    <div class="pch">${avEl(p.authorDisplay,p.authorPhoto||"",32)}<div class="pui"><div class="pun">${esc(p.authorDisplay)}</div><div class="pdt">${fmtDate(p.ts)}</div></div><button class="pmore" onclick="showMenu('${p._key}','${board}')">⋯</button></div>
+    <div class="ptrow"><span class="tag tag-${esc(p.category)}">${esc(p.category)}</span><span class="ptitle" onclick="openDetail('${p._key}','${board}')">${esc(p.title||"(제목 없음)")}${p.pinned?" 📌":""}</span></div>
+    ${media}${p.scheduleDate?`<div class="sbadge">📅 ${p.scheduleDate}${p.timeStart?" ⏰ "+p.timeStart+(p.timeEnd?" ~ "+p.timeEnd:""):""}</div>`:""}
     ${p.content?`<div class="ptext clamp" onclick="openDetail('${p._key}','${board}')">${esc(p.content)}</div>`:""}
-    <div class="pacts">
-      <button class="bhrt" onclick="toggleLike('${p._key}','${board}')">${liked?"❤️":"🤍"}</button>
-      <button class="bcmt" onclick="openDetail('${p._key}','${board}')">💬</button>
-    </div>
-    <div class="erow">${era}</div>
-    ${lc?`<div class="plikes">좋아요 ${lc}개</div>`:""}
-    <div class="pmeta">
-      <span class="au">👤 ${esc(p.authorDisplay)}</span>
-      <span>·</span><span>💬 ${p.commentCount||0}</span>
-      ${p.attendanceOn?`<span>·</span><span style="color:var(--green);">📋 ✅${attGo} ❌${attNo}</span>`:""}
-    </div>
+    <div class="pacts"><button class="bhrt" onclick="toggleLike('${p._key}','${board}')">${liked?"❤️":"🤍"}</button><button class="bcmt" onclick="openDetail('${p._key}','${board}')">💬</button></div>
+    <div class="erow">${era}</div>${lc?`<div class="plikes">좋아요 ${lc}개</div>`:""}
+    <div class="pmeta"><span class="au">👤 ${esc(p.authorDisplay)}</span><span>·</span><span>💬 ${p.commentCount||0}</span>${p.attendanceOn?`<span>·</span><span style="color:var(--green);">📋 ✅${attGo} ❌${attNo}</span>`:""}</div>
     ${p.attendanceOn?`<div class="att-strip" onclick="openDetail('${p._key}','${board}')">📋 출석 체크 보기 →</div>`:""}
   </div>`;
 }
 function ytE(url){if(!url)return"";const m=url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|v\/|shorts\/))([a-zA-Z0-9_-]{11})/);return m?`https://www.youtube.com/embed/${m[1]}`:""}
-
 function doSearch(q,board){if(board==="board"){boardQ=q;renderBoard();}else{freeQ=q;renderFree();}}
-function ftag(el,board,tag){
-  if(board==="board"){boardTag=tag;}else{freeTag=tag;}
-  el.parentElement.querySelectorAll(".stag").forEach(t=>t.classList.remove("active"));
-  el.classList.add("active");
-  if(board==="board")renderBoard();else renderFree();
-}
+function ftag(el,board,tag){if(board==="board"){boardTag=tag;}else{freeTag=tag;}el.parentElement.querySelectorAll(".stag").forEach(t=>t.classList.remove("active"));el.classList.add("active");if(board==="board")renderBoard();else renderFree();}
 window.doSearch=doSearch;window.ftag=ftag;
-
 async function toggleLike(key,board){if(isGuest){toast("로그인 후 이용할 수 있어요",false);return;}const ek=`${key}_❤️`;const had=!!localReacts[ek];const path=`${board}_posts/${key}/reactions/❤️`;const cur=(await DG(path))||0;await DS(path,Math.max(0,had?cur-1:cur+1));if(had)delete localReacts[ek];else localReacts[ek]=true;localStorage.setItem(RK,JSON.stringify(localReacts));}
 async function toggleReact(e,key,board,emoji){e.preventDefault();e.stopPropagation();if(isGuest){toast("로그인 후 이용할 수 있어요",false);return;}const ek=`${key}_${emoji}`;const had=!!localReacts[ek];const path=`${board}_posts/${key}/reactions/${emoji}`;const cur=(await DG(path))||0;await DS(path,Math.max(0,had?cur-1:cur+1));if(had)delete localReacts[ek];else localReacts[ek]=true;localStorage.setItem(RK,JSON.stringify(localReacts));}
 window.toggleLike=toggleLike;window.toggleReact=toggleReact;
@@ -1350,200 +1068,83 @@ async function openDetail(key,board){
   SL();
   try{
     const p=await DG(`${board}_posts/${key}`);if(!p){HL();toast("찾을 수 없어요",false);return;}
-    p._key=key;p._board=board;
-    const cv=await DG(`${board}_comments/${key}`);
+    p._key=key;p._board=board;const cv=await DG(`${board}_comments/${key}`);
     p.comments=cv?Object.entries(cv).map(([k,v])=>({...v,_key:k})).sort((a,b)=>a.ts-b.ts):[];
-    HL();
-    showPage("detail");
-    document.querySelector("#pg-detail .detail-inner").innerHTML=buildDetail(p);
-    window.scrollTo(0,0);
+    HL();showPage("detail");document.querySelector("#pg-detail .detail-inner").innerHTML=buildDetail(p);window.scrollTo(0,0);
   }catch(e){HL();toast("❌ "+e.message,false);}
 }
 window.openDetail=openDetail;
-
-function showPage(pg){
-  document.getElementById("pg-app").style.display="none";
-  document.getElementById("pg-detail").style.display=pg==="detail"?"block":"none";
-  document.getElementById("pg-write").style.display=pg==="write"?"block":"none";
-}
+function showPage(pg){document.getElementById("pg-app").style.display="none";document.getElementById("pg-detail").style.display=pg==="detail"?"block":"none";document.getElementById("pg-write").style.display=pg==="write"?"block":"none";}
 function backToApp(){document.getElementById("pg-detail").style.display="none";document.getElementById("pg-write").style.display="none";document.getElementById("pg-app").style.display="block";}
 window.backToApp=backToApp;
 
 function buildDetail(p){
-  const liked=localReacts[`${p._key}_❤️`];
-  const lc=(p.reactions&&p.reactions["❤️"])||0;
+  const liked=localReacts[`${p._key}_❤️`];const lc=(p.reactions&&p.reactions["❤️"])||0;
   const atts=p.attendance?Object.entries(p.attendance).map(([k,v])=>({...v,_key:k})):[];
   const gl=atts.filter(a=>a.status==="go"),nl=atts.filter(a=>a.status==="no");
   const isMine=CU&&(CU.username===p.author||CU.isAdmin);
   const era=EMOJIS.map(e=>{const cnt=(p.reactions&&p.reactions[e])||0;const act=localReacts[`${p._key}_${e}`];return`<button class="erb${act?" active":""}" onclick="toggleReact(event,'${p._key}','${p._board}','${e}')">${e}${cnt?` <span class="erbc">${cnt}</span>`:""}</button>`;}).join("");
-  let media="";
-  if(p.videoUrl){const yt=ytE(p.videoUrl);media=yt?`<iframe class="pvideo" src="${yt}" frameborder="0" allowfullscreen></iframe>`:`<video class="pvideo" src="${esc(p.videoUrl)}" controls></video>`;}
-  else if(p.imageData)media=`<img class="pimg" src="${p.imageData}" alt="">`;
-
-  const cmts=p.comments.length
-    ? p.comments.map(c=>`
-      <div class="dci">
-        ${avEl(c.authorDisplay||c.author,c.authorPhoto||"",28)}
-        <div class="dcb">
-          <span class="dcan">${esc(c.authorDisplay||c.author)}</span>
-          <span class="dctext"> ${esc(c.text)}</span>
-          <div class="dcdate">
-            ${fmtDate(c.ts)}
-            ${CU?.isAdmin||CU?.username===c.author
-              ?`<button class="btn-dcdel" onclick="delComment('${p._key}','${c._key}','${p._board}')">삭제</button>`
-              :""}
-          </div>
-        </div>
-      </div>`).join("")
-    : `<p style="color:var(--gray);font-size:.78rem;padding:14px 0 8px;text-align:center;">💬 첫 댓글을 달아보세요!</p>`;
-
+  let media="";if(p.videoUrl){const yt=ytE(p.videoUrl);media=yt?`<iframe class="pvideo" src="${yt}" frameborder="0" allowfullscreen></iframe>`:`<video class="pvideo" src="${esc(p.videoUrl)}" controls></video>`;}else if(p.imageData)media=`<img class="pimg" src="${p.imageData}" alt="">`;
+  const cmts=p.comments.length?p.comments.map(c=>`
+    <div class="dci">${avEl(c.authorDisplay||c.author,c.authorPhoto||"",28)}<div class="dcb"><span class="dcan">${esc(c.authorDisplay||c.author)}</span><span class="dctext"> ${esc(c.text)}</span><div class="dcdate">${fmtDate(c.ts)} ${CU?.isAdmin||CU?.username===c.author?`<button class="btn-dcdel" onclick="delComment('${p._key}','${c._key}','${p._board}')">삭제</button>`:""}</div></div></div>`).join("")
+    :`<p style="color:var(--gray);font-size:.78rem;padding:14px 0 8px;text-align:center;">💬 첫 댓글을 달아보세요!</p>`;
   const myAv=avEl(CU?.displayName||"",CU?.photoData||"",28);
   const writeBar=!isGuest
-    ? `<div class="dcwrite">
-        ${myAv}
-        <input class="dcinput" id="ci"
-          placeholder="${esc(CU?.displayName||"")}(으)로 댓글 달기..."
-          oninput="this.nextElementSibling.classList.toggle('on',this.value.trim().length>0)">
-        <button class="dcsub" onclick="submitComment('${p._key}','${p._board}')">게시</button>
-      </div>`
-    : `<div style="text-align:center;padding:13px;font-size:.76rem;color:var(--gray);background:#fff;border-top:1px solid var(--bd);">
-        댓글을 달려면 로그인해주세요
-       </div>`;
-
+    ?`<div class="dcwrite">${myAv}<input class="dcinput" id="ci" placeholder="${esc(CU?.displayName||"")}(으)로 댓글 달기..." oninput="this.nextElementSibling.classList.toggle('on',this.value.trim().length>0)"><button class="dcsub" onclick="submitComment('${p._key}','${p._board}')">게시</button></div>`
+    :`<div style="text-align:center;padding:13px;font-size:.76rem;color:var(--gray);background:#fff;border-top:1px solid var(--bd);">댓글을 달려면 로그인해주세요</div>`;
   return `
   <div class="detcard">
-    <div class="dhd">
-      <button class="dback" onclick="backToApp()">← 목록</button>
-      <div class="dtitle">${p._board==="free"?"자율게시판":"게시판"}</div>
-      ${isMine?`<button class="pmore" style="margin-left:auto;" onclick="showMenu('${p._key}','${p._board}')">⋯</button>`:"<div></div>"}
-    </div>
-
+    <div class="dhd"><button class="dback" onclick="backToApp()">← 목록</button><div class="dtitle">${p._board==="free"?"자율게시판":"게시판"}</div>${isMine?`<button class="pmore" style="margin-left:auto;" onclick="showMenu('${p._key}','${p._board}')">⋯</button>`:"<div></div>"}</div>
     <div class="dbody">
-      <div class="pch" style="padding:0 0 8px;">
-        ${avEl(p.authorDisplay,p.authorPhoto||"",32)}
-        <div class="pui">
-          <div class="pun">${esc(p.authorDisplay)}</div>
-          <div class="pdt">${fmtDate(p.ts)}</div>
-        </div>
-      </div>
-      <div class="ptrow" style="padding:0 0 8px;">
-        <span class="tag tag-${esc(p.category)}">${esc(p.category)}</span>
-        <span class="ptitle" style="font-size:1rem;">${esc(p.title||"(제목 없음)")}${p.pinned?" 📌":""}</span>
-      </div>
-      ${media}
-      ${p.scheduleDate?`<div class="sbadge" style="margin:5px 0 8px;">📅 ${p.scheduleDate}${p.timeStart?" ⏰ "+p.timeStart+(p.timeEnd?" ~ "+p.timeEnd:""):""}</div>`:""}
+      <div class="pch" style="padding:0 0 8px;">${avEl(p.authorDisplay,p.authorPhoto||"",32)}<div class="pui"><div class="pun">${esc(p.authorDisplay)}</div><div class="pdt">${fmtDate(p.ts)}</div></div></div>
+      <div class="ptrow" style="padding:0 0 8px;"><span class="tag tag-${esc(p.category)}">${esc(p.category)}</span><span class="ptitle" style="font-size:1rem;">${esc(p.title||"(제목 없음)")}${p.pinned?" 📌":""}</span></div>
+      ${media}${p.scheduleDate?`<div class="sbadge" style="margin:5px 0 8px;">📅 ${p.scheduleDate}${p.timeStart?" ⏰ "+p.timeStart+(p.timeEnd?" ~ "+p.timeEnd:""):""}</div>`:""}
       ${p.content?`<div class="dcontent">${esc(p.content)}</div>`:""}
-      <div class="pacts" style="padding:6px 0 2px;">
-        <button class="bhrt" onclick="toggleLike('${p._key}','${p._board}')">${liked?"❤️":"🤍"}</button>
-        <button class="bcmt">💬</button>
-      </div>
-      <div class="erow" style="padding:0 0 5px;">${era}</div>
-      ${lc?`<div class="plikes" style="padding:0 0 5px;">좋아요 ${lc}개</div>`:""}
+      <div class="pacts" style="padding:6px 0 2px;"><button class="bhrt" onclick="toggleLike('${p._key}','${p._board}')">${liked?"❤️":"🤍"}</button><button class="bcmt">💬</button></div>
+      <div class="erow" style="padding:0 0 5px;">${era}</div>${lc?`<div class="plikes" style="padding:0 0 5px;">좋아요 ${lc}개</div>`:""}
     </div>
-
-    ${p.attendanceOn||CU?.isAdmin?`
-    <div style="padding:0 14px 10px;">
-      <div class="att-sec">
-        <div class="atttitle">📋 출석 체크
-          ${CU?.isAdmin?`<button class="atttog" onclick="toggleAtt('${p._key}','${p._board}',${!p.attendanceOn})">${p.attendanceOn?"OFF":"ON"}</button>`:""}
-        </div>
-        ${p.attendanceOn?`
-        <div class="attchips">${gl.map(a=>`<span class="attchip go">✅ ${esc(a.name)}</span>`).join("")}${nl.map(a=>`<span class="attchip no">❌ ${esc(a.name)}</span>`).join("")}</div>
-        <div class="attwrite">
-          <input class="attni" id="att-name" placeholder="이름...">
-          <button class="btnatt go" onclick="markAtt('${p._key}','${p._board}','go')">✅ 참석</button>
-          <button class="btnatt no" onclick="markAtt('${p._key}','${p._board}','no')">❌ 불참</button>
-        </div>`:"<p style=\"font-size:.74rem;color:var(--gray);\">관리자가 출석을 켤 수 있어요</p>"}
-      </div>
-    </div>`:""}
-
-    <div class="dcmtsec">
-      <div class="dcmttitle">💬 댓글 <span class="dcmtcnt">${p.comments.length}</span></div>
-      <div id="cmt-list">${cmts}</div>
-    </div>
+    ${p.attendanceOn||CU?.isAdmin?`<div style="padding:0 14px 10px;"><div class="att-sec"><div class="atttitle">📋 출석 체크 ${CU?.isAdmin?`<button class="atttog" onclick="toggleAtt('${p._key}','${p._board}',${!p.attendanceOn})">${p.attendanceOn?"OFF":"ON"}</button>`:""}</div>${p.attendanceOn?`<div class="attchips">${gl.map(a=>`<span class="attchip go">✅ ${esc(a.name)}</span>`).join("")}${nl.map(a=>`<span class="attchip no">❌ ${esc(a.name)}</span>`).join("")}</div><div class="attwrite"><input class="attni" id="att-name" placeholder="이름..."><button class="btnatt go" onclick="markAtt('${p._key}','${p._board}','go')">✅ 참석</button><button class="btnatt no" onclick="markAtt('${p._key}','${p._board}','no')">❌ 불참</button></div>`:"<p style=\"font-size:.74rem;color:var(--gray);\">관리자가 출석을 켤 수 있어요</p>"}</div></div>`:""}
+    <div class="dcmtsec"><div class="dcmttitle">💬 댓글 <span class="dcmtcnt">${p.comments.length}</span></div><div id="cmt-list">${cmts}</div></div>
   </div>
-
-  ${writeBar}
-  <div style="height:62px;"></div>
-  `;
+  ${writeBar}<div style="height:62px;"></div>`;
 }
 
 function showMenu(key,board){
-  const list=board==="board"?boardPosts:freePosts;
-  const p=list.find(x=>x._key===key);
-  const isMine=CU&&(CU.username===p?.author||CU.isAdmin);
-  if(!isMine){toast("권한이 없어요",false);return;}
+  const list=board==="board"?boardPosts:freePosts;const p=list.find(x=>x._key===key);
+  const isMine=CU&&(CU.username===p?.author||CU.isAdmin);if(!isMine){toast("권한이 없어요",false);return;}
   const acts=[];
   if(CU?.isAdmin)acts.push({l:p?.pinned?"📌 고정 해제":"📌 상단 고정",fn:()=>togglePin(key,board,!p?.pinned)});
   if(CU?.isAdmin)acts.push({l:p?.attendanceOn?"📋 출석 OFF":"📋 출석 ON",fn:()=>toggleAtt(key,board,!p?.attendanceOn)});
   acts.push({l:"🗑️ 삭제",fn:()=>{delKey=key;delBoard=board;delType="post";document.getElementById("del-pw").value="";document.getElementById("m-del").classList.add("show");setTimeout(()=>document.getElementById("del-pw").focus(),100);}});
-  const ch=prompt(`작업:\n${acts.map((a,i)=>`${i+1}. ${a.l}`).join("\n")}\n\n번호:`);
-  if(!ch)return;const idx=parseInt(ch)-1;if(acts[idx])acts[idx].fn();
+  const ch=prompt(`작업:\n${acts.map((a,i)=>`${i+1}. ${a.l}`).join("\n")}\n\n번호:`);if(!ch)return;const idx=parseInt(ch)-1;if(acts[idx])acts[idx].fn();
 }
 window.showMenu=showMenu;
 
-async function submitComment(postKey,board){
-  if(isGuest){toast("로그인 후 이용할 수 있어요",false);return;}
-  const inp=document.getElementById("ci");if(!inp)return;
-  const text=inp.value.trim();if(!text)return;
-  SL();try{await DP(`${board}_comments/${postKey}`,{author:CU.username,authorDisplay:CU.displayName,authorPhoto:CU.photoData||"",text,ts:Date.now()});const cur=(await DG(`${board}_posts/${postKey}/commentCount`))||0;await DS(`${board}_posts/${postKey}/commentCount`,cur+1);HL();inp.value="";await openDetail(postKey,board);}catch(e){HL();toast("❌ "+e.message,false);}
-}
+async function submitComment(postKey,board){if(isGuest){toast("로그인 후 이용할 수 있어요",false);return;}const inp=document.getElementById("ci");if(!inp)return;const text=inp.value.trim();if(!text)return;SL();try{await DP(`${board}_comments/${postKey}`,{author:CU.username,authorDisplay:CU.displayName,authorPhoto:CU.photoData||"",text,ts:Date.now()});const cur=(await DG(`${board}_posts/${postKey}/commentCount`))||0;await DS(`${board}_posts/${postKey}/commentCount`,cur+1);HL();inp.value="";await openDetail(postKey,board);}catch(e){HL();toast("❌ "+e.message,false);}}
 window.submitComment=submitComment;
 async function delComment(postKey,cmtKey,board){if(!CU?.isAdmin){const e=prompt("댓글 삭제 비밀번호:");if(e===null)return;}SL();try{await DD(`${board}_comments/${postKey}/${cmtKey}`);const cur=(await DG(`${board}_posts/${postKey}/commentCount`))||1;await DS(`${board}_posts/${postKey}/commentCount`,Math.max(0,cur-1));HL();toast("🗑️ 삭제됐어요!");await openDetail(postKey,board);}catch(e){HL();toast("❌ "+e.message,false);}}
 window.delComment=delComment;
-
-async function confirmDel(){
-  const ent=document.getElementById("del-pw").value;closeM("m-del");SL();
-  try{if(!CU?.isAdmin){const p=await DG(`${delBoard}_posts/${delKey}`);if(!p||p.pw!==ent){HL();toast("❌ 비밀번호가 틀렸어요",false);return;}}
-  await Promise.all([DD(`${delBoard}_posts/${delKey}`),DD(`${delBoard}_comments/${delKey}`)]);HL();toast("🗑️ 삭제됐어요!");backToApp();}
-  catch(e){HL();toast("❌ "+e.message,false);}
-}
+async function confirmDel(){const ent=document.getElementById("del-pw").value;closeM("m-del");SL();try{if(!CU?.isAdmin){const p=await DG(`${delBoard}_posts/${delKey}`);if(!p||p.pw!==ent){HL();toast("❌ 비밀번호가 틀렸어요",false);return;}}await Promise.all([DD(`${delBoard}_posts/${delKey}`),DD(`${delBoard}_comments/${delKey}`)]);HL();toast("🗑️ 삭제됐어요!");backToApp();}catch(e){HL();toast("❌ "+e.message,false);}}
 window.confirmDel=confirmDel;
-
 async function togglePin(key,board,pin){SL();try{await DU(`${board}_posts/${key}`,{pinned:pin||false});HL();toast(pin?"📌 고정됐어요":"고정 해제됐어요");}catch(e){HL();toast("❌ "+e.message,false);}}
 async function toggleAtt(key,board,on){SL();try{await DU(`${board}_posts/${key}`,{attendanceOn:on});HL();toast(on?"📋 출석 켜졌어요":"출석 꺼졌어요");await openDetail(key,board);}catch(e){HL();toast("❌ "+e.message,false);}}
 window.toggleAtt=toggleAtt;
 async function markAtt(key,board,status){const name=document.getElementById("att-name")?.value.trim();if(!name){toast("⚠️ 이름을 입력해주세요",false);return;}SL();try{await DP(`${board}_posts/${key}/attendance`,{name,status,ts:Date.now()});HL();toast(status==="go"?"✅ 참석!":"❌ 불참!");await openDetail(key,board);}catch(e){HL();toast("❌ "+e.message,false);}}
 window.markAtt=markAtt;
 
-// ── 글쓰기 ──
 function openWrite(board){
   if(isGuest){toast("로그인 후 이용할 수 있어요",false);return;}
   curWriteBoard=board;curMT="text";
   const isBoard=board==="board";
-  const cats=isBoard?`<option value="일반">💬 일반</option><option value="훈련">🥊 훈련</option><option value="일정">📅 일정</option><option value="공지">📢 공지</option>`
-    :`<option value="자유">💬 자유</option><option value="정보">📌 정보</option><option value="질문">❓ 질문</option><option value="유머">😂 유머</option>`;
+  const cats=isBoard?`<option value="일반">💬 일반</option><option value="훈련">🥊 훈련</option><option value="일정">📅 일정</option><option value="공지">📢 공지</option>`:`<option value="자유">💬 자유</option><option value="정보">📌 정보</option><option value="질문">❓ 질문</option><option value="유머">😂 유머</option>`;
   document.getElementById("wf-inner").innerHTML=`
-    <div class="wfhead">
-      <button onclick="backToApp()" style="background:none;border:none;color:#fff;font-size:.83rem;cursor:pointer;padding:4px 8px;">← 취소</button>
-      <h2>${isBoard?"게시판":"자율게시판"} 글쓰기</h2>
-      <button class="btn-sub" onclick="submitPost()">등록</button>
-    </div>
+    <div class="wfhead"><button onclick="backToApp()" style="background:none;border:none;color:#fff;font-size:.83rem;cursor:pointer;padding:4px 8px;">← 취소</button><h2>${isBoard?"게시판":"자율게시판"} 글쓰기</h2><button class="btn-sub" onclick="submitPost()">등록</button></div>
     <div class="wfbody">
-      <div class="mbtns">
-        <button class="mbtn active" id="mt-text" onclick="switchMT('text')">📝 텍스트</button>
-        <button class="mbtn" id="mt-photo" onclick="switchMT('photo')">📷 사진</button>
-        <button class="mbtn" id="mt-video" onclick="switchMT('video')">🎥 동영상</button>
-      </div>
-      <div id="wr-photo" style="display:none;">
-        <div class="imgwrap" onclick="document.getElementById('wif').click()">
-          <img id="wiprev" style="display:none;" alt="">
-          <div class="imgph" id="wiph"><div class="bi">📷</div><p>사진 추가 (자동 압축)</p></div>
-        </div>
-        <input type="file" id="wif" accept="image/*" style="display:none;" onchange="handleImg(this)">
-      </div>
-      <div id="wr-video" style="display:none;">
-        <input class="vidinput" id="w-vurl" type="text" placeholder="YouTube URL..." oninput="previewVid(this.value)">
-        <div class="vidhint">예: https://youtu.be/xxxxx</div>
-        <div id="vid-prev" style="display:none;border-radius:10px;overflow:hidden;margin-bottom:9px;aspect-ratio:16/9;background:#111;"></div>
-      </div>
+      <div class="mbtns"><button class="mbtn active" id="mt-text" onclick="switchMT('text')">📝 텍스트</button><button class="mbtn" id="mt-photo" onclick="switchMT('photo')">📷 사진</button><button class="mbtn" id="mt-video" onclick="switchMT('video')">🎥 동영상</button></div>
+      <div id="wr-photo" style="display:none;"><div class="imgwrap" onclick="document.getElementById('wif').click()"><img id="wiprev" style="display:none;" alt=""><div class="imgph" id="wiph"><div class="bi">📷</div><p>사진 추가 (자동 압축)</p></div></div><input type="file" id="wif" accept="image/*" style="display:none;" onchange="handleImg(this)"></div>
+      <div id="wr-video" style="display:none;"><input class="vidinput" id="w-vurl" type="text" placeholder="YouTube URL..." oninput="previewVid(this.value)"><div class="vidhint">예: https://youtu.be/xxxxx</div><div id="vid-prev" style="display:none;border-radius:10px;overflow:hidden;margin-bottom:9px;aspect-ratio:16/9;background:#111;"></div></div>
       <div class="frow"><label class="fl">카테고리</label><select class="fs" id="wcat" onchange="toggleWDate()">${cats}</select></div>
-      <div id="wdaterow" style="display:none;" class="frow">
-        <label class="fl">📅 일정 날짜 & 시간</label>
-        <div class="f3col">
-          <input class="fi" id="wsdate" type="date"><input class="fi" id="wstime" type="time"><input class="fi" id="wetime" type="time">
-        </div>
-      </div>
+      <div id="wdaterow" style="display:none;" class="frow"><label class="fl">📅 일정 날짜 & 시간</label><div class="f3col"><input class="fi" id="wsdate" type="date"><input class="fi" id="wstime" type="time"><input class="fi" id="wetime" type="time"></div></div>
       <div class="frow"><label class="fl">제목</label><input class="fi" id="wtitle" type="text" placeholder="제목을 입력하세요" maxlength="60"></div>
       <div class="frow"><label class="fl">내용</label><textarea class="fta" id="wcontent" placeholder="내용을 입력하세요..."></textarea></div>
       <div class="frow"><label class="fl">비밀번호 (삭제용)</label><input class="fi" id="wpw" type="password" placeholder="나만 아는 비밀번호"></div>
@@ -1552,46 +1153,22 @@ function openWrite(board){
 }
 function openWriteSched(){openWrite("board");setTimeout(()=>{const s=document.getElementById("wcat");if(s){s.value="일정";toggleWDate();}},50);}
 window.openWrite=openWrite;window.openWriteSched=openWriteSched;
-
-function switchMT(type){
-  curMT=type;
-  ["text","photo","video"].forEach(t=>{const el=document.getElementById("mt-"+t);if(el)el.classList.toggle("active",t===type);});
-  const pr=document.getElementById("wr-photo");const vr=document.getElementById("wr-video");
-  if(pr)pr.style.display=type==="photo"?"":"none";if(vr)vr.style.display=type==="video"?"":"none";
-}
+function switchMT(type){curMT=type;["text","photo","video"].forEach(t=>{const el=document.getElementById("mt-"+t);if(el)el.classList.toggle("active",t===type);});const pr=document.getElementById("wr-photo");const vr=document.getElementById("wr-video");if(pr)pr.style.display=type==="photo"?"":"none";if(vr)vr.style.display=type==="video"?"":"none";}
 window.switchMT=switchMT;
-
 async function handleImg(input){const file=input.files[0];if(!file)return;SL();try{const comp=await compressImg(file);const pr=document.getElementById("wiprev");pr.src=comp;pr.style.display="block";document.getElementById("wiph").style.display="none";toast("✅ 이미지 압축 (~"+Math.round(comp.length*.75/1024)+"KB)");}catch(e){toast("이미지 처리 실패",false);}HL();}
 window.handleImg=handleImg;
-
 function previewVid(url){const c=document.getElementById("vid-prev");const yt=ytE(url);if(yt){c.innerHTML=`<iframe width="100%" height="100%" src="${yt}" frameborder="0" allowfullscreen></iframe>`;c.style.display="";}else c.style.display="none";}
 window.previewVid=previewVid;
-
 function toggleWDate(){const el=document.getElementById("wdaterow");if(el)el.style.display=document.getElementById("wcat")?.value==="일정"?"":"none";}
 window.toggleWDate=toggleWDate;
-
 async function submitPost(){
   if(isGuest){toast("로그인 후 이용할 수 있어요",false);return;}
-  const title=document.getElementById("wtitle")?.value.trim()||"";
-  const content=document.getElementById("wcontent")?.value.trim()||"";
-  const pw=document.getElementById("wpw")?.value.trim()||"";
-  const cat=document.getElementById("wcat")?.value||"일반";
-  const wiprev=document.getElementById("wiprev");
-  const imageData=curMT==="photo"&&wiprev?.style.display!=="none"?wiprev.src:"";
-  const videoUrl=curMT==="video"?(document.getElementById("w-vurl")?.value.trim()||""):"";
-  const sd=document.getElementById("wsdate")?.value||"",st=document.getElementById("wstime")?.value||"",et=document.getElementById("wetime")?.value||"";
-  if(!title){toast("제목을 입력해주세요",false);return;}
-  if(!content&&!imageData&&!videoUrl){toast("내용, 사진 또는 동영상을 추가해주세요",false);return;}
-  if(!pw){toast("비밀번호를 입력해주세요",false);return;}
-  if(cat==="일정"&&!sd){toast("일정 날짜를 선택해주세요",false);return;}
-  SL();try{
-    await DP(`${curWriteBoard}_posts`,{author:CU.username,authorDisplay:CU.displayName,authorPhoto:CU.photoData||"",title,content,imageData,videoUrl,category:curMT==="video"?"동영상":cat,pw,ts:Date.now(),commentCount:0,pinned:false,attendanceOn:false,scheduleDate:sd,timeStart:st,timeEnd:et});
-    HL();toast("✅ 게시물이 등록됐어요!");backToApp();goPanel(curWriteBoard==="board"?1:2,false);
-  }catch(e){HL();toast("❌ "+e.message,false);}
+  const title=document.getElementById("wtitle")?.value.trim()||"";const content=document.getElementById("wcontent")?.value.trim()||"";const pw=document.getElementById("wpw")?.value.trim()||"";const cat=document.getElementById("wcat")?.value||"일반";const wiprev=document.getElementById("wiprev");const imageData=curMT==="photo"&&wiprev?.style.display!=="none"?wiprev.src:"";const videoUrl=curMT==="video"?(document.getElementById("w-vurl")?.value.trim()||""):"";const sd=document.getElementById("wsdate")?.value||"",st=document.getElementById("wstime")?.value||"",et=document.getElementById("wetime")?.value||"";
+  if(!title){toast("제목을 입력해주세요",false);return;}if(!content&&!imageData&&!videoUrl){toast("내용, 사진 또는 동영상을 추가해주세요",false);return;}if(!pw){toast("비밀번호를 입력해주세요",false);return;}if(cat==="일정"&&!sd){toast("일정 날짜를 선택해주세요",false);return;}
+  SL();try{await DP(`${curWriteBoard}_posts`,{author:CU.username,authorDisplay:CU.displayName,authorPhoto:CU.photoData||"",title,content,imageData,videoUrl,category:curMT==="video"?"동영상":cat,pw,ts:Date.now(),commentCount:0,pinned:false,attendanceOn:false,scheduleDate:sd,timeStart:st,timeEnd:et});HL();toast("✅ 게시물이 등록됐어요!");backToApp();goPanel(curWriteBoard==="board"?1:2,false);}catch(e){HL();toast("❌ "+e.message,false);}
 }
 window.submitPost=submitPost;
 
-// ── 공지 (모든 관리자) ──
 async function renderNotices(){
   document.getElementById("btn-nw").style.display=isAdminUser()?"":"none";
   const c=document.getElementById("notice-list");c.innerHTML=`<div class="empty-st"><div class="ej">⏳</div></div>`;
@@ -1603,24 +1180,15 @@ async function submitNotice(){if(!isAdminUser()){toast("관리자만 가능해�
 async function delNotice(key){if(!isAdminUser())return;if(!confirm("공지를 삭제할까요?"))return;SL();try{await DD("notices/"+key);HL();toast("🗑️ 삭제됐어요!");renderNotices();}catch(e){HL();toast("❌ "+e.message,false);}}
 window.showNW=showNW;window.hideNW=hideNW;window.submitNotice=submitNotice;window.delNotice=delNotice;
 
-// ── 익명 민원/신고 (관리자 처리: 모든 관리자) ──
 function selRT(el,type){curRT=type;document.querySelectorAll(".rtbtn").forEach(b=>b.classList.remove("active"));el.classList.add("active");}
 window.selRT=selRT;
-async function submitReport(){
-  const title=document.getElementById("r-title").value.trim();const content=document.getElementById("r-content").value.trim();
-  if(!title){toast("제목을 입력해주세요",false);return;}if(content.length<10){toast("내용을 10자 이상 입력해주세요",false);return;}
-  SL();try{await DP("reports",{title,content,type:curRT,ts:Date.now(),status:"pending"});HL();document.getElementById("r-title").value="";document.getElementById("r-content").value="";toast("🔒 익명으로 접수됐어요!");}catch(e){HL();toast("❌ "+e.message,false);}
-}
+async function submitReport(){const title=document.getElementById("r-title").value.trim();const content=document.getElementById("r-content").value.trim();if(!title){toast("제목을 입력해주세요",false);return;}if(content.length<10){toast("내용을 10자 이상 입력해주세요",false);return;}SL();try{await DP("reports",{title,content,type:curRT,ts:Date.now(),status:"pending"});HL();document.getElementById("r-title").value="";document.getElementById("r-content").value="";toast("🔒 익명으로 접수됐어요!");}catch(e){HL();toast("❌ "+e.message,false);}}
 window.submitReport=submitReport;
-async function loadReports(){
-  if(!isAdminUser())return;
-  document.getElementById("r-admin-area").style.display="";
-  try{const val=await DG("reports");const rs=val?Object.entries(val).map(([k,v])=>({...v,_key:k})).sort((a,b)=>b.ts-a.ts):[];document.getElementById("r-cnt").textContent=`(${rs.length}건)`;const c=document.getElementById("r-list");if(!rs.length){c.innerHTML=`<div class="empty-st" style="padding:22px;"><div class="ej">📭</div><p>접수된 민원이 없어요</p></div>`;return;}c.innerHTML=rs.map(r=>`<div class="ritem"><div class="rih"><div><span class="ritag">${esc(r.type)}</span><span class="rititl">${esc(r.title)}</span></div><div style="display:flex;align-items:center;gap:6px;"><span class="ristatus ${r.status==="done"?"done":"pending"}">${r.status==="done"?"✅ 처리완료":"⏳ 처리중"}</span><span class="ridate">${fmtDate(r.ts)}</span></div></div><div class="ribody">${esc(r.content)}</div><div style="margin-top:6px;font-size:.67rem;color:var(--gray);">🔒 익명 접수 ${r.status!=="done"?`<button onclick="markRDone('${r._key}')" style="background:var(--green);color:#fff;border:none;border-radius:5px;padding:2px 9px;font-size:.65rem;cursor:pointer;margin-left:8px;">처리완료</button>`:""}<button onclick="delReport('${r._key}')" style="background:none;border:none;color:var(--red);font-size:.65rem;cursor:pointer;margin-left:5px;">삭제</button></div></div>`).join("");}catch(e){}}
+async function loadReports(){if(!isAdminUser())return;document.getElementById("r-admin-area").style.display="";try{const val=await DG("reports");const rs=val?Object.entries(val).map(([k,v])=>({...v,_key:k})).sort((a,b)=>b.ts-a.ts):[];document.getElementById("r-cnt").textContent=`(${rs.length}건)`;const c=document.getElementById("r-list");if(!rs.length){c.innerHTML=`<div class="empty-st" style="padding:22px;"><div class="ej">📭</div><p>접수된 민원이 없어요</p></div>`;return;}c.innerHTML=rs.map(r=>`<div class="ritem"><div class="rih"><div><span class="ritag">${esc(r.type)}</span><span class="rititl">${esc(r.title)}</span></div><div style="display:flex;align-items:center;gap:6px;"><span class="ristatus ${r.status==="done"?"done":"pending"}">${r.status==="done"?"✅ 처리완료":"⏳ 처리중"}</span><span class="ridate">${fmtDate(r.ts)}</span></div></div><div class="ribody">${esc(r.content)}</div><div style="margin-top:6px;font-size:.67rem;color:var(--gray);">🔒 익명 접수 ${r.status!=="done"?`<button onclick="markRDone('${r._key}')" style="background:var(--green);color:#fff;border:none;border-radius:5px;padding:2px 9px;font-size:.65rem;cursor:pointer;margin-left:8px;">처리완료</button>`:""}<button onclick="delReport('${r._key}')" style="background:none;border:none;color:var(--red);font-size:.65rem;cursor:pointer;margin-left:5px;">삭제</button></div></div>`).join("");}catch(e){}}
 async function markRDone(k){SL();try{await DU("reports/"+k,{status:"done"});HL();toast("✅ 처리완료!");loadReports();}catch(e){HL();}}
 async function delReport(k){if(!confirm("삭제할까요?"))return;SL();try{await DD("reports/"+k);HL();toast("🗑️ 삭제됐어요!");loadReports();}catch(e){HL();}}
 window.markRDone=markRDone;window.delReport=delReport;
 
-// ── 달력 ──
 function calPrev(){calM--;if(calM<0){calM=11;calY--;}renderCalendar();renderUpcoming();}
 function calNext(){calM++;if(calM>11){calM=0;calY++;}renderCalendar();renderUpcoming();}
 window.calPrev=calPrev;window.calNext=calNext;
@@ -1646,18 +1214,13 @@ function openDayM(ds){
 }
 window.openDayM=openDayM;
 
-// ── 알림 ──
 async function requestNotifPerm(){if("Notification" in window&&Notification.permission==="default")await Notification.requestPermission();}
 function sendBNotif(name,body){if(Notification.permission==="granted"&&document.visibilityState!=="visible")new Notification("🥋 석사 태권도 시범단 - "+name,{body});}
-function toggleNotif(){
-  notifIsOpen=!notifIsOpen;document.getElementById("ndrop").classList.toggle("show",notifIsOpen);
-  if(notifIsOpen){document.getElementById("hdot").classList.remove("show");lastVisitTs=Date.now();localStorage.setItem("sbd_lv",lastVisitTs.toString());renderND();}
-}
+function toggleNotif(){notifIsOpen=!notifIsOpen;document.getElementById("ndrop").classList.toggle("show",notifIsOpen);if(notifIsOpen){document.getElementById("hdot").classList.remove("show");lastVisitTs=Date.now();localStorage.setItem("sbd_lv",lastVisitTs.toString());renderND();}}
 function renderND(){const c=document.getElementById("nscroll");if(!notifItems.length){c.innerHTML="<div class=\"nempty\">알림이 없어요</div>";return;}c.innerHTML=notifItems.slice(0,14).map(n=>`<div class="nrow new" onclick="toggleNotif();openDetail('${n.key}','${n.board||"board"}')"><div class="nrow-t">${esc(n.author)} 님이 새 글을 올렸어요</div><div class="nrow-s">${esc(n.title)} · ${fmtDate(n.ts)}</div></div>`).join("");}
 window.toggleNotif=toggleNotif;
 document.addEventListener("click",e=>{if(notifIsOpen&&!e.target.closest(".ndrop")&&!e.target.closest(".hbtn")){notifIsOpen=false;document.getElementById("ndrop").classList.remove("show");}});
 
-// ── 모달 ──
 function closeM(id){document.getElementById(id).classList.remove("show");}
 window.closeM=closeM;
 ["m-del","m-day","m-usersettings","m-tmppw"].forEach(id=>{const el=document.getElementById(id);if(el)el.addEventListener("click",function(e){if(e.target===this)closeM(id);});});
@@ -1671,31 +1234,16 @@ document.getElementById("su-pw2").addEventListener("keydown",e=>{if(e.key==="Ent
 function getSnoozedVer(){return localStorage.getItem("sbd_snoozed_ver")||"";}
 function setSnoozedVer(v){localStorage.setItem("sbd_snoozed_ver",v);}
 function showUpdateBanner(newVer){
-  if(document.getElementById("update-banner"))return;
-  if(getSnoozedVer()===newVer)return;
-  const banner=document.createElement("div");
-  banner.id="update-banner";
+  if(document.getElementById("update-banner"))return;if(getSnoozedVer()===newVer)return;
+  const banner=document.createElement("div");banner.id="update-banner";
   banner.style.cssText=`position:fixed;bottom:75px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#1565C0,#0d47a1);color:#fff;border-radius:14px;padding:14px 18px;box-shadow:0 4px 20px rgba(0,0,0,.3);z-index:900;max-width:340px;width:90%;text-align:center;animation:slideUp .4s ease;`;
-  banner.innerHTML=`
-    <div style="font-size:.82rem;font-weight:700;margin-bottom:6px;">🆕 새 버전이 있어요! (v${newVer})</div>
-    <div style="font-size:.72rem;color:#bbdefb;margin-bottom:10px;">새로운 기능과 개선사항이 추가됐어요</div>
-    <div style="display:flex;gap:8px;justify-content:center;">
-      <button onclick="doRefresh('${newVer}')" style="background:#fff;color:#1565C0;border:none;border-radius:8px;padding:8px 18px;font-size:.8rem;font-weight:700;cursor:pointer;">🔄 지금 새로고침</button>
-      <button onclick="snoozeUpdate('${newVer}')" style="background:rgba(255,255,255,.2);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:.8rem;cursor:pointer;">나중에</button>
-    </div>`;
+  banner.innerHTML=`<div style="font-size:.82rem;font-weight:700;margin-bottom:6px;">🆕 새 버전이 있어요! (v${newVer})</div><div style="font-size:.72rem;color:#bbdefb;margin-bottom:10px;">새로운 기능과 개선사항이 추가됐어요</div><div style="display:flex;gap:8px;justify-content:center;"><button onclick="doRefresh('${newVer}')" style="background:#fff;color:#1565C0;border:none;border-radius:8px;padding:8px 18px;font-size:.8rem;font-weight:700;cursor:pointer;">🔄 지금 새로고침</button><button onclick="snoozeUpdate('${newVer}')" style="background:rgba(255,255,255,.2);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:.8rem;cursor:pointer;">나중에</button></div>`;
   document.body.appendChild(banner);
 }
 function doRefresh(ver){setSnoozedVer(ver);location.reload(true);}
 function snoozeUpdate(ver){setSnoozedVer(ver);const b=document.getElementById("update-banner");if(b)b.remove();}
 window.doRefresh=doRefresh;window.snoozeUpdate=snoozeUpdate;
-
-function startVersionListener(){
-  DON("app_version",ver=>{
-    if(!ver)return;
-    if(ver!==APP_VERSION&&ver!==getSnoozedVer())showUpdateBanner(ver);
-    else{const b=document.getElementById("update-banner");if(b)b.remove();}
-  });
-}
+function startVersionListener(){DON("app_version",ver=>{if(!ver)return;if(ver!==APP_VERSION&&ver!==getSnoozedVer())showUpdateBanner(ver);else{const b=document.getElementById("update-banner");if(b)b.remove();}});}
 
 init();
 setTimeout(startVersionListener,3000);
